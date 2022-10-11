@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="2D">
+      <UniqueIdentifier>{dbb99018-01cd-456d-ab25-0ebbbc72ccee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D\DebugText">
+      <UniqueIdentifier>{c8690236-0dde-4b5d-a66f-5c0987aada4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D\LoadSprite">
+      <UniqueIdentifier>{4900f846-aa53-4042-bdce-6e7c3e0a3893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D\Sprite">
+      <UniqueIdentifier>{44f57d94-e49c-469d-bb86-5200c07a61b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D\SpriteCommon">
+      <UniqueIdentifier>{0d469624-e784-436e-bcbb-ce5dcacf0cb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D\PostEffect">
+      <UniqueIdentifier>{a2f36e54-9327-49c4-8610-b9bfb71b035b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D">
+      <UniqueIdentifier>{c63cc561-2bd6-4acb-a423-b4d75f3d14c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\OBJ">
+      <UniqueIdentifier>{7e8081d0-cb98-49cd-8911-10b403cf2c72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\OBJ\Object3d">
+      <UniqueIdentifier>{c2fa1ddb-f0b0-4d51-be16-2f91e7f83139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\OBJ\Mesh">
+      <UniqueIdentifier>{ee91e7de-f590-4869-aced-9a3bb1f03203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\OBJ\Model">
+      <UniqueIdentifier>{1af386ec-662a-4c9a-9281-e87807071314}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\OBJ\Material">
+      <UniqueIdentifier>{2425e6dc-68f2-47b4-8ab8-59a3243fecd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\FBX">
+      <UniqueIdentifier>{c5919cb6-0a06-4fe2-b8f2-face233e99e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\FBX\FbxModel">
+      <UniqueIdentifier>{930de5ab-dcdd-4b97-a482-fdabfb9c7899}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\FBX\FbxLoader">
+      <UniqueIdentifier>{e7ee5cb2-f345-4637-8698-92d8581b152d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\FBX\FbxObject3d">
+      <UniqueIdentifier>{33a53efb-a510-4524-bac0-f9baf1a91da6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{174a6840-0eec-4543-94a2-8d5539fe0f5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\DirectXCommon">
+      <UniqueIdentifier>{e07193ed-72a7-44e9-be86-6d7652f56f68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\WinApp">
+      <UniqueIdentifier>{6b57e627-9872-4197-814c-47e3955fc0e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{33467f57-db8b-4fdf-a8e7-8b6ec05b1a4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{f8f85efb-b660-43fd-9bee-7d05b83d339f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\FbxShader">
+      <UniqueIdentifier>{ec78cd6e-f14a-47ce-925a-9a12a9e51f30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\PostEffectShader">
+      <UniqueIdentifier>{584a7600-2877-422e-aec6-89b05dccbf8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{ee54b079-1710-4500-9a95-3a7776e4afff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\ObjShader">
+      <UniqueIdentifier>{85b3c2ba-1ff6-4145-8bae-b6067df2a8ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\SpriteShader">
+      <UniqueIdentifier>{9d653e4b-1b9c-48bf-b81f-5d8bda41a200}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D\Camera">
+      <UniqueIdentifier>{f9e260d0-a3cf-41d7-bc60-3224a10727b2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="2d\DebugText.cpp">
+      <Filter>2D\DebugText</Filter>
+    </ClCompile>
+    <ClCompile Include="2d\LoadSprite.cpp">
+      <Filter>2D\LoadSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="2d\Sprite.cpp">
+      <Filter>2D\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="2d\SpriteCommon.cpp">
+      <Filter>2D\SpriteCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="2d\PostEffect.cpp">
+      <Filter>2D\PostEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="3d\Material.cpp">
+      <Filter>3D\OBJ\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="3d\Mesh.cpp">
+      <Filter>3D\OBJ\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="3d\Model.cpp">
+      <Filter>3D\OBJ\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="3d\FbxModel.cpp">
+      <Filter>3D\FBX\FbxModel</Filter>
+    </ClCompile>
+    <ClCompile Include="3d\FbxLoader.cpp">
+      <Filter>3D\FBX\FbxLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="3d\FbxObject3d.cpp">
+      <Filter>3D\FBX\FbxObject3d</Filter>
+    </ClCompile>
+    <ClCompile Include="base\DirectXCommon.cpp">
+      <Filter>Base\DirectXCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="base\WinApp.cpp">
+      <Filter>Base\WinApp</Filter>
+    </ClCompile>
+    <ClCompile Include="input\Input.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="3d\Object3d.cpp">
+      <Filter>3D\OBJ\Object3d</Filter>
+    </ClCompile>
+    <ClCompile Include="camera\Camera.cpp">
+      <Filter>3D\Camera</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="2d\DebugText.h">
+      <Filter>2D\DebugText</Filter>
+    </ClInclude>
+    <ClInclude Include="2d\LoadSprite.h">
+      <Filter>2D\LoadSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="2d\Sprite.h">
+      <Filter>2D\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="2d\SpriteCommon.h">
+      <Filter>2D\SpriteCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="2d\PostEffect.h">
+      <Filter>2D\PostEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="3d\Material.h">
+      <Filter>3D\OBJ\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="3d\Mesh.h">
+      <Filter>3D\OBJ\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="3d\Model.h">
+      <Filter>3D\OBJ\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="3d\FbxModel.h">
+      <Filter>3D\FBX\FbxModel</Filter>
+    </ClInclude>
+    <ClInclude Include="3d\FbxLoader.h">
+      <Filter>3D\FBX\FbxLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="3d\FbxObject3d.h">
+      <Filter>3D\FBX\FbxObject3d</Filter>
+    </ClInclude>
+    <ClInclude Include="base\DirectXCommon.h">
+      <Filter>Base\DirectXCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="base\WinApp.h">
+      <Filter>Base\WinApp</Filter>
+    </ClInclude>
+    <ClInclude Include="input\Input.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="3d\Object3d.h">
+      <Filter>3D\OBJ\Object3d</Filter>
+    </ClInclude>
+    <ClInclude Include="camera\Camera.h">
+      <Filter>3D\Camera</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shaders\FBX.hlsli">
+      <Filter>Shader\FbxShader</Filter>
+    </None>
+    <None Include="Resources\shaders\SpriteShaderHeader.hlsli">
+      <Filter>Shader\SpriteShader</Filter>
+    </None>
+    <None Include="Resources\shaders\OBJShaderHeader.hlsli">
+      <Filter>Shader\ObjShader</Filter>
+    </None>
+    <None Include="Resources\shaders\PostEffectTest.hlsli">
+      <Filter>Shader\PostEffectShader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Resources\shaders\FBXPS.hlsl">
+      <Filter>Shader\FbxShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\shaders\FBXVS.hlsl">
+      <Filter>Shader\FbxShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\shaders\SpritePixelShader.hlsl">
+      <Filter>Shader\SpriteShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\shaders\SpriteVertexShader.hlsl">
+      <Filter>Shader\SpriteShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\shaders\OBJPixelShader.hlsl">
+      <Filter>Shader\ObjShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\shaders\OBJVertexShader.hlsl">
+      <Filter>Shader\ObjShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\shaders\PostEffectTestPS.hlsl">
+      <Filter>Shader\PostEffectShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Resources\shaders\PostEffectTestVS.hlsl">
+      <Filter>Shader\PostEffectShader</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
