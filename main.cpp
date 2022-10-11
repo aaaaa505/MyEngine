@@ -136,6 +136,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		//描画後処理
 		dxCommon->PostDraw();
 		
+		// コミットtest
 
 		//postEffect->PreDrawScene(dxCommon->GetCmdList());
 		////3Dオブジェクト描画前処理
