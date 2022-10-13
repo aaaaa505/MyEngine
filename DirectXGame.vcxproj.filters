@@ -111,6 +111,7 @@
     <ClCompile Include="MyGame.cpp">
       <Filter>Shader\SpriteShader</Filter>
     </ClCompile>
+    <ClCompile Include="FrameWork.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2d\DebugText.h">
@@ -150,6 +151,7 @@
       <Filter>3D\Camera</Filter>
     </ClInclude>
     <ClInclude Include="MyGame.h" />
+    <ClInclude Include="FrameWork.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shaders\FBX.hlsli">

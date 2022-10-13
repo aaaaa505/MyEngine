@@ -2,28 +2,10 @@
 
 void MyGame::Initialize()
 {
-	//生成&初期化
-	winApp = new WinApp();
-	winApp->Initialize();
-
-	dxCommon = new DirectXCommon();
-	dxCommon->initialize(winApp);
-
-	input = new Input();
-	input->Initialize(winApp);
-
-	spriteCommon = new SpriteCommon();
-	//確保したスプライト共通部分インスタンスを初期化
-	spriteCommon->Initialize(dxCommon->Getdev(), dxCommon->GetCmdList(), WinApp::window_width, WinApp::window_height);
-
+	// 基底クラスの初期化
+	FrameWork::Initialize();
 
 #pragma region オブジェクト
-	//カメラ生成
-	camera = new Camera(WinApp::window_width, WinApp::window_height);
-
-	Object3d::StaticInitialize(dxCommon->Getdev());
-
-	Object3d::SetCamera(camera);
 	//OBJからモデルデータを読み込む
 	model = Model::LoadFromOBJ("player_N");
 	//3Dオブジェクトの生成
@@ -36,12 +18,6 @@ void MyGame::Initialize()
 #pragma endregion
 
 #pragma region スプライト
-	LoadSprite::StaticInitialize(spriteCommon);
-
-	//デバッグテキスト生成
-	debugText = DebugText::Create(spriteCommon, debugTextTexNumber);
-	debugText->Initialize(spriteCommon, debugTextTexNumber);
-
 	//スプライト生成
 	sprite = Sprite::Create(spriteCommon, sample2, { 0.0f, 0.0f });
 	sprite->SetSize({ 100.0f, 100.0f });
@@ -51,60 +27,44 @@ void MyGame::Initialize()
 
 void MyGame::Finalize()
 {
-	//クラスの解放
-	delete dxCommon;
-	delete input;
-	delete spriteCommon;
 	delete sprite;
 	delete object3d;
 	delete model;
-	delete debugText;
-	delete camera;
 
-
-#pragma region WindowsAPI後始末
-	winApp->Finalize();
-	delete winApp;
-#pragma endregion WindowsAPI後始末
+	// 基底クラスの終了処理
+	FrameWork::Finalize();
 }
 
 void MyGame::Updata()
 {
-#pragma region ウィンドウメッセージ処理
-	if (winApp->ProcessMessage()) {
-		//ゲームループから抜ける
-		endRequest = true;
-		return;
-	}
-#pragma endregion ウィンドウメッセージ処理
+	// 基底クラスの更新処理
+	FrameWork::Updata();
 
 #pragma region DirectX毎フレーム処理
 	//DirectX毎フレーム処理　ここから
 	camera->MoveCamera(input, 0.5f);
 
-	//更新g
+	//更新
 	object3d->Update();
 	sprite->Updata();
-	input->Updata();
-	camera->Update();
-
 	//DirectX毎フレーム処理　ここまで
 #pragma endregion DirectX毎フレーム処理
 }
 
 void MyGame::Draw()
 {
+	// 描画前処理
 	dxCommon->PreDraw();
-	//3Dオブジェクト描画前処理
+	// 3Dオブジェクト描画前処理
 	Object3d::PreDraw(dxCommon->GetCmdList());
 
-	//3Dオブジェクト描画
+	// 3Dオブジェクト描画
 	object3d->Draw();
 
-	//3Dオブジェクト後処理
+	// 3Dオブジェクト後処理
 	Object3d::PostDraw();
 
-	//スプライト共通コマンド
+	// スプライト前処理
 	spriteCommon->PreDraw(dxCommon->GetCmdList());
 
 	//sprite->Draw();
@@ -114,6 +74,7 @@ void MyGame::Draw()
 	debugText->Print(strDebug, 0, 0, 2);
 	debugText->DrawAll();*/
 
+	// スプライト後処理
 	spriteCommon->PostDraw();
 	//描画後処理
 	dxCommon->PostDraw();

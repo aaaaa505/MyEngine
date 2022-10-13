@@ -157,6 +157,7 @@
     <ClCompile Include="base\DirectXCommon.cpp" />
     <ClCompile Include="base\WinApp.cpp" />
     <ClCompile Include="camera\Camera.cpp" />
+    <ClCompile Include="FrameWork.cpp" />
     <ClCompile Include="input\Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyGame.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="base\DirectXCommon.h" />
     <ClInclude Include="base\WinApp.h" />
     <ClInclude Include="camera\Camera.h" />
+    <ClInclude Include="FrameWork.h" />
     <ClInclude Include="input\Input.h" />
     <ClInclude Include="MyGame.h" />
   </ItemGroup>
