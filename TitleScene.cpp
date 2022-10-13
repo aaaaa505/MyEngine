@@ -25,7 +25,7 @@ void TitleScene::Updata()
 	{
 		// ƒV[ƒ“Ø‚è‘Ö‚¦
 		BaseScene* scene = new PlayScene();
-		sceneManager->SetNextScene(scene);
+		SceneManager::GetInstance()->SetNextScene(scene);
 	}
 
 	sprite->Updata();

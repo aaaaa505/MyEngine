@@ -47,6 +47,5 @@ protected:
 	SpriteCommon* spriteCommon = nullptr;
 	Input* input = nullptr;
 	DebugText* debugText = nullptr;
-	SceneManager* sceneManager = nullptr;
 };
 

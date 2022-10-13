@@ -7,6 +7,13 @@ SceneManager::~SceneManager()
 	delete nowScene;
 }
 
+SceneManager* SceneManager::GetInstance()
+{
+	static SceneManager instance;
+
+	return &instance;
+}
+
 void SceneManager::Updata()
 {
 	// シーン切り替えがあるなら
@@ -22,9 +29,6 @@ void SceneManager::Updata()
 		// シーン切り替え
 		nowScene = nextScene;
 		nextScene = nullptr;
-
-		// シーンマネージャーをセット
-		nowScene->SetSceneManager(this);
 
 		// 次のシーンの初期化
 		nowScene->Initialize();

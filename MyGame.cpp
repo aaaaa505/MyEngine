@@ -10,7 +10,7 @@ void MyGame::Initialize()
 	// シーン初期化
 	BaseScene* scene = new TitleScene();
 	// シーンマネージャーに最初のシーンをセット
-	sceneManager->SetNextScene(scene);
+	SceneManager::GetInstance()->SetNextScene(scene);
 }
 
 void MyGame::Finalize()

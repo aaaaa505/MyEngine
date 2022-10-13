@@ -1,4 +1,5 @@
 #include "PlayScene.h"
+#include "TitleScene.h"
 #include "Input.h"
 #include "DebugText.h"
 #include "SceneManager.h"
@@ -33,17 +34,18 @@ void PlayScene::Finalize()
 
 void PlayScene::Updata()
 {
-#pragma region DirectX毎フレーム処理
 	Input* input = Input::GetInstacne();
+	if (input->Triggerkey(DIK_SPACE))
+	{
+		BaseScene* scene = new TitleScene();
+		SceneManager::GetInstance()->SetNextScene(scene);
+	}
 
-	//DirectX毎フレーム処理　ここから
 	camera->MoveCamera(input, 0.5f);
 
 	//更新
 	object3d->Update();
 	camera->Update();
-	//DirectX毎フレーム処理　ここまで
-#pragma endregion DirectX毎フレーム処理
 }
 
 void PlayScene::Draw()

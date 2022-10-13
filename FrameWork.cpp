@@ -28,14 +28,10 @@ void FrameWork::Initialize()
 	// オブジェクト3Dの静的初期化
 	Object3d::StaticInitialize(dxCommon->Getdev(), dxCommon->GetCmdList());
 
-	// シーンマネージャー生成
-	sceneManager = new SceneManager();
 }
 
 void FrameWork::Finalize()
 {
-	// シーンマネージャー解放
-	delete sceneManager;
 	// DirectX基盤クラス解放
 	delete dxCommon;
 	// デバッグテキストの終了処理
@@ -80,7 +76,7 @@ void FrameWork::Updata()
 	input->Updata();
 
 	// シーンの更新
-	sceneManager->Updata();
+	SceneManager::GetInstance()->Updata();
 }
 
 void FrameWork::Draw()
@@ -89,7 +85,7 @@ void FrameWork::Draw()
 	dxCommon->PreDraw();
 
 	// シーン描画
-	sceneManager->Draw();
+	SceneManager::GetInstance()->Draw();
 
 	// デバッグテキスト描画
 	debugText->DrawAll();
