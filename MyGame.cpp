@@ -1,16 +1,17 @@
 #include "MyGame.h"
-#include "PlayScene.h"
-#include "TitleScene.h"
+#include "SceneFactory.h"
 
 void MyGame::Initialize()
 {
 	// 基底クラスの初期化
 	FrameWork::Initialize();
 
-	// シーン初期化
-	BaseScene* scene = new TitleScene();
+	// シーンファクトリー生成
+	sceneFactory = new SceneFactory();
+	SceneManager::GetInstance()->SetSceneFactory(sceneFactory);
+
 	// シーンマネージャーに最初のシーンをセット
-	SceneManager::GetInstance()->SetNextScene(scene);
+	SceneManager::GetInstance()->ChangeScene("TITLE");
 }
 
 void MyGame::Finalize()

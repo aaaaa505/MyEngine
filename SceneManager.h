@@ -1,5 +1,6 @@
 #pragma once
 #include "BaseScene.h"
+#include "AbstractSceneFactory.h"
 
 class SceneManager
 {
@@ -21,8 +22,14 @@ public:
 	/// </summary>
 	void Draw();
 
-	// 次シーン予約
-	void SetNextScene(BaseScene* nextScene) { this->nextScene = nextScene; }
+	/// <summary>
+	/// 次シーン予約
+	/// </summary>
+	/// <param name="sceneName">シーン名</param>
+	void ChangeScene(const std::string& sceneName);
+
+	
+	void SetSceneFactory(AbstractSceneFactory* sceneFactory) { this->sceneFactory = sceneFactory; }
 
 private:// 外部で新たなインスタンスを作らせないために隠蔽
 	SceneManager() = default;
@@ -35,5 +42,7 @@ private:
 	BaseScene* nowScene = nullptr;
 	// 次のシーン
 	BaseScene* nextScene = nullptr;
+	// シーンファクトリー
+	AbstractSceneFactory* sceneFactory = nullptr;
 };
 

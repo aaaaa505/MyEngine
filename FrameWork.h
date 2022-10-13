@@ -7,6 +7,7 @@
 #include "Object3d.h"
 #include "Sprite.h"
 #include "SceneManager.h"
+#include "AbstractSceneFactory.h"
 
 class FrameWork
 {
@@ -47,5 +48,7 @@ protected:
 	SpriteCommon* spriteCommon = nullptr;
 	Input* input = nullptr;
 	DebugText* debugText = nullptr;
+	AbstractSceneFactory* sceneFactory = nullptr;
+
 };
 

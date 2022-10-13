@@ -1,5 +1,7 @@
 #include "SceneManager.h"
 
+#include <cassert>
+
 SceneManager::~SceneManager()
 {
 	// 最後のシーンの終了と解放
@@ -42,4 +44,13 @@ void SceneManager::Draw()
 {
 	// 現在のシーン描画
 	nowScene->Draw();
+}
+
+void SceneManager::ChangeScene(const std::string& sceneName)
+{
+	assert(sceneFactory);
+	assert(nextScene == nullptr);
+
+	// 次シーンをセット
+	nextScene = sceneFactory->CreateScene(sceneName);
 }

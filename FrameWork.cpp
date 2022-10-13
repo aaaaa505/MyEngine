@@ -32,6 +32,8 @@ void FrameWork::Initialize()
 
 void FrameWork::Finalize()
 {
+	// シーンファクトリー解放
+	delete sceneFactory;
 	// DirectX基盤クラス解放
 	delete dxCommon;
 	// デバッグテキストの終了処理

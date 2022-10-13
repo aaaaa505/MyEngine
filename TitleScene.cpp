@@ -2,7 +2,6 @@
 #include "Input.h"
 #include "DebugText.h"
 #include "SceneManager.h"
-#include "PlayScene.h"
 
 void TitleScene::Initialize()
 {
@@ -24,8 +23,7 @@ void TitleScene::Updata()
 	if (input->Triggerkey(DIK_SPACE))
 	{
 		// ƒV[ƒ“Ø‚è‘Ö‚¦
-		BaseScene* scene = new PlayScene();
-		SceneManager::GetInstance()->SetNextScene(scene);
+		SceneManager::GetInstance()->ChangeScene("PLAY");
 	}
 
 	sprite->Updata();

@@ -37,8 +37,8 @@ void PlayScene::Updata()
 	Input* input = Input::GetInstacne();
 	if (input->Triggerkey(DIK_SPACE))
 	{
-		BaseScene* scene = new TitleScene();
-		SceneManager::GetInstance()->SetNextScene(scene);
+		// ƒV[ƒ“Ø‚è‘Ö‚¦
+		SceneManager::GetInstance()->ChangeScene("TITLE");
 	}
 
 	camera->MoveCamera(input, 0.5f);
