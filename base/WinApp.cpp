@@ -7,6 +7,7 @@ LRESULT WinApp::WindowProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
     switch (msg)
     {
     case WM_DESTROY://ウィンドウが破棄された
+    case VK_ESCAPE:	// ESCAPEが入力された
         PostQuitMessage(0);//OSに対して、アプリが終了を伝える
         return 0;
     }

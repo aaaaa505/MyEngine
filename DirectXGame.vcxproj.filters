@@ -16,9 +16,6 @@
     <Filter Include="2D\SpriteCommon">
       <UniqueIdentifier>{0d469624-e784-436e-bcbb-ce5dcacf0cb2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="2D\PostEffect">
-      <UniqueIdentifier>{a2f36e54-9327-49c4-8610-b9bfb71b035b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="3D">
       <UniqueIdentifier>{c63cc561-2bd6-4acb-a423-b4d75f3d14c2}</UniqueIdentifier>
     </Filter>
@@ -36,18 +33,6 @@
     </Filter>
     <Filter Include="3D\OBJ\Material">
       <UniqueIdentifier>{2425e6dc-68f2-47b4-8ab8-59a3243fecd6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="3D\FBX">
-      <UniqueIdentifier>{c5919cb6-0a06-4fe2-b8f2-face233e99e8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="3D\FBX\FbxModel">
-      <UniqueIdentifier>{930de5ab-dcdd-4b97-a482-fdabfb9c7899}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="3D\FBX\FbxLoader">
-      <UniqueIdentifier>{e7ee5cb2-f345-4637-8698-92d8581b152d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="3D\FBX\FbxObject3d">
-      <UniqueIdentifier>{33a53efb-a510-4524-bac0-f9baf1a91da6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Base">
       <UniqueIdentifier>{174a6840-0eec-4543-94a2-8d5539fe0f5c}</UniqueIdentifier>
@@ -96,9 +81,6 @@
     <ClCompile Include="2d\SpriteCommon.cpp">
       <Filter>2D\SpriteCommon</Filter>
     </ClCompile>
-    <ClCompile Include="2d\PostEffect.cpp">
-      <Filter>2D\PostEffect</Filter>
-    </ClCompile>
     <ClCompile Include="3d\Material.cpp">
       <Filter>3D\OBJ\Material</Filter>
     </ClCompile>
@@ -107,15 +89,6 @@
     </ClCompile>
     <ClCompile Include="3d\Model.cpp">
       <Filter>3D\OBJ\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="3d\FbxModel.cpp">
-      <Filter>3D\FBX\FbxModel</Filter>
-    </ClCompile>
-    <ClCompile Include="3d\FbxLoader.cpp">
-      <Filter>3D\FBX\FbxLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="3d\FbxObject3d.cpp">
-      <Filter>3D\FBX\FbxObject3d</Filter>
     </ClCompile>
     <ClCompile Include="base\DirectXCommon.cpp">
       <Filter>Base\DirectXCommon</Filter>
@@ -135,6 +108,9 @@
     <ClCompile Include="camera\Camera.cpp">
       <Filter>3D\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="MyGame.cpp">
+      <Filter>Shader\SpriteShader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2d\DebugText.h">
@@ -149,9 +125,6 @@
     <ClInclude Include="2d\SpriteCommon.h">
       <Filter>2D\SpriteCommon</Filter>
     </ClInclude>
-    <ClInclude Include="2d\PostEffect.h">
-      <Filter>2D\PostEffect</Filter>
-    </ClInclude>
     <ClInclude Include="3d\Material.h">
       <Filter>3D\OBJ\Material</Filter>
     </ClInclude>
@@ -160,15 +133,6 @@
     </ClInclude>
     <ClInclude Include="3d\Model.h">
       <Filter>3D\OBJ\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="3d\FbxModel.h">
-      <Filter>3D\FBX\FbxModel</Filter>
-    </ClInclude>
-    <ClInclude Include="3d\FbxLoader.h">
-      <Filter>3D\FBX\FbxLoader</Filter>
-    </ClInclude>
-    <ClInclude Include="3d\FbxObject3d.h">
-      <Filter>3D\FBX\FbxObject3d</Filter>
     </ClInclude>
     <ClInclude Include="base\DirectXCommon.h">
       <Filter>Base\DirectXCommon</Filter>
@@ -185,6 +149,7 @@
     <ClInclude Include="camera\Camera.h">
       <Filter>3D\Camera</Filter>
     </ClInclude>
+    <ClInclude Include="MyGame.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shaders\FBX.hlsli">
