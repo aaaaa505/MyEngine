@@ -7,7 +7,6 @@
 class PlayScene : public BaseScene
 {
 public:
-	PlayScene(SceneManager* sceneManager);
 
 	/// <summary>
 	/// ‰Šú‰»

@@ -107,7 +107,6 @@
     <ClCompile Include="PlayScene.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="BaseScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2d\DebugText.h">

@@ -7,8 +7,7 @@
 class TitleScene : public BaseScene
 {
 public:
-	TitleScene(SceneManager* sceneManager);
-
+	
 	/// <summary>
 	/// ‰Šú‰»
 	/// </summary>

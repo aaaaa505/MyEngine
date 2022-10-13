@@ -3,11 +3,6 @@
 #include "DebugText.h"
 #include "SceneManager.h"
 
-PlayScene::PlayScene(SceneManager* sceneManager)
-	:BaseScene(sceneManager)
-{
-}
-
 void PlayScene::Initialize()
 {
 #pragma region オブジェクト

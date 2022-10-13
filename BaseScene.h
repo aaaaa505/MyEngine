@@ -6,7 +6,10 @@ class SceneManager;
 class BaseScene
 {
 public:
-	BaseScene(SceneManager* sceneManager);
+	/// <summary>
+	/// 仮想デストラクタ
+	/// </summary>
+	virtual ~BaseScene() = default;
 
 	/// <summary>
 	/// 初期化
@@ -28,6 +31,8 @@ public:
 	/// </summary>
 	virtual void Draw() = 0;
 
+	// シーンマネージャーsetter
+	virtual void SetSceneManager(SceneManager* sceneManager) { this->sceneManager = sceneManager; }
 protected:
 	// シーンマネージャー
 	SceneManager* sceneManager = nullptr;

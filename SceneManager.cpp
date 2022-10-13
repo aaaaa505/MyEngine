@@ -23,13 +23,19 @@ void SceneManager::Updata()
 		nowScene = nextScene;
 		nextScene = nullptr;
 
+		// シーンマネージャーをセット
+		nowScene->SetSceneManager(this);
+
+		// 次のシーンの初期化
 		nowScene->Initialize();
 	}
 
+	// 現在のシーン更新
 	nowScene->Updata();
 }
 
 void SceneManager::Draw()
 {
+	// 現在のシーン描画
 	nowScene->Draw();
 }

@@ -8,7 +8,7 @@ void MyGame::Initialize()
 	FrameWork::Initialize();
 
 	// シーン初期化
-	BaseScene* scene = new TitleScene(sceneManager);
+	BaseScene* scene = new TitleScene();
 	// シーンマネージャーに最初のシーンをセット
 	sceneManager->SetNextScene(scene);
 }

@@ -4,12 +4,6 @@
 #include "SceneManager.h"
 #include "PlayScene.h"
 
-TitleScene::TitleScene(SceneManager* sceneManager)
-	:BaseScene(sceneManager)
-{
-
-}
-
 void TitleScene::Initialize()
 {
 #pragma region スプライト
@@ -30,7 +24,7 @@ void TitleScene::Updata()
 	if (input->Triggerkey(DIK_SPACE))
 	{
 		// シーン切り替え
-		BaseScene* scene = new PlayScene(sceneManager);
+		BaseScene* scene = new PlayScene();
 		sceneManager->SetNextScene(scene);
 	}
 
