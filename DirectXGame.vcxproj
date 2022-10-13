@@ -154,6 +154,7 @@
     <ClCompile Include="3d\Mesh.cpp" />
     <ClCompile Include="3d\Model.cpp" />
     <ClCompile Include="3d\Object3d.cpp" />
+    <ClCompile Include="BaseScene.cpp" />
     <ClCompile Include="base\DirectXCommon.cpp" />
     <ClCompile Include="base\WinApp.cpp" />
     <ClCompile Include="camera\Camera.cpp" />
@@ -162,6 +163,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="PlayScene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2d\DebugText.h" />
@@ -179,6 +182,9 @@
     <ClInclude Include="input\Input.h" />
     <ClInclude Include="MyGame.h" />
     <ClInclude Include="PlayScene.h" />
+    <ClInclude Include="BaseScene.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shaders\OBJShaderHeader.hlsli" />

@@ -27,20 +27,28 @@ void FrameWork::Initialize()
 
 	// オブジェクト3Dの静的初期化
 	Object3d::StaticInitialize(dxCommon->Getdev(), dxCommon->GetCmdList());
+
+	// シーンマネージャー生成
+	sceneManager = new SceneManager();
 }
 
 void FrameWork::Finalize()
 {
-	// クラスの解放
+	// シーンマネージャー解放
+	delete sceneManager;
+	// DirectX基盤クラス解放
 	delete dxCommon;
+	// デバッグテキストの終了処理
 	debugText->Finalize();
+	// WindowsAPIの終了処理
 	winApp->Finalize();
+	// WindowsAPIクラス解放
 	delete winApp;
 }
 
 void FrameWork::Run()
 {
-	// ゲームの初期化
+	// 初期化
 	Initialize();
 
 	while (true)// ゲームループ
@@ -55,22 +63,37 @@ void FrameWork::Run()
 		// 描画
 		Draw();
 	}
-
 	// 終了処理
 	Finalize();
 }
 
 void FrameWork::Updata()
 {
+	// Windowsメッセージの処理
 	if (winApp->ProcessMessage()) {
 		// ゲームループから抜ける
 		endRequest = true;
 		return;
 	}
 
+	// 入力の更新
 	input->Updata();
+
+	// シーンの更新
+	sceneManager->Updata();
 }
 
 void FrameWork::Draw()
 {
+	// 描画前処理
+	dxCommon->PreDraw();
+
+	// シーン描画
+	sceneManager->Draw();
+
+	// デバッグテキスト描画
+	debugText->DrawAll();
+
+	//描画後処理
+	dxCommon->PostDraw();
 }

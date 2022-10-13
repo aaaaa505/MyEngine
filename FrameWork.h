@@ -6,6 +6,7 @@
 #include "LoadSprite.h"
 #include "Object3d.h"
 #include "Sprite.h"
+#include "SceneManager.h"
 
 class FrameWork
 {
@@ -35,9 +36,10 @@ public:// メンバ関数
 	/// <summary>
 	/// 描画
 	/// </summary>
-	virtual void Draw() = 0;
+	virtual void Draw();
 
-protected: // メンバ変数
+protected:
+	// 終了フラッグ
 	bool endRequest = false;
 	// ポインタ置き場
 	WinApp* winApp = nullptr;
@@ -45,5 +47,6 @@ protected: // メンバ変数
 	SpriteCommon* spriteCommon = nullptr;
 	Input* input = nullptr;
 	DebugText* debugText = nullptr;
+	SceneManager* sceneManager = nullptr;
 };
 

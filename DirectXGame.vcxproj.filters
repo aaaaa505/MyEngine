@@ -105,6 +105,9 @@
     <ClCompile Include="FrameWork.cpp" />
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="PlayScene.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="BaseScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2d\DebugText.h">
@@ -146,6 +149,9 @@
     <ClInclude Include="MyGame.h" />
     <ClInclude Include="FrameWork.h" />
     <ClInclude Include="PlayScene.h" />
+    <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="BaseScene.h" />
+    <ClInclude Include="SceneManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shaders\SpriteShaderHeader.hlsli">

@@ -1,9 +1,14 @@
 #pragma once
-#include "FrameWork.h"
+#include "BaseScene.h"
+#include "Sprite.h"
+#include "LoadSprite.h"
+#include "Camera.h"
 
-class MyGame : public FrameWork
+class TitleScene : public BaseScene
 {
 public:
+	TitleScene(SceneManager* sceneManager);
+
 	/// <summary>
 	/// ‰Šú‰»
 	/// </summary>
@@ -24,5 +29,7 @@ public:
 	/// </summary>
 	void Draw() override;
 
+private:// ƒƒ“ƒo•Ï”
+	Sprite* sprite = nullptr;
 };
 
