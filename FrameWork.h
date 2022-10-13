@@ -4,7 +4,6 @@
 #include "Input.h"
 #include "DebugText.h"
 #include "LoadSprite.h"
-#include "Camera.h"
 #include "Object3d.h"
 #include "Sprite.h"
 
@@ -24,6 +23,11 @@ public:// メンバ関数
 	virtual void Finalize();
 
 	/// <summary>
+	/// 実行
+	/// </summary>
+	void Run();
+
+	/// <summary>
 	/// 更新
 	/// </summary>
 	virtual void Updata();
@@ -33,9 +37,6 @@ public:// メンバ関数
 	/// </summary>
 	virtual void Draw() = 0;
 
-	// getter
-	bool Getter() { return endRequest; }
-
 protected: // メンバ変数
 	bool endRequest = false;
 	// ポインタ置き場
@@ -44,6 +45,5 @@ protected: // メンバ変数
 	SpriteCommon* spriteCommon = nullptr;
 	Input* input = nullptr;
 	DebugText* debugText = nullptr;
-	Camera* camera = nullptr;
 };
 

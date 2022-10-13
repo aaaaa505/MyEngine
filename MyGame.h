@@ -1,6 +1,8 @@
 #pragma once
 #include "FrameWork.h"
 
+class PlayScene;
+
 /// <summary>
 /// ゲーム固有クラス
 /// </summary>
@@ -28,9 +30,8 @@ public:// メンバ関数
 	/// </summary>
 	void Draw() override;
 
-private:// メンバ変数
-	Model* model = nullptr;
-	Object3d* object3d = nullptr;
-	Sprite* sprite = nullptr;
+private:
+
+	PlayScene* scene = nullptr;
 };
 

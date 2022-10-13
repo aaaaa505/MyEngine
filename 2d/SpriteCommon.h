@@ -5,8 +5,11 @@
 #include <DirectXMath.h>
 class SpriteCommon
 {
+public:
+	static SpriteCommon* GetInstance();
+
 private: // エイリアス
-// Microsoft::WRL::を省略
+	// Microsoft::WRL::を省略
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;
 	// DirectX::を省略
 	using XMFLOAT2 = DirectX::XMFLOAT2;
@@ -15,16 +18,16 @@ private: // エイリアス
 	using XMMATRIX = DirectX::XMMATRIX;
 
 public://メンバ関数
-	//初期化
+	// 初期化
 	void Initialize(ID3D12Device* device, ID3D12GraphicsCommandList* cmdList,int window_width, int window_height);
-	//描画前
-	void PreDraw(ID3D12GraphicsCommandList* cmdList);
-	//描画後
+	// 描画前
+	void PreDraw();
+	// 描画後
 	void PostDraw();
-	//共通テクスチャの読み込み
+	// 共通テクスチャの読み込み
 	bool LoadTexture(UINT texnumber, const wchar_t* filename);
 	//ルートデスクリプタテーブルの設定
-	void SetGraphicsRootDescriptorTabl(UINT rootParmeterIndex, UINT texNumber);
+	void SetGraphicsRootDescriptorTable(UINT rootParmeterIndex, UINT texNumber);
 
 	//getter
 	ID3D12Resource* GetTexBuff(UINT texNumber);

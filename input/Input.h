@@ -15,6 +15,13 @@ public:
 
 
 public://メンバ関数
+
+	/// <summary>
+	/// シングロトン
+	/// </summary>
+	/// <returns></returns>
+	static Input* GetInstacne();
+
 	//初期化
 	void Initialize(WinApp* winApp);
 

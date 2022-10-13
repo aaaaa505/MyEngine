@@ -12,6 +12,13 @@ using namespace Microsoft::WRL;
 //静的メンバ変数の実体
 ID3D12Device* SpriteCommon::device = nullptr;
 
+SpriteCommon* SpriteCommon::GetInstance()
+{
+	static SpriteCommon instance;
+
+	return &instance;
+}
+
 void SpriteCommon::Initialize(ID3D12Device* device, ID3D12GraphicsCommandList* cmdList, int window_width, int window_height)
 {
 	assert(device);
@@ -38,11 +45,8 @@ void SpriteCommon::Initialize(ID3D12Device* device, ID3D12GraphicsCommandList* c
 	
 }
 
-void SpriteCommon::PreDraw(ID3D12GraphicsCommandList* cmdList)
+void SpriteCommon::PreDraw()
 {
-	assert(cmdList);
-	this->cmdList = cmdList;
-
 	//パイプラインステートの設定
 	cmdList->SetPipelineState(pipelineSet.pipelinestate.Get());
 	//ルートシグネチャの設定
@@ -57,7 +61,7 @@ void SpriteCommon::PreDraw(ID3D12GraphicsCommandList* cmdList)
 
 void SpriteCommon::PostDraw()
 {
-	cmdList = nullptr;
+	//cmdList = nullptr;
 }
 
 bool SpriteCommon::LoadTexture(UINT texnumber, const wchar_t* filename)
@@ -140,7 +144,7 @@ ID3D12Resource* SpriteCommon::GetTexBuff(UINT texNumber)
 	return texBuff[texNumber].Get();
 }
 
-void SpriteCommon::SetGraphicsRootDescriptorTabl(UINT rootParmeterIndex, UINT texNumber)
+void SpriteCommon::SetGraphicsRootDescriptorTable(UINT rootParmeterIndex, UINT texNumber)
 {
 	//シェーダリソースビューをセット
 	cmdList->SetGraphicsRootDescriptorTable(rootParmeterIndex,
@@ -148,6 +152,8 @@ void SpriteCommon::SetGraphicsRootDescriptorTabl(UINT rootParmeterIndex, UINT te
 			descHeap->GetGPUDescriptorHandleForHeapStart(),
 			texNumber,
 			device->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV)));
+
+	
 }
 
 void SpriteCommon::CreateGraphicsPipeline()

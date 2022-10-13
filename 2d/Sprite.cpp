@@ -8,12 +8,11 @@
 
 using namespace DirectX;
 using namespace Microsoft::WRL;
-//静的メンバ変数の実体
-SpriteCommon* Sprite::spriteCommon = nullptr;
 
-
-Sprite* Sprite::Create(SpriteCommon* spriteCommon, UINT texNumber, XMFLOAT2 position, XMFLOAT4 color, XMFLOAT2 anchorpoint, bool isFlipX, bool isFlipY)
+Sprite* Sprite::Create(UINT texNumber, XMFLOAT2 position, XMFLOAT4 color, XMFLOAT2 anchorpoint, bool isFlipX, bool isFlipY)
 {
+	SpriteCommon* spriteCommon = SpriteCommon::GetInstance();
+
 	//仮サイズ
 	XMFLOAT2 size = { 0.0f, 0.0f };
 
@@ -31,7 +30,7 @@ Sprite* Sprite::Create(SpriteCommon* spriteCommon, UINT texNumber, XMFLOAT2 posi
 		return nullptr;
 	}
 
-	if (!sprite->Initialize(spriteCommon))
+	if (!sprite->Initialize())
 	{
 		delete sprite;
 		assert(0);
@@ -55,17 +54,14 @@ Sprite::Sprite(UINT texNumber, XMFLOAT2 position, XMFLOAT2 size, XMFLOAT4 color,
 	this->texSize = size;
 }
 
-bool Sprite::Initialize(SpriteCommon* spriteCommon)
+bool Sprite::Initialize()
 {
-	assert(spriteCommon);
-
 	HRESULT result = S_FALSE;
 
-	//メンバ変数に書き込む
-	this->spriteCommon = spriteCommon;
+	SpriteCommon* spriteCommon = SpriteCommon::GetInstance();
 
 	//頂点バッファ生成
-	result = this->spriteCommon->GetDevice()->CreateCommittedResource(
+	result = spriteCommon->GetDevice()->CreateCommittedResource(
 		&CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD),
 		D3D12_HEAP_FLAG_NONE,
 		&CD3DX12_RESOURCE_DESC::Buffer(sizeof(VertexPosUv) * vertNum),
@@ -86,7 +82,7 @@ bool Sprite::Initialize(SpriteCommon* spriteCommon)
 	vbView.StrideInBytes = sizeof(VertexPosUv);
 
 	//定数バッファの生成
-	result = this->spriteCommon->GetDevice()->CreateCommittedResource(
+	result = spriteCommon->GetDevice()->CreateCommittedResource(
 		&CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD),
 		D3D12_HEAP_FLAG_NONE,
 		&CD3DX12_RESOURCE_DESC::Buffer((sizeof(ConstBufferData) + 0xff) & ~0xff),
@@ -102,7 +98,7 @@ bool Sprite::Initialize(SpriteCommon* spriteCommon)
 	ConstBufferData* constMap = nullptr;
 	result = constBuff->Map(0, nullptr, (void**)&constMap);
 	constMap->color = color; //色指定（RGBA）
-	constMap->mat = this->spriteCommon->GetMatProjection();
+	constMap->mat = spriteCommon->GetMatProjection();
 		constBuff->Unmap(0, nullptr);
 
 	return true;
@@ -110,6 +106,8 @@ bool Sprite::Initialize(SpriteCommon* spriteCommon)
 
 void Sprite::TransferVertexBuffer()
 {
+	SpriteCommon* spriteCommon = SpriteCommon::GetInstance();
+
 	HRESULT result = S_FALSE;
 	//左下、左上、右下、右上
 	enum { LB, LT, RB, RT };
@@ -163,7 +161,7 @@ void Sprite::TransferVertexBuffer()
 
 void Sprite::Updata()
 {
-
+	SpriteCommon* spriteCommon = SpriteCommon::GetInstance();
 	//ワールド行列の更新
 	matWorld = XMMatrixIdentity();
 	//Z軸回転
@@ -181,6 +179,8 @@ void Sprite::Updata()
 
 void Sprite::Draw()
 {
+	SpriteCommon* spriteCommon = SpriteCommon::GetInstance();
+
 	if (isInvisible) {
 		return;
 	}
@@ -194,7 +194,7 @@ void Sprite::Draw()
 	cmdList->SetGraphicsRootConstantBufferView(0, constBuff->GetGPUVirtualAddress());
 
 	//ルートパラメータ1番にシェーダーリソースビューをセット
-	spriteCommon->SetGraphicsRootDescriptorTabl(1, texNumber);
+	spriteCommon->SetGraphicsRootDescriptorTable(1, texNumber);
 
 	//ポリゴンの描画（4頂点で四角形）
 	cmdList->DrawInstanced(4, 1, 0, 0);

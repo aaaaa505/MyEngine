@@ -1,37 +1,26 @@
 #include "DebugText.h"
 
-DebugText::DebugText()
+DebugText* DebugText::GetInstance()
 {
-}
-
-DebugText::~DebugText()
-{
-	for (int i = 0; i < _countof(spriteDatas); i++) {
-		delete spriteDatas[i];
-	}
-}
-
-DebugText* DebugText::Create(SpriteCommon* spriteCommon, UINT texnumber)
-{
-	DebugText* instance = new DebugText();
-
-	instance->Initialize(spriteCommon, texnumber);
-
-	return instance;
+	static DebugText instance;
+	return &instance;
 }
 
 //デバッグ文字列初期化
-void DebugText::Initialize(SpriteCommon* spriteCommon, UINT texnumber)
+void DebugText::Initialize(UINT texnumber)
 {
-	assert(spriteCommon);
-
-	this->spriteCommon = spriteCommon;
-
 	//全てのスプライトデータについて
 	for (int i = 0; i < _countof(spriteDatas); i++)
 	{
 		// スプライトを生成する
-		spriteDatas[i] = Sprite::Create(this->spriteCommon, texnumber, { 0, 0 });
+		spriteDatas[i] = Sprite::Create(texnumber, { 0, 0 });
+	}
+}
+
+void DebugText::Finalize()
+{
+	for (int i = 0; i < _countof(spriteDatas); i++) {
+		delete spriteDatas[i];
 	}
 }
 

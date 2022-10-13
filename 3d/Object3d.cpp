@@ -21,7 +21,7 @@ Object3d::PipelineSet Object3d::pipelineSet;
 Camera* Object3d::camera = nullptr;
 //LightGroup* Object3d::lightGroup = nullptr;
 
-void Object3d::StaticInitialize(ID3D12Device* device)
+void Object3d::StaticInitialize(ID3D12Device* device, ID3D12GraphicsCommandList* cmdList)
 {
 	// nullptrチェック
 	assert(device);
@@ -30,6 +30,7 @@ void Object3d::StaticInitialize(ID3D12Device* device)
 	assert(!Object3d::device);
 
 	Object3d::device = device;
+	Object3d::cmdList = cmdList;
 	
 	// パイプライン初期化
 	InitializeGraphicsPipeline();
@@ -191,13 +192,13 @@ bool Object3d::InitializeGraphicsPipeline()
 	return true;
 }
 
-void Object3d::PreDraw(ID3D12GraphicsCommandList* cmdList)
+void Object3d::PreDraw()
 {
-	// PreDrawとPostDrawがペアで呼ばれていなければエラー
-	assert(Object3d::cmdList == nullptr);
+	//// PreDrawとPostDrawがペアで呼ばれていなければエラー
+	//assert(Object3d::cmdList == nullptr);
 
-	// コマンドリストをセット
-	Object3d::cmdList = cmdList;
+	//// コマンドリストをセット
+	//Object3d::cmdList = cmdList;
 
 	// プリミティブ形状を設定
 	cmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -205,8 +206,8 @@ void Object3d::PreDraw(ID3D12GraphicsCommandList* cmdList)
 
 void Object3d::PostDraw()
 {
-	// コマンドリストを解除
-	Object3d::cmdList = nullptr;
+	//// コマンドリストを解除
+	//Object3d::cmdList = nullptr;
 }
 
 Object3d* Object3d::Create(Model* model)

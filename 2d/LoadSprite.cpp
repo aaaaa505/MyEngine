@@ -9,12 +9,7 @@ void LoadSprite::StaticInitialize(SpriteCommon* spriteCommon)
 		return;
 	}
 	//サンプル画像1
-	if (!spriteCommon->LoadTexture(sample1, L"Resources/texture1.png")) {
-		assert(0);
-		return;
-	}
-	//サンプル画像2
-	if (!spriteCommon->LoadTexture(sample2, L"Resources/texture2.png")) {
+	if (!spriteCommon->LoadTexture(title_Number, L"Resources/title.png")) {
 		assert(0);
 		return;
 	}

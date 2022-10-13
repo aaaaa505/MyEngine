@@ -49,12 +49,6 @@
     <Filter Include="Shader">
       <UniqueIdentifier>{f8f85efb-b660-43fd-9bee-7d05b83d339f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shader\FbxShader">
-      <UniqueIdentifier>{ec78cd6e-f14a-47ce-925a-9a12a9e51f30}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Shader\PostEffectShader">
-      <UniqueIdentifier>{584a7600-2877-422e-aec6-89b05dccbf8e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Main">
       <UniqueIdentifier>{ee54b079-1710-4500-9a95-3a7776e4afff}</UniqueIdentifier>
     </Filter>
@@ -108,10 +102,9 @@
     <ClCompile Include="camera\Camera.cpp">
       <Filter>3D\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="MyGame.cpp">
-      <Filter>Shader\SpriteShader</Filter>
-    </ClCompile>
     <ClCompile Include="FrameWork.cpp" />
+    <ClCompile Include="MyGame.cpp" />
+    <ClCompile Include="PlayScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="2d\DebugText.h">
@@ -152,28 +145,17 @@
     </ClInclude>
     <ClInclude Include="MyGame.h" />
     <ClInclude Include="FrameWork.h" />
+    <ClInclude Include="PlayScene.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\shaders\FBX.hlsli">
-      <Filter>Shader\FbxShader</Filter>
-    </None>
     <None Include="Resources\shaders\SpriteShaderHeader.hlsli">
       <Filter>Shader\SpriteShader</Filter>
     </None>
     <None Include="Resources\shaders\OBJShaderHeader.hlsli">
       <Filter>Shader\ObjShader</Filter>
     </None>
-    <None Include="Resources\shaders\PostEffectTest.hlsli">
-      <Filter>Shader\PostEffectShader</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Resources\shaders\FBXPS.hlsl">
-      <Filter>Shader\FbxShader</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\shaders\FBXVS.hlsl">
-      <Filter>Shader\FbxShader</Filter>
-    </FxCompile>
     <FxCompile Include="Resources\shaders\SpritePixelShader.hlsl">
       <Filter>Shader\SpriteShader</Filter>
     </FxCompile>
@@ -185,12 +167,6 @@
     </FxCompile>
     <FxCompile Include="Resources\shaders\OBJVertexShader.hlsl">
       <Filter>Shader\ObjShader</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\shaders\PostEffectTestPS.hlsl">
-      <Filter>Shader\PostEffectShader</Filter>
-    </FxCompile>
-    <FxCompile Include="Resources\shaders\PostEffectTestVS.hlsl">
-      <Filter>Shader\PostEffectShader</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>

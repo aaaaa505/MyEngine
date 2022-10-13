@@ -6,8 +6,8 @@ enum  SpriteNumber
 	// デバックテキスト
 	debugTextTexNumber,
 	
-	sample1,
-	sample2,
+	// タイトルナンバー
+	title_Number,
 
 };
 
@@ -17,6 +17,6 @@ public:// 静的メンバ関数
 	/// <summary>
 	/// 静的初期化
 	/// </summary>
-	void static StaticInitialize(SpriteCommon* spriteCommon);
+	static void StaticInitialize(SpriteCommon* spriteCommon);
 };
 

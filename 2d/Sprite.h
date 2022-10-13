@@ -34,15 +34,9 @@ public://サブクラス
 
 public://静的メンバ関数
 	//スプライト生成
-	static Sprite* Create(SpriteCommon* spriteCommon,
-						  UINT texNumber,
-						  XMFLOAT2 position,
-						  XMFLOAT4 color = {1,1,1,1},
-						  XMFLOAT2 anchorpoint = { 0.0f,0.0f },
-						  bool isFlipX = false, bool isFlipY = false);
+	static Sprite* Create(UINT texNumber, XMFLOAT2 position, XMFLOAT4 color = {1,1,1,1}, XMFLOAT2 anchorpoint = { 0.0f,0.0f },bool isFlipX = false, bool isFlipY = false);
 
 private:// 静的メンバ変数
-	static SpriteCommon* spriteCommon;
 	// 頂点数
 	static const int vertNum = 4;
 
@@ -50,7 +44,7 @@ public://メンバ関数
 	//コンストラクタ
 	Sprite(UINT texNumber, XMFLOAT2 position, XMFLOAT2 size, XMFLOAT4 color, XMFLOAT2 anchorpoint, bool isFlipX, bool isFlipY);
 	//初期化
-	bool Initialize(SpriteCommon* spriteCommon);
+	bool Initialize();
 	//描画
 	void Draw();
 	//更新
@@ -83,10 +77,10 @@ public://メンバ関数
 	{
 		this->texNumber = textureNumber;
 
-		if (spriteCommon->GetTexBuff(texNumber))
+		if (SpriteCommon::GetInstance()->GetTexBuff(texNumber))
 		{
 			// テクスチャ情報取得
-			D3D12_RESOURCE_DESC resDesc = spriteCommon->GetTexBuff(texNumber)->GetDesc();
+			D3D12_RESOURCE_DESC resDesc = SpriteCommon::GetInstance()->GetTexBuff(texNumber)->GetDesc();
 			// スプライトのサイズをテクスチャのサイズに設定
 			size = { (float)resDesc.Width, (float)resDesc.Height };
 		}

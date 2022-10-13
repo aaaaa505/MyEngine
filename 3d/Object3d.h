@@ -43,16 +43,14 @@ public: // 静的メンバ関数
 	/// 静的初期化
 	/// </summary>
 	/// <param name="device">デバイス</param>
-	/// <param name="window_width">画面幅</param>
-	/// <param name="window_height">画面高さ</param>
 	/// <returns>成否</returns>
-	static void StaticInitialize(ID3D12Device* device);
+	static void StaticInitialize(ID3D12Device* device, ID3D12GraphicsCommandList* cmdList);
 
 	/// <summary>
 	/// 描画前処理
 	/// </summary>
 	/// <param name="cmdList">描画コマンドリスト</param>
-	static void PreDraw(ID3D12GraphicsCommandList* cmdList);
+	static void PreDraw();
 
 	/// <summary>
 	/// 描画後処理
