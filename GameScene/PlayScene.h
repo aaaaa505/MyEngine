@@ -3,6 +3,7 @@
 #include "Object3d.h"
 #include "LoadSprite.h"
 #include "Camera.h"
+#include "Player.h"
 
 class PlayScene : public BaseScene
 {
@@ -29,11 +30,13 @@ public:
 	void Draw() override;
 
 
-private:// メンバ変数
+private:
+	// プレイヤー
+	Player* player = nullptr;
+	// グランド
 	Model* model = nullptr;
-	Object3d* object3d = nullptr;
-	Camera* camera = nullptr;
-
+	Object3d* obj = nullptr;
+	// デバッグテキスト用
 	char strDebug[100];
 };
 

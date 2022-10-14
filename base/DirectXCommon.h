@@ -4,6 +4,7 @@
 #include<dxgi1_6.h>
 #include<wrl.h>
 #include"WinApp.h"
+#include <chrono>
 
 //DirectXŠî”Õ
 class DirectXCommon
@@ -77,5 +78,10 @@ private:
 	//windowsAPI
 	WinApp* winApp = nullptr;
 
+	// FPSŒv‘ª—p
+	float deltaTime = 0.0f;
+	float frameRate = 0.0f;
+	float commandWaitTime = 0.0f;
+	std::chrono::steady_clock::time_point lastUpdate;
 };
 
