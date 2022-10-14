@@ -1,21 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="2D">
-      <UniqueIdentifier>{dbb99018-01cd-456d-ab25-0ebbbc72ccee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="2D\DebugText">
-      <UniqueIdentifier>{c8690236-0dde-4b5d-a66f-5c0987aada4a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="2D\LoadSprite">
-      <UniqueIdentifier>{4900f846-aa53-4042-bdce-6e7c3e0a3893}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="2D\Sprite">
-      <UniqueIdentifier>{44f57d94-e49c-469d-bb86-5200c07a61b3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="2D\SpriteCommon">
-      <UniqueIdentifier>{0d469624-e784-436e-bcbb-ce5dcacf0cb2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="3D">
       <UniqueIdentifier>{c63cc561-2bd6-4acb-a423-b4d75f3d14c2}</UniqueIdentifier>
     </Filter>
@@ -61,20 +46,26 @@
     <Filter Include="3D\Camera">
       <UniqueIdentifier>{f9e260d0-a3cf-41d7-bc60-3224a10727b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{d6a1040e-8574-40f8-9f7e-0fdb33f9121f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\2D">
+      <UniqueIdentifier>{dbb99018-01cd-456d-ab25-0ebbbc72ccee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\2D\DebugText">
+      <UniqueIdentifier>{c8690236-0dde-4b5d-a66f-5c0987aada4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\2D\LoadSprite">
+      <UniqueIdentifier>{4900f846-aa53-4042-bdce-6e7c3e0a3893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\2D\Sprite">
+      <UniqueIdentifier>{44f57d94-e49c-469d-bb86-5200c07a61b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\2D\SpriteCommon">
+      <UniqueIdentifier>{0d469624-e784-436e-bcbb-ce5dcacf0cb2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2d\DebugText.cpp">
-      <Filter>2D\DebugText</Filter>
-    </ClCompile>
-    <ClCompile Include="2d\LoadSprite.cpp">
-      <Filter>2D\LoadSprite</Filter>
-    </ClCompile>
-    <ClCompile Include="2d\Sprite.cpp">
-      <Filter>2D\Sprite</Filter>
-    </ClCompile>
-    <ClCompile Include="2d\SpriteCommon.cpp">
-      <Filter>2D\SpriteCommon</Filter>
-    </ClCompile>
     <ClCompile Include="3d\Material.cpp">
       <Filter>3D\OBJ\Material</Filter>
     </ClCompile>
@@ -108,20 +99,20 @@
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneFactory.cpp" />
+    <ClCompile Include="Engine\2d\DebugText\DebugText.cpp">
+      <Filter>Engine\2D\DebugText</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\2d\LoadSprite\LoadSprite.cpp">
+      <Filter>Engine\2D\LoadSprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\2d\Sprite\Sprite.cpp">
+      <Filter>Engine\2D\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\2d\SpriteCommon\SpriteCommon.cpp">
+      <Filter>Engine\2D\SpriteCommon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="2d\DebugText.h">
-      <Filter>2D\DebugText</Filter>
-    </ClInclude>
-    <ClInclude Include="2d\LoadSprite.h">
-      <Filter>2D\LoadSprite</Filter>
-    </ClInclude>
-    <ClInclude Include="2d\Sprite.h">
-      <Filter>2D\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="2d\SpriteCommon.h">
-      <Filter>2D\SpriteCommon</Filter>
-    </ClInclude>
     <ClInclude Include="3d\Material.h">
       <Filter>3D\OBJ\Material</Filter>
     </ClInclude>
@@ -154,6 +145,18 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="AbstractSceneFactory.h" />
     <ClInclude Include="SceneFactory.h" />
+    <ClInclude Include="Engine\2d\DebugText\DebugText.h">
+      <Filter>Engine\2D\DebugText</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\2d\LoadSprite\LoadSprite.h">
+      <Filter>Engine\2D\LoadSprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\2d\Sprite\Sprite.h">
+      <Filter>Engine\2D\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\2d\SpriteCommon\SpriteCommon.h">
+      <Filter>Engine\2D\SpriteCommon</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shaders\SpriteShaderHeader.hlsli">
