@@ -16,9 +16,6 @@
     <Filter Include="Shader">
       <UniqueIdentifier>{f8f85efb-b660-43fd-9bee-7d05b83d339f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main">
-      <UniqueIdentifier>{ee54b079-1710-4500-9a95-3a7776e4afff}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shader\ObjShader">
       <UniqueIdentifier>{85b3c2ba-1ff6-4145-8bae-b6067df2a8ed}</UniqueIdentifier>
     </Filter>
@@ -64,6 +61,27 @@
     <Filter Include="Engine\3D\Camera">
       <UniqueIdentifier>{f9e260d0-a3cf-41d7-bc60-3224a10727b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameScene">
+      <UniqueIdentifier>{56f6cc47-08c1-4da3-9be4-d43f74cc1461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Main">
+      <UniqueIdentifier>{ee54b079-1710-4500-9a95-3a7776e4afff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\FrameWork">
+      <UniqueIdentifier>{225e559d-4f85-4ce0-aaa3-eed1425fa6af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\MyGame">
+      <UniqueIdentifier>{5d724db5-af71-4bdc-8757-37f1b7420c30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MakeScene">
+      <UniqueIdentifier>{3bd9e02f-13c4-458c-bcfe-2ae7dd7cb6d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameScene\PlayScene">
+      <UniqueIdentifier>{1edc7448-ce8a-463f-8602-ac907adfc54d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameScene\TitleScene">
+      <UniqueIdentifier>{0723d6e7-3b33-4adc-9784-6b520c19a530}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base\DirectXCommon.cpp">
@@ -75,18 +93,9 @@
     <ClCompile Include="input\Input.cpp">
       <Filter>Input</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="camera\Camera.cpp">
       <Filter>Engine\3D\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="FrameWork.cpp" />
-    <ClCompile Include="MyGame.cpp" />
-    <ClCompile Include="PlayScene.cpp" />
-    <ClCompile Include="TitleScene.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="SceneFactory.cpp" />
     <ClCompile Include="Engine\2d\DebugText\DebugText.cpp">
       <Filter>Engine\2D\DebugText</Filter>
     </ClCompile>
@@ -111,6 +120,27 @@
     <ClCompile Include="Engine\3d\Object3d\Object3d.cpp">
       <Filter>Engine\3D\OBJ\Object3d</Filter>
     </ClCompile>
+    <ClCompile Include="GameScene\TitleScene.cpp">
+      <Filter>GameScene\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\PlayScene.cpp">
+      <Filter>GameScene\PlayScene</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeScene\SceneFactory.cpp">
+      <Filter>MakeScene</Filter>
+    </ClCompile>
+    <ClCompile Include="MakeScene\SceneManager.cpp">
+      <Filter>MakeScene</Filter>
+    </ClCompile>
+    <ClCompile Include="base\main.cpp">
+      <Filter>Base\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="base\FrameWork.cpp">
+      <Filter>Base\FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="base\MyGame.cpp">
+      <Filter>Base\MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base\DirectXCommon.h">
@@ -125,14 +155,6 @@
     <ClInclude Include="camera\Camera.h">
       <Filter>Engine\3D\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="MyGame.h" />
-    <ClInclude Include="FrameWork.h" />
-    <ClInclude Include="PlayScene.h" />
-    <ClInclude Include="TitleScene.h" />
-    <ClInclude Include="BaseScene.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="AbstractSceneFactory.h" />
-    <ClInclude Include="SceneFactory.h" />
     <ClInclude Include="Engine\2d\DebugText\DebugText.h">
       <Filter>Engine\2D\DebugText</Filter>
     </ClInclude>
@@ -156,6 +178,30 @@
     </ClInclude>
     <ClInclude Include="Engine\3d\Object3d\Object3d.h">
       <Filter>Engine\3D\OBJ\Object3d</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\TitleScene.h">
+      <Filter>GameScene\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\PlayScene.h">
+      <Filter>GameScene\PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="MakeScene\AbstractSceneFactory.h">
+      <Filter>MakeScene</Filter>
+    </ClInclude>
+    <ClInclude Include="MakeScene\BaseScene.h">
+      <Filter>MakeScene</Filter>
+    </ClInclude>
+    <ClInclude Include="MakeScene\SceneFactory.h">
+      <Filter>MakeScene</Filter>
+    </ClInclude>
+    <ClInclude Include="MakeScene\SceneManager.h">
+      <Filter>MakeScene</Filter>
+    </ClInclude>
+    <ClInclude Include="base\FrameWork.h">
+      <Filter>Base\FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="base\MyGame.h">
+      <Filter>Base\MyGame</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

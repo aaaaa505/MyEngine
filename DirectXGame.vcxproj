@@ -78,12 +78,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir);$(ProjectDir)3d\;$(ProjectDir)camera\;$(ProjectDir)base\;$(ProjectDir)input\;$(ProjectDir)audio\;$(ProjectDir)scene\;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)lib\fbx_sdk\include;$(ProjectDir)Engine\2d\Sprite;$(ProjectDir)Engine\2d\LoadSprite;$(ProjectDir)Engine\2d\SpriteCommon;$(ProjectDir)Engine\2d\DebugText;$(ProjectDir)Engine\3d\Material;$(ProjectDir)Engine\3d\Mesh;$(ProjectDir)Engine\3d\Model;$(ProjectDir)Engine\3d\Object3d;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(ProjectDir)3d\;$(ProjectDir)camera\;$(ProjectDir)base\;$(ProjectDir)input\;$(ProjectDir)audio\;$(ProjectDir)scene\;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)lib\fbx_sdk\include;$(ProjectDir)Engine\2d\Sprite;$(ProjectDir)Engine\2d\LoadSprite;$(ProjectDir)Engine\2d\SpriteCommon;$(ProjectDir)Engine\2d\DebugText;$(ProjectDir)Engine\3d\Material;$(ProjectDir)Engine\3d\Mesh;$(ProjectDir)Engine\3d\Model;$(ProjectDir)Engine\3d\Object3d;$(ProjectDir)GameScene\;$(ProjectDir)MakeScene\;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)lib\DirectXTex\lib\Debug;$(ProjectDir)lib\imgui\lib\Debug;$(LibraryPath);$(ProjectDir)lib\fbx_sdk\lib;$(ProjectDir)lib\fbx_sdk\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir);$(ProjectDir)3d\;$(ProjectDir)camera\;$(ProjectDir)base\;$(ProjectDir)input\;$(ProjectDir)audio\;$(ProjectDir)scene\;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)lib\fbx_sdk\include;$(ProjectDir)Engine\2d\Sprite;$(ProjectDir)Engine\2d\LoadSprite;$(ProjectDir)Engine\2d\SpriteCommon;$(ProjectDir)Engine\2d\DebugText;$(ProjectDir)Engine\3d\Material;$(ProjectDir)Engine\3d\Mesh;$(ProjectDir)Engine\3d\Model;$(ProjectDir)Engine\3d\Object3d;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(ProjectDir)3d\;$(ProjectDir)camera\;$(ProjectDir)base\;$(ProjectDir)input\;$(ProjectDir)audio\;$(ProjectDir)scene\;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)lib\fbx_sdk\include;$(ProjectDir)Engine\2d\Sprite;$(ProjectDir)Engine\2d\LoadSprite;$(ProjectDir)Engine\2d\SpriteCommon;$(ProjectDir)Engine\2d\DebugText;$(ProjectDir)Engine\3d\Material;$(ProjectDir)Engine\3d\Mesh;$(ProjectDir)Engine\3d\Model;$(ProjectDir)Engine\3d\Object3d;$(ProjectDir)GameScene\;$(ProjectDir)MakeScene\;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)lib\DirectXTex\lib\Release;$(ProjectDir)lib\imgui\lib\Release;$(LibraryPath);$(ProjectDir)lib\fbx_sdk\lib;$(ProjectDir)lib\fbx_sdk\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -147,6 +147,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="base\DirectXCommon.cpp" />
+    <ClCompile Include="base\FrameWork.cpp" />
+    <ClCompile Include="base\main.cpp" />
+    <ClCompile Include="base\MyGame.cpp" />
     <ClCompile Include="base\WinApp.cpp" />
     <ClCompile Include="camera\Camera.cpp" />
     <ClCompile Include="Engine\2d\DebugText\DebugText.cpp" />
@@ -157,18 +160,16 @@
     <ClCompile Include="Engine\3d\Mesh\Mesh.cpp" />
     <ClCompile Include="Engine\3d\Model\Model.cpp" />
     <ClCompile Include="Engine\3d\Object3d\Object3d.cpp" />
-    <ClCompile Include="FrameWork.cpp" />
+    <ClCompile Include="GameScene\PlayScene.cpp" />
+    <ClCompile Include="GameScene\TitleScene.cpp" />
     <ClCompile Include="input\Input.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyGame.cpp" />
-    <ClCompile Include="PlayScene.cpp" />
-    <ClCompile Include="SceneFactory.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="MakeScene\SceneFactory.cpp" />
+    <ClCompile Include="MakeScene\SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AbstractSceneFactory.h" />
     <ClInclude Include="base\DirectXCommon.h" />
+    <ClInclude Include="base\FrameWork.h" />
+    <ClInclude Include="base\MyGame.h" />
     <ClInclude Include="base\WinApp.h" />
     <ClInclude Include="camera\Camera.h" />
     <ClInclude Include="Engine\2d\DebugText\DebugText.h" />
@@ -179,14 +180,13 @@
     <ClInclude Include="Engine\3d\Mesh\Mesh.h" />
     <ClInclude Include="Engine\3d\Model\Model.h" />
     <ClInclude Include="Engine\3d\Object3d\Object3d.h" />
-    <ClInclude Include="FrameWork.h" />
+    <ClInclude Include="GameScene\PlayScene.h" />
+    <ClInclude Include="GameScene\TitleScene.h" />
     <ClInclude Include="input\Input.h" />
-    <ClInclude Include="MyGame.h" />
-    <ClInclude Include="PlayScene.h" />
-    <ClInclude Include="BaseScene.h" />
-    <ClInclude Include="SceneFactory.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="MakeScene\AbstractSceneFactory.h" />
+    <ClInclude Include="MakeScene\BaseScene.h" />
+    <ClInclude Include="MakeScene\SceneFactory.h" />
+    <ClInclude Include="MakeScene\SceneManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shaders\OBJShaderHeader.hlsli" />
