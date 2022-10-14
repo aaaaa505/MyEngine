@@ -1,24 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="3D">
-      <UniqueIdentifier>{c63cc561-2bd6-4acb-a423-b4d75f3d14c2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="3D\OBJ">
-      <UniqueIdentifier>{7e8081d0-cb98-49cd-8911-10b403cf2c72}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="3D\OBJ\Object3d">
-      <UniqueIdentifier>{c2fa1ddb-f0b0-4d51-be16-2f91e7f83139}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="3D\OBJ\Mesh">
-      <UniqueIdentifier>{ee91e7de-f590-4869-aced-9a3bb1f03203}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="3D\OBJ\Model">
-      <UniqueIdentifier>{1af386ec-662a-4c9a-9281-e87807071314}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="3D\OBJ\Material">
-      <UniqueIdentifier>{2425e6dc-68f2-47b4-8ab8-59a3243fecd6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Base">
       <UniqueIdentifier>{174a6840-0eec-4543-94a2-8d5539fe0f5c}</UniqueIdentifier>
     </Filter>
@@ -43,9 +25,6 @@
     <Filter Include="Shader\SpriteShader">
       <UniqueIdentifier>{9d653e4b-1b9c-48bf-b81f-5d8bda41a200}</UniqueIdentifier>
     </Filter>
-    <Filter Include="3D\Camera">
-      <UniqueIdentifier>{f9e260d0-a3cf-41d7-bc60-3224a10727b2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine">
       <UniqueIdentifier>{d6a1040e-8574-40f8-9f7e-0fdb33f9121f}</UniqueIdentifier>
     </Filter>
@@ -64,17 +43,29 @@
     <Filter Include="Engine\2D\SpriteCommon">
       <UniqueIdentifier>{0d469624-e784-436e-bcbb-ce5dcacf0cb2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\3D">
+      <UniqueIdentifier>{c63cc561-2bd6-4acb-a423-b4d75f3d14c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\3D\OBJ">
+      <UniqueIdentifier>{7e8081d0-cb98-49cd-8911-10b403cf2c72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\3D\OBJ\Object3d">
+      <UniqueIdentifier>{c2fa1ddb-f0b0-4d51-be16-2f91e7f83139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\3D\OBJ\Mesh">
+      <UniqueIdentifier>{ee91e7de-f590-4869-aced-9a3bb1f03203}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\3D\OBJ\Model">
+      <UniqueIdentifier>{1af386ec-662a-4c9a-9281-e87807071314}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\3D\OBJ\Material">
+      <UniqueIdentifier>{2425e6dc-68f2-47b4-8ab8-59a3243fecd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\3D\Camera">
+      <UniqueIdentifier>{f9e260d0-a3cf-41d7-bc60-3224a10727b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="3d\Material.cpp">
-      <Filter>3D\OBJ\Material</Filter>
-    </ClCompile>
-    <ClCompile Include="3d\Mesh.cpp">
-      <Filter>3D\OBJ\Mesh</Filter>
-    </ClCompile>
-    <ClCompile Include="3d\Model.cpp">
-      <Filter>3D\OBJ\Model</Filter>
-    </ClCompile>
     <ClCompile Include="base\DirectXCommon.cpp">
       <Filter>Base\DirectXCommon</Filter>
     </ClCompile>
@@ -87,11 +78,8 @@
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="3d\Object3d.cpp">
-      <Filter>3D\OBJ\Object3d</Filter>
-    </ClCompile>
     <ClCompile Include="camera\Camera.cpp">
-      <Filter>3D\Camera</Filter>
+      <Filter>Engine\3D\Camera</Filter>
     </ClCompile>
     <ClCompile Include="FrameWork.cpp" />
     <ClCompile Include="MyGame.cpp" />
@@ -111,17 +99,20 @@
     <ClCompile Include="Engine\2d\SpriteCommon\SpriteCommon.cpp">
       <Filter>Engine\2D\SpriteCommon</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\3d\Material\Material.cpp">
+      <Filter>Engine\3D\OBJ\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3d\Mesh\Mesh.cpp">
+      <Filter>Engine\3D\OBJ\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3d\Model\Model.cpp">
+      <Filter>Engine\3D\OBJ\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3d\Object3d\Object3d.cpp">
+      <Filter>Engine\3D\OBJ\Object3d</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="3d\Material.h">
-      <Filter>3D\OBJ\Material</Filter>
-    </ClInclude>
-    <ClInclude Include="3d\Mesh.h">
-      <Filter>3D\OBJ\Mesh</Filter>
-    </ClInclude>
-    <ClInclude Include="3d\Model.h">
-      <Filter>3D\OBJ\Model</Filter>
-    </ClInclude>
     <ClInclude Include="base\DirectXCommon.h">
       <Filter>Base\DirectXCommon</Filter>
     </ClInclude>
@@ -131,11 +122,8 @@
     <ClInclude Include="input\Input.h">
       <Filter>Input</Filter>
     </ClInclude>
-    <ClInclude Include="3d\Object3d.h">
-      <Filter>3D\OBJ\Object3d</Filter>
-    </ClInclude>
     <ClInclude Include="camera\Camera.h">
-      <Filter>3D\Camera</Filter>
+      <Filter>Engine\3D\Camera</Filter>
     </ClInclude>
     <ClInclude Include="MyGame.h" />
     <ClInclude Include="FrameWork.h" />
@@ -156,6 +144,18 @@
     </ClInclude>
     <ClInclude Include="Engine\2d\SpriteCommon\SpriteCommon.h">
       <Filter>Engine\2D\SpriteCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3d\Material\Material.h">
+      <Filter>Engine\3D\OBJ\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3d\Mesh\Mesh.h">
+      <Filter>Engine\3D\OBJ\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3d\Model\Model.h">
+      <Filter>Engine\3D\OBJ\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3d\Object3d\Object3d.h">
+      <Filter>Engine\3D\OBJ\Object3d</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
