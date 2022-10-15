@@ -34,8 +34,9 @@ public:
 
 	// カメラの座標取得
 	const XMFLOAT3& GetEye() { return camera->GetEye(); }
+	const XMFLOAT3& GetTarget() { return camera->GetTarget(); }
 	// プレイヤーの座標取得
-	const XMFLOAT3& GetPos() { return obj->GetPosition(); }
+	const XMFLOAT3& GetPos() { return obj_Bike->GetPosition(); }
 
 private:
 
@@ -44,12 +45,29 @@ private:
 	/// </summary>
 	void Initialize();
 
+	/// <summary>
+	/// 横移動
+	/// </summary>
+	void BesideMove();
+
+	/// <summary>
+	/// 自動移動
+	/// </summary>
+	void AutoSprint();
+
 private:
 	// カメラ
 	Camera* camera = nullptr;
 	// バイクモデル
-	Model* model = nullptr;
+	Model* model_Bike = nullptr;
 	// バイクオブジェクト
-	Object3d* obj = nullptr;
+	Object3d* obj_Bike = nullptr;
+	// ドームモデル
+	Model* model_Dome = nullptr;
+	// ドームオブジェクト
+	Object3d* obj_Dome = nullptr;
+
+	// プレイヤー座標
+	XMFLOAT3 pos{};
 };
 

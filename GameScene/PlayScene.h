@@ -34,8 +34,12 @@ private:
 	// プレイヤー
 	Player* player = nullptr;
 	// グランド
-	Model* model = nullptr;
-	Object3d* obj = nullptr;
+	Model* model_Ground = nullptr;
+	Object3d* obj_Ground = nullptr;
+	// ロード
+	Model* model_Road = nullptr;
+	Object3d* obj_Road = nullptr;
+
 	// デバッグテキスト用
 	char strDebug[100];
 };

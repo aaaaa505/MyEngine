@@ -16,9 +16,9 @@ Player::~Player()
 	// カメラ解放
 	delete camera;
 	// モデル解放
-	delete model;
+	delete model_Bike;
 	// オブジェクト解放
-	delete obj;
+	delete obj_Bike;
 }
 
 void Player::Initialize()
@@ -26,34 +26,68 @@ void Player::Initialize()
 	// カメラ生成＆セット
 	camera = new Camera(WinApp::window_width, WinApp::window_height);
 	Object3d::SetCamera(camera);
-	camera->SetTarget({ 0.0f, 4.0f, 0.0f });
-	camera->SetEye({ 0.0f, 4.0f, -2.8f });
+
 	// モデル読み込み
-	model = Model::LoadFromOBJ("bike");
+	model_Bike = Model::LoadFromOBJ("bike", true);
 	// オブジェクト生成
-	obj = Object3d::Create(model);
-	obj->SetPosition({ 0.0f, 1.0f, 0.0f });
+	obj_Bike = Object3d::Create(model_Bike);
+	// 初期位置
+	pos = { 0.0f, 0.0f, -100.0f };
+	obj_Bike->SetPosition(pos);
+
+	// モデル読み込み
+	model_Dome = Model::LoadFromOBJ("skydome");
+	// オブジェクト生成
+	obj_Dome = Object3d::Create(model_Dome);
+	// サイズ
+	obj_Dome->SetScale({ 1.0f,	1.0f, 1.0f });
+
 }
 
+void Player::BesideMove()
+{
+	if (Input::GetInstacne()->PushKey(DIK_A))
+	{
+		pos.x -= 0.1f;
+	}
+
+	if (Input::GetInstacne()->PushKey(DIK_D))
+	{
+		pos.x += 0.1f;
+	}
+}
+
+void Player::AutoSprint()
+{
+	pos.z += 0.5f;
+	if (pos.z >= 0.0f)
+	{
+		pos.z = -90.0f;
+	}
+	obj_Bike->SetPosition(pos);
+}
 
 void Player::Update()
 {
-	if (Input::GetInstacne()->PushKey(DIK_LEFT))
-	{
-		XMFLOAT3 pos1 = obj->GetPosition();
-		pos1.x += 0.1f;
-		obj->SetPosition(pos1);
-		const XMFLOAT3 pos2 = { +0.1f, 0.0f,0.0f };
-		camera->MoveVector(pos2);
-		
-	}
+	// 横移動
+	BesideMove();
+	// 自動移動
+	AutoSprint();
+	// 追従
+	camera->SetEye({pos.x, pos.y + 3.0f, pos.z + 0.3f});
+	camera->SetTarget({pos.x, pos.y + 3.0f, pos.z + 1.0f});
+	//camera->SetEye({ pos.x, pos.y + 6.0f, pos.z - 10.0f });
+	//camera->SetTarget({ pos.x, pos.y, pos.z });
+	obj_Dome->SetPosition(pos);
 	// オブジェクト更新
-	obj->Update();
+	obj_Bike->Update();
 	// カメラ更新
 	camera->Update();
+	obj_Dome->Update();
 }
 
 void Player::Draw()
 {
-	obj->Draw();
+	obj_Bike->Draw();
+	obj_Dome->Draw();
 }

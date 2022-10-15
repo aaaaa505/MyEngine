@@ -206,8 +206,8 @@ void Object3d::PreDraw()
 
 void Object3d::PostDraw()
 {
-	//// コマンドリストを解除
-	//Object3d::cmdList = nullptr;
+	// コマンドリストを解除
+	Object3d::cmdList = nullptr;
 }
 
 Object3d* Object3d::Create(Model* model)
@@ -313,9 +313,6 @@ void Object3d::Draw()
 	cmdList->SetGraphicsRootSignature(pipelineSet.rootsignature.Get());
 	// 定数バッファビューをセット
 	cmdList->SetGraphicsRootConstantBufferView(0, constBuffB0->GetGPUVirtualAddress());
-
-	// ライトの描画
-	/*lightGroup->Draw(cmdList, 3);*/
 
 	// モデル描画
 	model->Draw(cmdList);

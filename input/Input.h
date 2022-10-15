@@ -40,7 +40,7 @@ public://メンバ関数
 	/// </summary>
 	/// <param name="keyNumber"></param>
 	/// <returns></returns>
-	bool Triggerkey(BYTE keyNumber);
+	bool TriggerKey(BYTE keyNumber);
 
 private://メンバ変数
 	//キーボードのデバイス
