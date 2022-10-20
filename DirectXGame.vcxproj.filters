@@ -90,12 +90,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="base\DirectXCommon.cpp">
-      <Filter>Base\DirectXCommon</Filter>
-    </ClCompile>
-    <ClCompile Include="base\WinApp.cpp">
-      <Filter>Base\WinApp</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\2d\DebugText\DebugText.cpp">
       <Filter>Engine\2D\DebugText</Filter>
     </ClCompile>
@@ -119,15 +113,6 @@
     </ClCompile>
     <ClCompile Include="MakeScene\SceneManager.cpp">
       <Filter>MakeScene</Filter>
-    </ClCompile>
-    <ClCompile Include="base\main.cpp">
-      <Filter>Base\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="base\FrameWork.cpp">
-      <Filter>Base\FrameWork</Filter>
-    </ClCompile>
-    <ClCompile Include="base\MyGame.cpp">
-      <Filter>Base\MyGame</Filter>
     </ClCompile>
     <ClCompile Include="App\Player.cpp">
       <Filter>App</Filter>
@@ -162,14 +147,23 @@
     <ClCompile Include="Engine\3d\obj\Object3d\Object3d.cpp">
       <Filter>Engine\3D\OBJ\Object3d</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\base\DirectXCommon\DirectXCommon.cpp">
+      <Filter>Base\DirectXCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\base\FrameWork\FrameWork.cpp">
+      <Filter>Base\FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\base\MyGame\MyGame.cpp">
+      <Filter>Base\MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\base\WinApp\WinApp.cpp">
+      <Filter>Base\WinApp</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\base\Main\main.cpp">
+      <Filter>Base\Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="base\DirectXCommon.h">
-      <Filter>Base\DirectXCommon</Filter>
-    </ClInclude>
-    <ClInclude Include="base\WinApp.h">
-      <Filter>Base\WinApp</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\2d\DebugText\DebugText.h">
       <Filter>Engine\2D\DebugText</Filter>
     </ClInclude>
@@ -199,12 +193,6 @@
     </ClInclude>
     <ClInclude Include="MakeScene\SceneManager.h">
       <Filter>MakeScene</Filter>
-    </ClInclude>
-    <ClInclude Include="base\FrameWork.h">
-      <Filter>Base\FrameWork</Filter>
-    </ClInclude>
-    <ClInclude Include="base\MyGame.h">
-      <Filter>Base\MyGame</Filter>
     </ClInclude>
     <ClInclude Include="App\Player.h">
       <Filter>App</Filter>
@@ -238,6 +226,18 @@
     </ClInclude>
     <ClInclude Include="Engine\3d\obj\Object3d\Object3d.h">
       <Filter>Engine\3D\OBJ\Object3d</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\base\DirectXCommon\DirectXCommon.h">
+      <Filter>Base\DirectXCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\base\FrameWork\FrameWork.h">
+      <Filter>Base\FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\base\MyGame\MyGame.h">
+      <Filter>Base\MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\base\WinApp\WinApp.h">
+      <Filter>Base\WinApp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

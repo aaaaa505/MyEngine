@@ -78,12 +78,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir);$(ProjectDir)Engine\3d\camera;$(ProjectDir)base\;$(ProjectDir)input\;$(ProjectDir)audio\;$(ProjectDir)scene\;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)lib\fbx_sdk\include;$(ProjectDir)Engine\2d\Sprite;$(ProjectDir)Engine\2d\LoadSprite;$(ProjectDir)Engine\2d\SpriteCommon;$(ProjectDir)Engine\2d\DebugText;$(ProjectDir)Engine\3d\obj\Material;$(ProjectDir)Engine\3d\obj\Mesh;$(ProjectDir)Engine\3d\obj\Model;$(ProjectDir)Engine\3d\obj\Object3d;$(ProjectDir)GameScene\;$(ProjectDir)MakeScene\;$(ProjectDir)App\;$(ProjectDir)Engine\input;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(ProjectDir)Engine\3d\camera;$(ProjectDir)Engine\base\DirectXCommon;$(ProjectDir)Engine\base\FrameWork;$(ProjectDir)Engine\base\MyGame;$(ProjectDir)scene\;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)lib\fbx_sdk\include;$(ProjectDir)Engine\2d\Sprite;$(ProjectDir)Engine\2d\LoadSprite;$(ProjectDir)Engine\2d\SpriteCommon;$(ProjectDir)Engine\2d\DebugText;$(ProjectDir)Engine\3d\obj\Material;$(ProjectDir)Engine\3d\obj\Mesh;$(ProjectDir)Engine\3d\obj\Model;$(ProjectDir)Engine\3d\obj\Object3d;$(ProjectDir)GameScene\;$(ProjectDir)MakeScene\;$(ProjectDir)App\;$(ProjectDir)Engine\input;$(ProjectDir)Engine\base\WinApp;$(ProjectDir)Engine\base\Main;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)lib\DirectXTex\lib\Debug;$(ProjectDir)lib\imgui\lib\Debug;$(LibraryPath);$(ProjectDir)lib\fbx_sdk\lib;$(ProjectDir)lib\fbx_sdk\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir);$(ProjectDir)Engine\3d\camera;$(ProjectDir)base\;$(ProjectDir)input\;$(ProjectDir)audio\;$(ProjectDir)scene\;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)lib\fbx_sdk\include;$(ProjectDir)Engine\2d\Sprite;$(ProjectDir)Engine\2d\LoadSprite;$(ProjectDir)Engine\2d\SpriteCommon;$(ProjectDir)Engine\2d\DebugText;$(ProjectDir)Engine\3d\obj\Material;$(ProjectDir)Engine\3d\obj\Mesh;$(ProjectDir)Engine\3d\obj\Model;$(ProjectDir)Engine\3d\obj\Object3d;$(ProjectDir)GameScene\;$(ProjectDir)MakeScene\;$(ProjectDir)App\;$(ProjectDir)Engine\input;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(ProjectDir)Engine\3d\camera;$(ProjectDir)Engine\base\DirectXCommon;$(ProjectDir)Engine\base\FrameWork;$(ProjectDir)Engine\base\MyGame;$(ProjectDir)scene\;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)lib\fbx_sdk\include;$(ProjectDir)Engine\2d\Sprite;$(ProjectDir)Engine\2d\LoadSprite;$(ProjectDir)Engine\2d\SpriteCommon;$(ProjectDir)Engine\2d\DebugText;$(ProjectDir)Engine\3d\obj\Material;$(ProjectDir)Engine\3d\obj\Mesh;$(ProjectDir)Engine\3d\obj\Model;$(ProjectDir)Engine\3d\obj\Object3d;$(ProjectDir)GameScene\;$(ProjectDir)MakeScene\;$(ProjectDir)App\;$(ProjectDir)Engine\input;$(ProjectDir)Engine\base\WinApp;$(ProjectDir)Engine\base\Main;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)lib\DirectXTex\lib\Release;$(ProjectDir)lib\imgui\lib\Release;$(LibraryPath);$(ProjectDir)lib\fbx_sdk\lib;$(ProjectDir)lib\fbx_sdk\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -150,11 +150,6 @@
     <ClCompile Include="App\Enemy.cpp" />
     <ClCompile Include="App\Field.cpp" />
     <ClCompile Include="App\Player.cpp" />
-    <ClCompile Include="base\DirectXCommon.cpp" />
-    <ClCompile Include="base\FrameWork.cpp" />
-    <ClCompile Include="base\main.cpp" />
-    <ClCompile Include="base\MyGame.cpp" />
-    <ClCompile Include="base\WinApp.cpp" />
     <ClCompile Include="Engine\2d\DebugText\DebugText.cpp" />
     <ClCompile Include="Engine\2d\LoadSprite\LoadSprite.cpp" />
     <ClCompile Include="Engine\2d\SpriteCommon\SpriteCommon.cpp" />
@@ -164,6 +159,11 @@
     <ClCompile Include="Engine\3d\obj\Mesh\Mesh.cpp" />
     <ClCompile Include="Engine\3d\obj\Model\Model.cpp" />
     <ClCompile Include="Engine\3d\obj\Object3d\Object3d.cpp" />
+    <ClCompile Include="Engine\base\DirectXCommon\DirectXCommon.cpp" />
+    <ClCompile Include="Engine\base\FrameWork\FrameWork.cpp" />
+    <ClCompile Include="Engine\base\Main\main.cpp" />
+    <ClCompile Include="Engine\base\MyGame\MyGame.cpp" />
+    <ClCompile Include="Engine\base\WinApp\WinApp.cpp" />
     <ClCompile Include="Engine\input\Input.cpp" />
     <ClCompile Include="GameScene\EndScene.cpp" />
     <ClCompile Include="GameScene\PlayScene.cpp" />
@@ -176,10 +176,6 @@
     <ClInclude Include="App\Enemy.h" />
     <ClInclude Include="App\Field.h" />
     <ClInclude Include="App\Player.h" />
-    <ClInclude Include="base\DirectXCommon.h" />
-    <ClInclude Include="base\FrameWork.h" />
-    <ClInclude Include="base\MyGame.h" />
-    <ClInclude Include="base\WinApp.h" />
     <ClInclude Include="Engine\2d\DebugText\DebugText.h" />
     <ClInclude Include="Engine\2d\LoadSprite\LoadSprite.h" />
     <ClInclude Include="Engine\2d\SpriteCommon\SpriteCommon.h" />
@@ -189,6 +185,10 @@
     <ClInclude Include="Engine\3d\obj\Mesh\Mesh.h" />
     <ClInclude Include="Engine\3d\obj\Model\Model.h" />
     <ClInclude Include="Engine\3d\obj\Object3d\Object3d.h" />
+    <ClInclude Include="Engine\base\DirectXCommon\DirectXCommon.h" />
+    <ClInclude Include="Engine\base\FrameWork\FrameWork.h" />
+    <ClInclude Include="Engine\base\MyGame\MyGame.h" />
+    <ClInclude Include="Engine\base\WinApp\WinApp.h" />
     <ClInclude Include="Engine\input\Input.h" />
     <ClInclude Include="GameScene\EndScene.h" />
     <ClInclude Include="GameScene\PlayScene.h" />
