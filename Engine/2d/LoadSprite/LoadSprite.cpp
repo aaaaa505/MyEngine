@@ -8,8 +8,13 @@ void LoadSprite::StaticInitialize(SpriteCommon* spriteCommon)
 		assert(0);
 		return;
 	}
-	//サンプル画像1
+	// タイトル画像
 	if (!spriteCommon->LoadTexture(title_Number, L"Resources/title.png")) {
+		assert(0);
+		return;
+	}
+	// エンド画像
+	if (!spriteCommon->LoadTexture(end_Number, L"Resources/end.png")) {
 		assert(0);
 		return;
 	}

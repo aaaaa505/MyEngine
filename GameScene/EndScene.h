@@ -1,13 +1,10 @@
 #pragma once
 #include "BaseScene.h"
-#include "Object3d.h"
+#include "Sprite.h"
 #include "LoadSprite.h"
 #include "Camera.h"
-#include "Player.h"
-#include "Enemy.h"
-#include "Field.h"
 
-class PlayScene : public BaseScene
+class EndScene : public BaseScene
 {
 public:
 
@@ -31,19 +28,7 @@ public:
 	/// </summary>
 	void Draw() override;
 
-
-private:
-	// プレイヤー
-	Player* player = nullptr;
-	// プレイヤー
-	Enemy* enemy = nullptr;
-	// フィールド
-	Field* field = nullptr;
-	// グランド
-	Model* model_Ground = nullptr;
-	Object3d* obj_Ground = nullptr;
-
-	// デバッグテキスト用
-	char strDebug[100];
+private:// メンバ変数
+	Sprite* sprite = nullptr;
 };
 

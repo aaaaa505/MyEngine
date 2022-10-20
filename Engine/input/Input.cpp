@@ -68,3 +68,27 @@ bool Input::TriggerKey(BYTE keyNumber)
     //そうでなければfalseを返す
     return false;
 }
+
+bool Input::AwayKey(BYTE keyNumber)
+{
+    //指定キーを押していればtrueを返す
+    if (!key[keyNumber])
+    {
+        return true;
+    }
+
+    //そうでなければfalseを返す
+    return false;
+}
+
+bool Input::PushMoveKey()
+{
+     //指定キーを押していればtrueを返す
+    if (key[DIK_W] || key[DIK_A] || key[DIK_S] || key[DIK_D])
+    {
+        return true;
+    }
+
+    //そうでなければfalseを返す
+    return false;
+}

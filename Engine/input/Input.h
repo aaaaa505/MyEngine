@@ -36,12 +36,24 @@ public://メンバ関数
 	bool PushKey(BYTE keyNumber);
 
 	/// <summary>
+	/// キーが離れたタイミングをチェック
+	/// </summary>
+	/// <param name="keyNumrber"></param>
+	/// <returns></returns>
+	bool AwayKey(BYTE keyNumrber);
+
+	/// <summary>
 	/// キーのトリガーをチェック
 	/// </summary>
 	/// <param name="keyNumber"></param>
 	/// <returns></returns>
 	bool TriggerKey(BYTE keyNumber);
 
+	/// <summary>
+	/// WASDのどれかが押された場合
+	/// </summary>
+	/// <returns></returns>
+	bool PushMoveKey();
 private://メンバ変数
 	//キーボードのデバイス
 	ComPtr<IDirectInputDevice8> devkeyboard;

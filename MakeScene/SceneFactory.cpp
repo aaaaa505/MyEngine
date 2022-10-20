@@ -2,6 +2,7 @@
 
 #include "PlayScene.h"
 #include "TitleScene.h"
+#include "EndScene.h"
 
 BaseScene* SceneFactory::CreateScene(const std::string& sceneName)
 {
@@ -16,6 +17,10 @@ BaseScene* SceneFactory::CreateScene(const std::string& sceneName)
 	else if (sceneName == "PLAY")
 	{
 		newScene = new PlayScene();
+	}
+	else if (sceneName == "END")
+	{
+		newScene = new EndScene();
 	}
 
 	// 作成したシーンをリターン

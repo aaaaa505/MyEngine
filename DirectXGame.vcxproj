@@ -78,12 +78,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir);$(ProjectDir)3d\;$(ProjectDir)camera\;$(ProjectDir)base\;$(ProjectDir)input\;$(ProjectDir)audio\;$(ProjectDir)scene\;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)lib\fbx_sdk\include;$(ProjectDir)Engine\2d\Sprite;$(ProjectDir)Engine\2d\LoadSprite;$(ProjectDir)Engine\2d\SpriteCommon;$(ProjectDir)Engine\2d\DebugText;$(ProjectDir)Engine\3d\Material;$(ProjectDir)Engine\3d\Mesh;$(ProjectDir)Engine\3d\Model;$(ProjectDir)Engine\3d\Object3d;$(ProjectDir)GameScene\;$(ProjectDir)MakeScene\;$(ProjectDir)App\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(ProjectDir)Engine\3d\camera;$(ProjectDir)base\;$(ProjectDir)input\;$(ProjectDir)audio\;$(ProjectDir)scene\;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)lib\fbx_sdk\include;$(ProjectDir)Engine\2d\Sprite;$(ProjectDir)Engine\2d\LoadSprite;$(ProjectDir)Engine\2d\SpriteCommon;$(ProjectDir)Engine\2d\DebugText;$(ProjectDir)Engine\3d\obj\Material;$(ProjectDir)Engine\3d\obj\Mesh;$(ProjectDir)Engine\3d\obj\Model;$(ProjectDir)Engine\3d\obj\Object3d;$(ProjectDir)GameScene\;$(ProjectDir)MakeScene\;$(ProjectDir)App\;$(ProjectDir)Engine\input;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)lib\DirectXTex\lib\Debug;$(ProjectDir)lib\imgui\lib\Debug;$(LibraryPath);$(ProjectDir)lib\fbx_sdk\lib;$(ProjectDir)lib\fbx_sdk\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir);$(ProjectDir)3d\;$(ProjectDir)camera\;$(ProjectDir)base\;$(ProjectDir)input\;$(ProjectDir)audio\;$(ProjectDir)scene\;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)lib\fbx_sdk\include;$(ProjectDir)Engine\2d\Sprite;$(ProjectDir)Engine\2d\LoadSprite;$(ProjectDir)Engine\2d\SpriteCommon;$(ProjectDir)Engine\2d\DebugText;$(ProjectDir)Engine\3d\Material;$(ProjectDir)Engine\3d\Mesh;$(ProjectDir)Engine\3d\Model;$(ProjectDir)Engine\3d\Object3d;$(ProjectDir)GameScene\;$(ProjectDir)MakeScene\;$(ProjectDir)App\;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(ProjectDir)Engine\3d\camera;$(ProjectDir)base\;$(ProjectDir)input\;$(ProjectDir)audio\;$(ProjectDir)scene\;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)lib\fbx_sdk\include;$(ProjectDir)Engine\2d\Sprite;$(ProjectDir)Engine\2d\LoadSprite;$(ProjectDir)Engine\2d\SpriteCommon;$(ProjectDir)Engine\2d\DebugText;$(ProjectDir)Engine\3d\obj\Material;$(ProjectDir)Engine\3d\obj\Mesh;$(ProjectDir)Engine\3d\obj\Model;$(ProjectDir)Engine\3d\obj\Object3d;$(ProjectDir)GameScene\;$(ProjectDir)MakeScene\;$(ProjectDir)App\;$(ProjectDir)Engine\input;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)lib\DirectXTex\lib\Release;$(ProjectDir)lib\imgui\lib\Release;$(LibraryPath);$(ProjectDir)lib\fbx_sdk\lib;$(ProjectDir)lib\fbx_sdk\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -146,45 +146,53 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="App\Collision.cpp" />
+    <ClCompile Include="App\Enemy.cpp" />
+    <ClCompile Include="App\Field.cpp" />
     <ClCompile Include="App\Player.cpp" />
     <ClCompile Include="base\DirectXCommon.cpp" />
     <ClCompile Include="base\FrameWork.cpp" />
     <ClCompile Include="base\main.cpp" />
     <ClCompile Include="base\MyGame.cpp" />
     <ClCompile Include="base\WinApp.cpp" />
-    <ClCompile Include="camera\Camera.cpp" />
     <ClCompile Include="Engine\2d\DebugText\DebugText.cpp" />
     <ClCompile Include="Engine\2d\LoadSprite\LoadSprite.cpp" />
     <ClCompile Include="Engine\2d\SpriteCommon\SpriteCommon.cpp" />
     <ClCompile Include="Engine\2d\Sprite\Sprite.cpp" />
-    <ClCompile Include="Engine\3d\Material\Material.cpp" />
-    <ClCompile Include="Engine\3d\Mesh\Mesh.cpp" />
-    <ClCompile Include="Engine\3d\Model\Model.cpp" />
-    <ClCompile Include="Engine\3d\Object3d\Object3d.cpp" />
+    <ClCompile Include="Engine\3d\camera\Camera.cpp" />
+    <ClCompile Include="Engine\3d\obj\Material\Material.cpp" />
+    <ClCompile Include="Engine\3d\obj\Mesh\Mesh.cpp" />
+    <ClCompile Include="Engine\3d\obj\Model\Model.cpp" />
+    <ClCompile Include="Engine\3d\obj\Object3d\Object3d.cpp" />
+    <ClCompile Include="Engine\input\Input.cpp" />
+    <ClCompile Include="GameScene\EndScene.cpp" />
     <ClCompile Include="GameScene\PlayScene.cpp" />
     <ClCompile Include="GameScene\TitleScene.cpp" />
-    <ClCompile Include="input\Input.cpp" />
     <ClCompile Include="MakeScene\SceneFactory.cpp" />
     <ClCompile Include="MakeScene\SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="App\Collision.h" />
+    <ClInclude Include="App\Enemy.h" />
+    <ClInclude Include="App\Field.h" />
     <ClInclude Include="App\Player.h" />
     <ClInclude Include="base\DirectXCommon.h" />
     <ClInclude Include="base\FrameWork.h" />
     <ClInclude Include="base\MyGame.h" />
     <ClInclude Include="base\WinApp.h" />
-    <ClInclude Include="camera\Camera.h" />
     <ClInclude Include="Engine\2d\DebugText\DebugText.h" />
     <ClInclude Include="Engine\2d\LoadSprite\LoadSprite.h" />
     <ClInclude Include="Engine\2d\SpriteCommon\SpriteCommon.h" />
     <ClInclude Include="Engine\2d\Sprite\Sprite.h" />
-    <ClInclude Include="Engine\3d\Material\Material.h" />
-    <ClInclude Include="Engine\3d\Mesh\Mesh.h" />
-    <ClInclude Include="Engine\3d\Model\Model.h" />
-    <ClInclude Include="Engine\3d\Object3d\Object3d.h" />
+    <ClInclude Include="Engine\3d\camera\Camera.h" />
+    <ClInclude Include="Engine\3d\obj\Material\Material.h" />
+    <ClInclude Include="Engine\3d\obj\Mesh\Mesh.h" />
+    <ClInclude Include="Engine\3d\obj\Model\Model.h" />
+    <ClInclude Include="Engine\3d\obj\Object3d\Object3d.h" />
+    <ClInclude Include="Engine\input\Input.h" />
+    <ClInclude Include="GameScene\EndScene.h" />
     <ClInclude Include="GameScene\PlayScene.h" />
     <ClInclude Include="GameScene\TitleScene.h" />
-    <ClInclude Include="input\Input.h" />
     <ClInclude Include="MakeScene\AbstractSceneFactory.h" />
     <ClInclude Include="MakeScene\BaseScene.h" />
     <ClInclude Include="MakeScene\SceneFactory.h" />

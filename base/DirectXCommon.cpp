@@ -96,6 +96,27 @@ void DirectXCommon::InitializeDevice()
         }
     }
 
+    Microsoft::WRL::ComPtr<ID3D12InfoQueue> infoQueue;
+    if (SUCCEEDED(dev->QueryInterface(IID_PPV_ARGS(&infoQueue))))
+    {
+        infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY_CORRUPTION, true);// やばいエラー時に止まる
+        infoQueue->SetBreakOnSeverity(D3D12_MESSAGE_SEVERITY_ERROR, true);// エラー時に止まる
+       // 抑制するエラー
+        D3D12_MESSAGE_ID denyIds[] = {
+            D3D12_MESSAGE_ID_RESOURCE_BARRIER_MISMATCHING_COMMAND_LIST_TYPE
+        };
+        // 抑制する表示レベル
+        D3D12_MESSAGE_SEVERITY severrities[] = { D3D12_MESSAGE_SEVERITY_INFO };
+        D3D12_INFO_QUEUE_FILTER filter{};
+        filter.DenyList.NumIDs = _countof(denyIds);
+        filter.DenyList.pIDList = denyIds;
+        filter.DenyList.NumSeverities = _countof(severrities);
+        filter.DenyList.pSeverityList = severrities;
+        // 指定したエラー表示を抑制する
+        infoQueue->PushStorageFilter(&filter);
+    }
+
+
 }
 
 void DirectXCommon::InitializeCommand()
@@ -251,7 +272,7 @@ void DirectXCommon::PreDraw()
     cmdList->OMSetRenderTargets(1, &rtvH, false, &dsvH);
 
     // 画面クリア           R     G     B    A
-    float clearColor[] = { 0.5f,0.5f, 0.5f,0.5f }; // 青っぽい色
+    float clearColor[] = { 0.0f,0.0f, 0.0f,0.0f }; // 青っぽい色
     cmdList->ClearRenderTargetView(rtvH, clearColor, 0, nullptr);
     cmdList->ClearDepthStencilView(dsvH, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
 

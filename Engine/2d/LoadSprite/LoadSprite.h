@@ -9,6 +9,9 @@ enum  SpriteNumber
 	// タイトルナンバー
 	title_Number,
 
+	// エンドナンバー
+	end_Number,
+
 };
 
 class LoadSprite

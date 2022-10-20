@@ -18,7 +18,6 @@ public:
 	static Player* Create();
 
 public:
-
 	// デストラクタ
 	~Player();
 
@@ -37,9 +36,10 @@ public:
 	const XMFLOAT3& GetTarget() { return camera->GetTarget(); }
 	// プレイヤーの座標取得
 	const XMFLOAT3& GetPos() { return obj_Bike->GetPosition(); }
+	// プレイヤーの速度を取得
+	const XMFLOAT3& GetSpeed() { return speed; }
 
 private:
-
 	/// <summary>
 	/// 生成処理
 	/// </summary>
@@ -55,6 +55,16 @@ private:
 	/// </summary>
 	void AutoSprint();
 
+	/// <summary>
+	/// 加速
+	/// </summary>
+	float Fluctuation();
+
+	/// <summary>
+	/// デバッグ用
+	/// </summary>
+	void DebugMove();
+
 private:
 	// カメラ
 	Camera* camera = nullptr;
@@ -67,7 +77,11 @@ private:
 	// ドームオブジェクト
 	Object3d* obj_Dome = nullptr;
 
-	// プレイヤー座標
+	// 座標
 	XMFLOAT3 pos{};
+	// 回転
+	XMFLOAT3 rot{};
+	// スピード
+	XMFLOAT3 speed{};
 };
 

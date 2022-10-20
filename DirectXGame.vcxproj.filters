@@ -10,9 +10,6 @@
     <Filter Include="Base\WinApp">
       <UniqueIdentifier>{6b57e627-9872-4197-814c-47e3955fc0e3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Input">
-      <UniqueIdentifier>{33467f57-db8b-4fdf-a8e7-8b6ec05b1a4c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shader">
       <UniqueIdentifier>{f8f85efb-b660-43fd-9bee-7d05b83d339f}</UniqueIdentifier>
     </Filter>
@@ -85,6 +82,12 @@
     <Filter Include="App">
       <UniqueIdentifier>{f12462c4-7248-4910-b4a5-4926ca95f089}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameScene\OverScene">
+      <UniqueIdentifier>{563d60b6-0985-46b5-a243-2dd202d82a7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Input">
+      <UniqueIdentifier>{33467f57-db8b-4fdf-a8e7-8b6ec05b1a4c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base\DirectXCommon.cpp">
@@ -92,12 +95,6 @@
     </ClCompile>
     <ClCompile Include="base\WinApp.cpp">
       <Filter>Base\WinApp</Filter>
-    </ClCompile>
-    <ClCompile Include="input\Input.cpp">
-      <Filter>Input</Filter>
-    </ClCompile>
-    <ClCompile Include="camera\Camera.cpp">
-      <Filter>Engine\3D\Camera</Filter>
     </ClCompile>
     <ClCompile Include="Engine\2d\DebugText\DebugText.cpp">
       <Filter>Engine\2D\DebugText</Filter>
@@ -110,18 +107,6 @@
     </ClCompile>
     <ClCompile Include="Engine\2d\SpriteCommon\SpriteCommon.cpp">
       <Filter>Engine\2D\SpriteCommon</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\3d\Material\Material.cpp">
-      <Filter>Engine\3D\OBJ\Material</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\3d\Mesh\Mesh.cpp">
-      <Filter>Engine\3D\OBJ\Mesh</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\3d\Model\Model.cpp">
-      <Filter>Engine\3D\OBJ\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\3d\Object3d\Object3d.cpp">
-      <Filter>Engine\3D\OBJ\Object3d</Filter>
     </ClCompile>
     <ClCompile Include="GameScene\TitleScene.cpp">
       <Filter>GameScene\TitleScene</Filter>
@@ -147,6 +132,36 @@
     <ClCompile Include="App\Player.cpp">
       <Filter>App</Filter>
     </ClCompile>
+    <ClCompile Include="App\Field.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Enemy.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Collision.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\EndScene.cpp">
+      <Filter>GameScene\OverScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\input\Input.cpp">
+      <Filter>Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3d\camera\Camera.cpp">
+      <Filter>Engine\3D\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3d\obj\Material\Material.cpp">
+      <Filter>Engine\3D\OBJ\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3d\obj\Mesh\Mesh.cpp">
+      <Filter>Engine\3D\OBJ\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3d\obj\Model\Model.cpp">
+      <Filter>Engine\3D\OBJ\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3d\obj\Object3d\Object3d.cpp">
+      <Filter>Engine\3D\OBJ\Object3d</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base\DirectXCommon.h">
@@ -154,12 +169,6 @@
     </ClInclude>
     <ClInclude Include="base\WinApp.h">
       <Filter>Base\WinApp</Filter>
-    </ClInclude>
-    <ClInclude Include="input\Input.h">
-      <Filter>Input</Filter>
-    </ClInclude>
-    <ClInclude Include="camera\Camera.h">
-      <Filter>Engine\3D\Camera</Filter>
     </ClInclude>
     <ClInclude Include="Engine\2d\DebugText\DebugText.h">
       <Filter>Engine\2D\DebugText</Filter>
@@ -172,18 +181,6 @@
     </ClInclude>
     <ClInclude Include="Engine\2d\SpriteCommon\SpriteCommon.h">
       <Filter>Engine\2D\SpriteCommon</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\3d\Material\Material.h">
-      <Filter>Engine\3D\OBJ\Material</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\3d\Mesh\Mesh.h">
-      <Filter>Engine\3D\OBJ\Mesh</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\3d\Model\Model.h">
-      <Filter>Engine\3D\OBJ\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\3d\Object3d\Object3d.h">
-      <Filter>Engine\3D\OBJ\Object3d</Filter>
     </ClInclude>
     <ClInclude Include="GameScene\TitleScene.h">
       <Filter>GameScene\TitleScene</Filter>
@@ -211,6 +208,36 @@
     </ClInclude>
     <ClInclude Include="App\Player.h">
       <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Field.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Enemy.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Collision.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\EndScene.h">
+      <Filter>GameScene\OverScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\input\Input.h">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3d\camera\Camera.h">
+      <Filter>Engine\3D\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3d\obj\Material\Material.h">
+      <Filter>Engine\3D\OBJ\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3d\obj\Mesh\Mesh.h">
+      <Filter>Engine\3D\OBJ\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3d\obj\Model\Model.h">
+      <Filter>Engine\3D\OBJ\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3d\obj\Object3d\Object3d.h">
+      <Filter>Engine\3D\OBJ\Object3d</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
