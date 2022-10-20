@@ -55,7 +55,7 @@ void PlayScene::Updata()
 	// プレイヤー更新
 	player->Update();
 	// エネミー更新
-	enemy->Update(player->GetPos());
+	//enemy->Update(player->GetPos());
 	// フィールド更新
 	field->Update(player->GetPos());
 }
@@ -69,14 +69,14 @@ void PlayScene::Draw()
 	// プレイヤー描画
 	player->Draw();
 	// エネミー描画
-	enemy->Draw();
+	//enemy->Draw();
 	// フィールド描画
 	field->Draw();
 	// スプライト前処理
 	SpriteCommon::GetInstance()->PreDraw();
 	//デバッグテキスト描画
 	// カメラ座標
-	sprintf_s(strDebug, "Speed = %f  Flag = %d", player->GetSpeed().z, enemy->Get1());
+	sprintf_s(strDebug, "Speed = %f", player->GetSpeed().z);
 	DebugText::GetInstance()->Print(strDebug, 0, 0, 2);
 	DebugText::GetInstance()->DrawAll();
 

@@ -39,7 +39,6 @@ void Player::Initialize()
 	obj_Bike->SetScale({ 0.5f, 0.5f, 0.5f });
 	// 初速度
 	speed = { 0.1f, 0.0f, 0.1f };
-
 	// モデル読み込み
 	model_Dome = Model::LoadFromOBJ("skydome");
 	// オブジェクト生成
@@ -49,22 +48,27 @@ void Player::Initialize()
 void Player::BesideMove()
 {
 	// 左移動
-	if (Input::GetInstacne()->PushKey(DIK_A))
+	if (Input::GetInstacne()->TiltLeftStick(StickLeft))
 	{
-		pos.x -= speed.x;
+		rot.z += 0.1f;
+		pos.x -= (rot.z / 15.0f);
 	}
-
 	// 右移動
-	if (Input::GetInstacne()->PushKey(DIK_D))
+	else if (Input::GetInstacne()->TiltLeftStick(StickRight))
 	{
-		pos.x += speed.x;
+		rot.z -= 0.1f;
+		pos.x -= (rot.z / 15.0f);
+	}
+	else
+	{
+		rot.z = 0.0f;
 	}
 }
 
 float Player::Fluctuation()
 {
 	// 加速
-	if (Input::GetInstacne()->TiltLeftStick(StickUp) && speed.z <= 1.5f)
+	if (Input::GetInstacne()->TiltRightStick(StickUp) && speed.z <= 1.5f)
 	{
 		speed.z += 0.01f;
 	}
@@ -73,12 +77,12 @@ float Player::Fluctuation()
 	if (speed.z >= 0.12f)
 	{
 		// 惰性走行
-		if (Input::GetInstacne()->AwayKey(DIK_W))
+		if (Input::GetInstacne()->TiltLeftStick(StickUp) == false)
 		{
 			speed.z -= 0.005f;
 		}
 		// ブレーキ
-		if (Input::GetInstacne()->PushKey(DIK_S))
+		if (Input::GetInstacne()->TiltRightStick(StickDown))
 		{
 			speed.z -= 0.01f;
 		}
@@ -118,8 +122,6 @@ void Player::DebugMove()
 		{
 			pos.x += 0.1f;
 		}
-
-		obj_Bike->SetPosition(pos);
 	}
 }
 
@@ -136,10 +138,17 @@ void Player::Update()
 
 	// カメラ更新
 	camera->Update();
+
+	// 回転を反映
+	obj_Bike->SetRotation(rot);
+	// 座標を反映
+	obj_Bike->SetPosition(pos);
 	// バイク更新
 	obj_Bike->Update();
-	// スカイドーム更新
+
+	// 座標反映
 	obj_Dome->SetPosition({ pos.x, pos.y, pos.z + 20.0f });
+	// スカイドーム更新
 	obj_Dome->Update();
 }
 
