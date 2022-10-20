@@ -49,9 +49,6 @@
     <Filter Include="Engine\3D\Camera">
       <UniqueIdentifier>{f9e260d0-a3cf-41d7-bc60-3224a10727b2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MakeScene">
-      <UniqueIdentifier>{3bd9e02f-13c4-458c-bcfe-2ae7dd7cb6d3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="App">
       <UniqueIdentifier>{f12462c4-7248-4910-b4a5-4926ca95f089}</UniqueIdentifier>
     </Filter>
@@ -103,6 +100,18 @@
     <Filter Include="App\GameScene\EndScene">
       <UniqueIdentifier>{563d60b6-0985-46b5-a243-2dd202d82a7a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\MakeScene">
+      <UniqueIdentifier>{3bd9e02f-13c4-458c-bcfe-2ae7dd7cb6d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MakeScene\SceneFactory">
+      <UniqueIdentifier>{9c83c25c-3c73-4fab-b42d-3931271a26d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MakeScene\SceneManager">
+      <UniqueIdentifier>{bb5cf123-c9ec-4805-a5de-d47431ba2aa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MakeScene\BaseScene">
+      <UniqueIdentifier>{90d50ca2-f528-4afb-98b1-07ae8d9bb75c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\2d\DebugText\DebugText.cpp">
@@ -116,12 +125,6 @@
     </ClCompile>
     <ClCompile Include="Engine\2d\SpriteCommon\SpriteCommon.cpp">
       <Filter>Engine\2D\SpriteCommon</Filter>
-    </ClCompile>
-    <ClCompile Include="MakeScene\SceneFactory.cpp">
-      <Filter>MakeScene</Filter>
-    </ClCompile>
-    <ClCompile Include="MakeScene\SceneManager.cpp">
-      <Filter>MakeScene</Filter>
     </ClCompile>
     <ClCompile Include="Engine\input\Input.cpp">
       <Filter>Engine\Input</Filter>
@@ -177,6 +180,12 @@
     <ClCompile Include="App\objects\player\Player.cpp">
       <Filter>App\Objects\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\makeScene\sceneManager\SceneManager.cpp">
+      <Filter>Engine\MakeScene\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\makeScene\sceneFactory\SceneFactory.cpp">
+      <Filter>Engine\MakeScene\SceneFactory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\2d\DebugText\DebugText.h">
@@ -190,18 +199,6 @@
     </ClInclude>
     <ClInclude Include="Engine\2d\SpriteCommon\SpriteCommon.h">
       <Filter>Engine\2D\SpriteCommon</Filter>
-    </ClInclude>
-    <ClInclude Include="MakeScene\AbstractSceneFactory.h">
-      <Filter>MakeScene</Filter>
-    </ClInclude>
-    <ClInclude Include="MakeScene\BaseScene.h">
-      <Filter>MakeScene</Filter>
-    </ClInclude>
-    <ClInclude Include="MakeScene\SceneFactory.h">
-      <Filter>MakeScene</Filter>
-    </ClInclude>
-    <ClInclude Include="MakeScene\SceneManager.h">
-      <Filter>MakeScene</Filter>
     </ClInclude>
     <ClInclude Include="Engine\input\Input.h">
       <Filter>Engine\Input</Filter>
@@ -253,6 +250,18 @@
     </ClInclude>
     <ClInclude Include="App\objects\player\Player.h">
       <Filter>App\Objects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\makeScene\baseScene\AbstractSceneFactory.h">
+      <Filter>Engine\MakeScene\BaseScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\makeScene\baseScene\BaseScene.h">
+      <Filter>Engine\MakeScene\BaseScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\makeScene\sceneManager\SceneManager.h">
+      <Filter>Engine\MakeScene\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\makeScene\sceneFactory\SceneFactory.h">
+      <Filter>Engine\MakeScene\SceneFactory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
