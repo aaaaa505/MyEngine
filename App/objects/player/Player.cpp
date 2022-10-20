@@ -64,7 +64,7 @@ void Player::BesideMove()
 float Player::Fluctuation()
 {
 	// ‰Á‘¬
-	if (Input::GetInstacne()->PushKey(DIK_W) && speed.z <= 1.5f)
+	if (Input::GetInstacne()->TiltLeftStick(StickUp) && speed.z <= 1.5f)
 	{
 		speed.z += 0.01f;
 	}

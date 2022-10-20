@@ -20,7 +20,7 @@ void TitleScene::Finalize()
 void TitleScene::Updata()
 {
 	Input* input = Input::GetInstacne();
-	if (input->TriggerKey(DIK_SPACE))
+	if (input->PushButton(Button_A))
 	{
 		// ƒV[ƒ“Ø‚è‘Ö‚¦
 		SceneManager::GetInstance()->ChangeScene("PLAY");

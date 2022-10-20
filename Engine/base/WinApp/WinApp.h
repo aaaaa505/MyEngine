@@ -16,7 +16,7 @@ public://ƒƒ“ƒoŠÖ”
 
 	//getter
 	HWND GetHwnd() { return hwnd; }
-	HINSTANCE GetHInstance() { return w.hInstance; }
+	HINSTANCE GetInstance() { return w.hInstance; }
 
 	//I—¹
 	void Finalize();

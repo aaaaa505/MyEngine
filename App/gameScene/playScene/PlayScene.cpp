@@ -76,7 +76,7 @@ void PlayScene::Draw()
 	SpriteCommon::GetInstance()->PreDraw();
 	//デバッグテキスト描画
 	// カメラ座標
-	sprintf_s(strDebug, "Timer = %d  Flag = %d", enemy->Get2(), enemy->Get1());
+	sprintf_s(strDebug, "Speed = %f  Flag = %d", player->GetSpeed().z, enemy->Get1());
 	DebugText::GetInstance()->Print(strDebug, 0, 0, 2);
 	DebugText::GetInstance()->DrawAll();
 
