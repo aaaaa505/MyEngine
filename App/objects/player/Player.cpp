@@ -47,22 +47,49 @@ void Player::Initialize()
 
 void Player::BesideMove()
 {
-	// 左移動
-	if (Input::GetInstacne()->TiltLeftStick(StickLeft))
+	// パッド操作
+	if (Input::GetInstacne()->CheckPad())
 	{
-		rot.z += 0.1f;
-		pos.x -= (rot.z / 15.0f);
+		// 左移動
+		if (Input::GetInstacne()->TiltLeftStick(StickLeft))
+		{
+			rot.z += 0.1f;
+			pos.x -= (rot.z / 15.0f);
+		}
+		// 右移動
+		else if (Input::GetInstacne()->TiltLeftStick(StickRight))
+		{
+			rot.z -= 0.1f;
+			pos.x -= (rot.z / 15.0f);
+		}
+		else
+		{
+			rot.z = 0.0f;
+		}
 	}
-	// 右移動
-	else if (Input::GetInstacne()->TiltLeftStick(StickRight))
-	{
-		rot.z -= 0.1f;
-		pos.x -= (rot.z / 15.0f);
-	}
+	// キーボード操作
 	else
 	{
-		rot.z = 0.0f;
+		// 左移動
+		if (Input::GetInstacne()->PushKey(DIK_A))
+		{
+			rot.z += 0.1f;
+			pos.x -= (rot.z / 15.0f);
+		}
+
+		// 右移動
+		if (Input::GetInstacne()->PushKey(DIK_D))
+		{
+			rot.z -= 0.1f;
+			pos.x -= (rot.z / 15.0f);
+		}
+
+		if (Input::GetInstacne()->AwayKey(DIK_A) || Input::GetInstacne()->AwayKey(DIK_D))
+		{
+			rot.z = 0.0f;
+		}
 	}
+
 }
 
 float Player::Fluctuation()

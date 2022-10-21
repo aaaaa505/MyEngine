@@ -139,7 +139,7 @@ bool Input::TriggerKey(BYTE keyNumber)
 bool Input::AwayKey(BYTE keyNumber)
 {
     //w’èƒL[‚ğ‰Ÿ‚µ‚Ä‚¢‚ê‚Îtrue‚ğ•Ô‚·
-    if (!key[keyNumber])
+    if (!key[keyNumber] && keyPre[keyNumber])
     {
         return true;
     }

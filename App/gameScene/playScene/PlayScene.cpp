@@ -44,11 +44,11 @@ void PlayScene::Updata()
 		}
 	}
 
-	if (player->GetPos().x < -5.0f)
-	{
-		// シーン切り替え
-		SceneManager::GetInstance()->ChangeScene("END");
-	}
+	//if (player->GetPos().x < -5.0f)
+	//{
+	//	// シーン切り替え
+	//	SceneManager::GetInstance()->ChangeScene("END");
+	//}
 
 	// グランド更新
 	obj_Ground->Update();
