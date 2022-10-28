@@ -54,14 +54,15 @@ void Player::BesideMove()
 		if (Input::GetInstacne()->TiltLeftStick(StickLeft))
 		{
 			rot.z += 0.1f;
-			pos.x -= (rot.z / 15.0f);
+			pos.x -= rot.z / 15.0f;
 		}
 		// 右移動
 		else if (Input::GetInstacne()->TiltLeftStick(StickRight))
 		{
 			rot.z -= 0.1f;
-			pos.x -= (rot.z / 15.0f);
+			pos.x -= rot.z / 15.0f;
 		}
+		// キーを離した時
 		else
 		{
 			rot.z = 0.0f;
@@ -74,16 +75,17 @@ void Player::BesideMove()
 		if (Input::GetInstacne()->PushKey(DIK_A))
 		{
 			rot.z += 0.1f;
-			pos.x -= (rot.z / 15.0f);
+			pos.x -= rot.z / 15.0f;
 		}
 
 		// 右移動
 		if (Input::GetInstacne()->PushKey(DIK_D))
 		{
 			rot.z -= 0.1f;
-			pos.x -= (rot.z / 15.0f);
+			pos.x -= rot.z / 15.0f;
 		}
 
+		// キーを離した時
 		if (Input::GetInstacne()->AwayKey(DIK_A) || Input::GetInstacne()->AwayKey(DIK_D))
 		{
 			rot.z = 0.0f;
@@ -95,21 +97,27 @@ void Player::BesideMove()
 float Player::Fluctuation()
 {
 	// 加速
-	if (Input::GetInstacne()->TiltRightStick(StickUp) && speed.z <= 1.5f)
+	if (speed.z <= 1.5f)
 	{
-		speed.z += 0.01f;
+		if (Input::GetInstacne()->TiltRightStick(StickUp) ||
+			Input::GetInstacne()->PushKey(DIK_W))
+		{
+			speed.z += 0.01f;
+		}
 	}
 
 	// 規定値より上なら
 	if (speed.z >= 0.12f)
 	{
 		// 惰性走行
-		if (Input::GetInstacne()->TiltLeftStick(StickUp) == false)
+		if (Input::GetInstacne()->TiltLeftStick(StickUp) == false ||
+			Input::GetInstacne()->PushKey(DIK_W) == false)
 		{
 			speed.z -= 0.005f;
 		}
 		// ブレーキ
-		if (Input::GetInstacne()->TiltRightStick(StickDown))
+		if (Input::GetInstacne()->TiltRightStick(StickDown) ||
+			Input::GetInstacne()->PushKey(DIK_S))
 		{
 			speed.z -= 0.01f;
 		}
@@ -174,7 +182,7 @@ void Player::Update()
 	obj_Bike->Update();
 
 	// 座標反映
-	obj_Dome->SetPosition({ pos.x, pos.y, pos.z + 20.0f });
+	obj_Dome->SetPosition({ pos.x, pos.y, pos.z + 150.0f });
 	// スカイドーム更新
 	obj_Dome->Update();
 }

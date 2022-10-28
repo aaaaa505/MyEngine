@@ -12,7 +12,7 @@ void PlayScene::Initialize()
 	// エネミー生成
 	enemy = Enemy::Create();
 	// フィールド生成
-	field = Field::Create();
+	scroll = Scroll::Create();
 	// グランド生成
 	model_Ground = Model::LoadFromOBJ("debugField");
 	obj_Ground = Object3d::Create(model_Ground);
@@ -25,7 +25,7 @@ void PlayScene::Finalize()
 	// エネミー解放
 	delete enemy;
 	// フィールド解放
-	delete field;
+	delete scroll;
 	// グランド解放
 	delete model_Ground;
 	delete obj_Ground;
@@ -57,7 +57,7 @@ void PlayScene::Updata()
 	// エネミー更新
 	//enemy->Update(player->GetPos());
 	// フィールド更新
-	field->Update(player->GetPos());
+	scroll->Update(player->GetPos());
 }
 
 void PlayScene::Draw()
@@ -71,13 +71,13 @@ void PlayScene::Draw()
 	// エネミー描画
 	//enemy->Draw();
 	// フィールド描画
-	field->Draw();
+	scroll->Draw();
 	// スプライト前処理
 	SpriteCommon::GetInstance()->PreDraw();
 	//デバッグテキスト描画
 	// カメラ座標
-	sprintf_s(strDebug, "Speed = %f", player->GetSpeed().z);
-	DebugText::GetInstance()->Print(strDebug, 0, 0, 2);
-	DebugText::GetInstance()->DrawAll();
+	//sprintf_s(strDebug, "Speed = %f", player->GetSpeed().z);
+	//DebugText::GetInstance()->Print(strDebug, 0, 0, 2);
+	//DebugText::GetInstance()->DrawAll();
 
 }

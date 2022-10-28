@@ -5,7 +5,7 @@
 #include "Camera.h"
 #include "Player.h"
 #include "Enemy.h"
-#include "Field.h"
+#include "Scroll.h"
 
 class PlayScene : public BaseScene
 {
@@ -37,8 +37,8 @@ private:
 	Player* player = nullptr;
 	// プレイヤー
 	Enemy* enemy = nullptr;
-	// フィールド
-	Field* field = nullptr;
+	// スクロール
+	Scroll* scroll = nullptr;
 	// グランド
 	Model* model_Ground = nullptr;
 	Object3d* obj_Ground = nullptr;

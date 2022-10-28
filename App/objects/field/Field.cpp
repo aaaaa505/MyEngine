@@ -1,76 +1,74 @@
 #include "Field.h"
+#include "LevelLoader.h"
 
-Field* Field::Create()
+Field* Field::Create(const std::string& fileName)
 {
-	// インスタンスの生成
-	Field* instance = new Field();
+    // インスタンス生成
+    Field* instance = new Field();
 
-	// インスタンスの初期化
-	instance->Initialize();
-	
-	// インスタンスを返す
-	return instance;
+    // インスタンスの初期化
+    instance->Initialize(fileName);
+
+    // インスタンスを返す
+    return instance;
 }
 
 Field::~Field()
 {
-	// オブジェクト解放
-	for (int i = 0; i < ROAD_MAX; i++)
-	{
-		delete obj[i];
-	}
-	// モデル解放
-	delete model;
+    // データ解放
+    for (Object3d*& object : objects)
+    {
+        delete(object);
+    }
 }
 
-void Field::Initialize()
+void Field::Initialize(const std::string& fileName)
 {
-	// モデル読み込み
-	model = Model::LoadFromOBJ("road");
-	for (int i = 0; i < ROAD_MAX; i++)
+	// レベルデータの読み込み
+	levelData = LevelLoader::LoadFile(fileName);
+
+	for (auto& objectData : levelData->objects)
 	{
-		// 生成
-		obj[i] = Object3d::Create();	
-		// モデルセット
-		obj[i]->SetModel(model);
-		// 初期座標セット(3枚用)
-		obj[i]->SetPosition({ 0.0f, 0.1f, 20.0f + i * 40.0f });
+		// モデルを指定して3Dオブジェクトを生成
+		Object3d* newObject = Object3d::Create(objectData.model);
+		// 座標
+		DirectX::XMFLOAT3 pos;
+		// MATRIXをXMFLOAT3へ変換
+		DirectX::XMStoreFloat3(&pos, objectData.translation);
+		// 変換した座標を反映
+		newObject->SetPosition(pos);
+		// 変換直後の座標を配列に登録
+		basePos.push_back(pos);
+		// オブジェクト配列に登録
+		objects.push_back(newObject);
+	}
+
+}
+
+void Field::Update()
+{
+	for (auto& object : objects)
+	{
+		object->Update();
 	}
 	
-	// 初期最前配列番号を格納
-	top = 2;
-}
-
-void Field::Update(XMFLOAT3 pos)
-{
-	// 列の中心座標を通過したら
-	if (obj[next]->GetPosition().z + 40 <= pos.z)
-	{
-		// 移動対象objを最前列に配置
-		obj[next]->SetPosition({ 0.0f, 0.1f, obj[top]->GetPosition().z + 40.0f});
-		// 最前列の配列番号を移動したobjの番号にする
-		top = next;
-		// 次の移動対象objにカウントを進める
-		next += 1;
-		// 配列の最大値になった場合
-		if (next == ROAD_MAX)
-		{
-			next = 0;
-		}
-	}
-
-	for (int i = 0; i < ROAD_MAX; i++)
-	{
-		// 更新
-		obj[i]->Update();
-	}
 }
 
 void Field::Draw()
 {
-	for (int i = 0; i < ROAD_MAX; i++)
+	for (auto& object : objects)
 	{
-		// 描画
-		obj[i]->Draw();
+		object->Draw();
+	}
+	
+}
+
+void Field::SetPosition(const XMFLOAT3 movePos)
+{
+	// objectsのデータサイズ分回す
+	for (int i = 0 ; i < objects.size(); i++)
+	{
+		// 更新した座標に元の座標を加算する
+		objects[i]->SetPosition({movePos.x + basePos[i].x, movePos.y + basePos[i].y, movePos.z + basePos[i].z });
 	}
 }

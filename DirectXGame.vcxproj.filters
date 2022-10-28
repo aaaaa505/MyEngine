@@ -112,6 +112,12 @@
     <Filter Include="Engine\MakeScene\BaseScene">
       <UniqueIdentifier>{90d50ca2-f528-4afb-98b1-07ae8d9bb75c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App\Staging">
+      <UniqueIdentifier>{355bbfc0-c73c-46f1-80c2-104d5709fdc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\LevelLoader">
+      <UniqueIdentifier>{41e5a09c-d683-4ab2-9dd4-d91fa5e61d74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\2d\DebugText\DebugText.cpp">
@@ -174,9 +180,6 @@
     <ClCompile Include="App\objects\enemy\Enemy.cpp">
       <Filter>App\Objects\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="App\objects\field\Field.cpp">
-      <Filter>App\Objects\Field</Filter>
-    </ClCompile>
     <ClCompile Include="App\objects\player\Player.cpp">
       <Filter>App\Objects\Player</Filter>
     </ClCompile>
@@ -185,6 +188,15 @@
     </ClCompile>
     <ClCompile Include="Engine\makeScene\sceneFactory\SceneFactory.cpp">
       <Filter>Engine\MakeScene\SceneFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="App\objects\field\Field.cpp">
+      <Filter>App\Objects\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="App\staging\scroll\Scroll.cpp">
+      <Filter>App\Staging</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\levelLoader\LevelLoader.cpp">
+      <Filter>Engine\LevelLoader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -245,9 +257,6 @@
     <ClInclude Include="App\objects\enemy\Enemy.h">
       <Filter>App\Objects\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="App\objects\field\Field.h">
-      <Filter>App\Objects\Field</Filter>
-    </ClInclude>
     <ClInclude Include="App\objects\player\Player.h">
       <Filter>App\Objects\Player</Filter>
     </ClInclude>
@@ -262,6 +271,15 @@
     </ClInclude>
     <ClInclude Include="Engine\makeScene\sceneFactory\SceneFactory.h">
       <Filter>Engine\MakeScene\SceneFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="App\objects\field\Field.h">
+      <Filter>App\Objects\Field</Filter>
+    </ClInclude>
+    <ClInclude Include="App\staging\scroll\Scroll.h">
+      <Filter>App\Staging</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\levelLoader\LevelLoader.h">
+      <Filter>Engine\LevelLoader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

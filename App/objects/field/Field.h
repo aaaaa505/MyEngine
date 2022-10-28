@@ -1,22 +1,25 @@
 #pragma once
 #include "Object3d.h"
+#include <map>
+#include <fstream>
 
-const int ROAD_MAX = 3;
+struct LevelData;
 
 class Field
 {
-private: // エイリアス
+private:// エイリアス
 	using XMFLOAT3 = DirectX::XMFLOAT3;
 	using XMFLOAT4 = DirectX::XMFLOAT4;
 
-public: // 静的メンバ関数
-
+public:// 静的メンバ関数
+	
 	/// <summary>
-	/// インスタンス
+	/// インスタンスの生成
 	/// </summary>
-	static Field* Create();
+	/// <returns>インスタンス</returns>
+	static Field* Create(const std::string& fileName);
 
-public: // メンバ関数
+public:// メンバ関数
 
 	// デストラクタ
 	~Field();
@@ -24,37 +27,31 @@ public: // メンバ関数
 	/// <summary>
 	/// 更新
 	/// </summary>
-	void Update(XMFLOAT3 pos);
+	void Update();
 
 	/// <summary>
 	/// 描画処理
 	/// </summary>
 	void Draw();
 
-	/// <summary>
-	/// プレイヤー座標取得
-	/// </summary>
-	/// <returns></returns>
-	XMFLOAT3 GetPos(int i) { return obj[i]->GetPosition(); }
+#pragma region setter
+	void SetPosition(XMFLOAT3 movePos);
+#pragma endregion
 
-	short GetDebug1() { return next; }
-	short GetDebug2() { return top; }
+private:// メンバ関数
 
-private: // メンバ関数
 	/// <summary>
 	/// 生成処理
 	/// </summary>
-	void Initialize();
+	void Initialize(const std::string& fileName);
 
-private: // メンバ変数
 
-	// オブジェクト
-	Object3d* obj[ROAD_MAX] = {nullptr};
-	// モデル
-	Model* model = nullptr;
-
-	// 次の移動ロードの配列番号
-	short next = 0;
-	// 最前列ロードの配列番号
-	short top = 0;
+private:
+	// レベルデータ
+	LevelData* levelData = nullptr;
+	// オブジェクト動的配列
+	std::vector<Object3d*> objects;
+	// データの初期座標
+	std::vector<XMFLOAT3> basePos;
 };
+
