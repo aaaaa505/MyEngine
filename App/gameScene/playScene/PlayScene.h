@@ -35,14 +35,10 @@ public:
 private:
 	// プレイヤー
 	Player* player = nullptr;
-	// プレイヤー
+	// エネミー
 	Enemy* enemy = nullptr;
 	// スクロール
 	Scroll* scroll = nullptr;
-	// グランド
-	Model* model_Ground = nullptr;
-	Object3d* obj_Ground = nullptr;
-
 	// デバッグテキスト用
 	char strDebug[100];
 };

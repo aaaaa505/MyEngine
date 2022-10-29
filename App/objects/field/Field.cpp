@@ -29,14 +29,12 @@ void Field::Initialize(const std::string& fileName)
 
 	for (auto& objectData : levelData->objects)
 	{
-		// モデルを指定して3Dオブジェクトを生成
-		Object3d* newObject = Object3d::Create(objectData.model);
 		// 座標
 		DirectX::XMFLOAT3 pos;
 		// MATRIXをXMFLOAT3へ変換
 		DirectX::XMStoreFloat3(&pos, objectData.translation);
-		// 変換した座標を反映
-		newObject->SetPosition(pos);
+		// モデルを指定して3Dオブジェクトを生成
+		Object3d* newObject = Object3d::Create(pos, objectData.model);
 		// 変換直後の座標を配列に登録
 		basePos.push_back(pos);
 		// オブジェクト配列に登録

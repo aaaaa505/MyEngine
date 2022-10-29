@@ -30,9 +30,7 @@ void Player::Initialize()
 	// モデル読み込み
 	model_Bike = Model::LoadFromOBJ("bike", true);
 	// オブジェクト生成
-	obj_Bike = Object3d::Create(model_Bike);
-	// 初期座標
-	pos = { 0.0f, 0.0f, 0.0f };
+	obj_Bike = Object3d::Create(pos, model_Bike);
 	// 初期回転
 	rot = { 0.0f, 0.0f, 0.0f };
 	// スケール
@@ -42,7 +40,7 @@ void Player::Initialize()
 	// モデル読み込み
 	model_Dome = Model::LoadFromOBJ("skydome");
 	// オブジェクト生成
-	obj_Dome = Object3d::Create(model_Dome);
+	obj_Dome = Object3d::Create({0.0f, 0.0f, 0.0f}, model_Dome);
 }
 
 void Player::BesideMove()

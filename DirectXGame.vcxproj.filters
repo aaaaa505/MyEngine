@@ -118,6 +118,9 @@
     <Filter Include="Engine\LevelLoader">
       <UniqueIdentifier>{41e5a09c-d683-4ab2-9dd4-d91fa5e61d74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App\Staging\Scroll">
+      <UniqueIdentifier>{acb33086-1370-40ff-b5e7-53d8fc2e3387}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\2d\DebugText\DebugText.cpp">
@@ -192,11 +195,11 @@
     <ClCompile Include="App\objects\field\Field.cpp">
       <Filter>App\Objects\Field</Filter>
     </ClCompile>
-    <ClCompile Include="App\staging\scroll\Scroll.cpp">
-      <Filter>App\Staging</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\levelLoader\LevelLoader.cpp">
       <Filter>Engine\LevelLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="App\staging\scroll\Scroll.cpp">
+      <Filter>App\Staging\Scroll</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -275,11 +278,11 @@
     <ClInclude Include="App\objects\field\Field.h">
       <Filter>App\Objects\Field</Filter>
     </ClInclude>
-    <ClInclude Include="App\staging\scroll\Scroll.h">
-      <Filter>App\Staging</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\levelLoader\LevelLoader.h">
       <Filter>Engine\LevelLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="App\staging\scroll\Scroll.h">
+      <Filter>App\Staging\Scroll</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

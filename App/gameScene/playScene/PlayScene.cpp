@@ -13,9 +13,6 @@ void PlayScene::Initialize()
 	enemy = Enemy::Create();
 	// フィールド生成
 	scroll = Scroll::Create();
-	// グランド生成
-	model_Ground = Model::LoadFromOBJ("debugField");
-	obj_Ground = Object3d::Create(model_Ground);
 }
 
 void PlayScene::Finalize()
@@ -26,23 +23,10 @@ void PlayScene::Finalize()
 	delete enemy;
 	// フィールド解放
 	delete scroll;
-	// グランド解放
-	delete model_Ground;
-	delete obj_Ground;
 }
 
 void PlayScene::Updata()
 {
-
-	for (int i = 0; i < 8; i++)
-	{
-		if (Collision::SphereSphere(player->GetPos(), 0.5f, enemy->GetPos(i), 1.0f))
-		{
-			// シーン切り替え
-			SceneManager::GetInstance()->ChangeScene("END");
-			break;
-		}
-	}
 
 	//if (player->GetPos().x < -5.0f)
 	//{
@@ -50,12 +34,10 @@ void PlayScene::Updata()
 	//	SceneManager::GetInstance()->ChangeScene("END");
 	//}
 
-	// グランド更新
-	obj_Ground->Update();
 	// プレイヤー更新
 	player->Update();
 	// エネミー更新
-	//enemy->Update(player->GetPos());
+	enemy->Update(player->GetPos());
 	// フィールド更新
 	scroll->Update(player->GetPos());
 }
@@ -64,20 +46,19 @@ void PlayScene::Draw()
 {
 	// 3Dオブジェクト描画前処理
 	Object3d::PreDraw();
-	// グランド描画
-	//obj_Ground->Draw();
+
 	// プレイヤー描画
 	player->Draw();
 	// エネミー描画
-	//enemy->Draw();
+	enemy->Draw();
 	// フィールド描画
 	scroll->Draw();
 	// スプライト前処理
 	SpriteCommon::GetInstance()->PreDraw();
 	//デバッグテキスト描画
-	// カメラ座標
-	//sprintf_s(strDebug, "Speed = %f", player->GetSpeed().z);
-	//DebugText::GetInstance()->Print(strDebug, 0, 0, 2);
-	//DebugText::GetInstance()->DrawAll();
+	
+	sprintf_s(strDebug, "CreateTimer = %d  PlayerPos = %f", enemy->GetCreateTimer(), player->GetPos().x);
+	DebugText::GetInstance()->Print(strDebug, 0, 0, 2);
+	DebugText::GetInstance()->DrawAll();
 
 }

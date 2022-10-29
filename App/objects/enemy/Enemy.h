@@ -1,8 +1,6 @@
 #pragma once
 #include "Object3d.h"
 
-const int MAX_ENEMY = 8;
-
 class Enemy
 {
 private: // エイリアス
@@ -30,15 +28,15 @@ public: // メンバ関数
 	/// 描画処理
 	/// </summary>
 	void Draw();
-
-	// <summary>
-	// プレイヤー座標取得
-	// </summary>
-	// <returns></returns>
-	XMFLOAT3 GetPos(int i) { return pos[i]; }
-	bool Get1() { return existenceFlag[0]; }
-	int Get2() { return settingTimer[0]; }
 	
+#pragma region getter
+	// 生成タイマー取得
+	int GetCreateTimer() { return createTimer; }
+	// データ数を取得
+	int GetDataSize() { return objects.size(); }
+#pragma endregion
+
+
 private:
 	/// <summary>
 	/// 生成処理
@@ -46,34 +44,25 @@ private:
 	void Initialize();
 
 	/// <summary>
-	/// 再配置
+	/// 
 	/// </summary>
-	/// <param name="topPos"></param>
-	void ReSetthing(XMFLOAT3 playerPos, int i);
+	int RandValue(const int maxValue, const int miniValue);
 
 	/// <summary>
-	/// 列を決定
+	/// 
 	/// </summary>
-	float LaneSetthing();
-
-	/// <summary>
-	/// 自動移動
-	/// </summary>
-	void AutoSprint(int i);
+	/// <returns></returns>
+	XMFLOAT3 RandPos();
 private:
 
+	// 車モデル
+	Model* model_Car = nullptr;
+	// トラックモデル
+	Model* model_Track = nullptr;
 	// オブジェクト
-	Object3d* obj[MAX_ENEMY] = { nullptr };
-	// モデル
-	Model* model = nullptr;
-	// 座標
-	XMFLOAT3 pos[MAX_ENEMY]{};
-	// 速度
-	XMFLOAT3 speed{};
-	// ランダムフラッグ
-	short randam = 0;
+	std::vector<Object3d*>objects;
+	// 生成時間
+	int createTimer = 0;
 	// 存在フラッグ
-	bool existenceFlag[MAX_ENEMY] = { false };
-	// 配置タイマー
-	int settingTimer[MAX_ENEMY] = { 0 };
+	bool existenceFlag = false;
 };
