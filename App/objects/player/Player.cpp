@@ -95,7 +95,7 @@ void Player::BesideMove()
 float Player::Fluctuation()
 {
 	// 加速
-	if (speed.z <= 1.5f)
+	if (speed.z < 1.5f)
 	{
 		if (Input::GetInstacne()->TiltRightStick(StickUp) ||
 			Input::GetInstacne()->PushKey(DIK_W))
@@ -108,11 +108,11 @@ float Player::Fluctuation()
 	if (speed.z >= 0.12f)
 	{
 		// 惰性走行
-		if (Input::GetInstacne()->TiltLeftStick(StickUp) == false ||
-			Input::GetInstacne()->PushKey(DIK_W) == false)
-		{
-			speed.z -= 0.005f;
-		}
+		//if (Input::GetInstacne()->TiltLeftStick(StickUp) == false ||
+		//	Input::GetInstacne()->PushKey(DIK_W) == false)
+		//{
+		//	speed.z -= 0.005f;
+		//}
 		// ブレーキ
 		if (Input::GetInstacne()->TiltRightStick(StickDown) ||
 			Input::GetInstacne()->PushKey(DIK_S))

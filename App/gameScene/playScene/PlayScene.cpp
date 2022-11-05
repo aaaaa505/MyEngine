@@ -27,17 +27,30 @@ void PlayScene::Finalize()
 
 void PlayScene::Updata()
 {
-
-	//if (player->GetPos().x < -5.0f)
-	//{
-	//	// シーン切り替え
-	//	SceneManager::GetInstance()->ChangeScene("END");
-	//}
+	for (int i = 0; i < enemy->GetDataSize(); i++)
+	{
+		if (enemy->GetModelFlag(i) == car)
+		{
+			if (Collision::BoxToBox(player->GetPos(), { RADIUS_X, RADIUS_Z }, enemy->GetPos(i), {CAR_RADIUS_X, CAR_RADIUS_Z}))
+			{
+				// シーン切り替え
+				SceneManager::GetInstance()->ChangeScene("END");
+			}
+		}
+		else
+		{
+			if (Collision::BoxToBox(player->GetPos(), { RADIUS_X, RADIUS_Z }, enemy->GetPos(i), { TRACK_RADIUS_X, TRACK_RADIUS_Z }))
+			{
+				// シーン切り替え
+				SceneManager::GetInstance()->ChangeScene("END");
+			}
+		}
+	}
 
 	// プレイヤー更新
 	player->Update();
 	// エネミー更新
-	enemy->Update(player->GetPos());
+	enemy->Update(player->GetPos(), player->GetSpeed().z);
 	// フィールド更新
 	scroll->Update(player->GetPos());
 }
@@ -57,7 +70,7 @@ void PlayScene::Draw()
 	SpriteCommon::GetInstance()->PreDraw();
 	//デバッグテキスト描画
 	
-	sprintf_s(strDebug, "CreateTimer = %d  PlayerPos = %f", enemy->GetCreateTimer(), player->GetPos().x);
+	sprintf_s(strDebug, "CreateTimer = %f", player->GetSpeed().z);
 	DebugText::GetInstance()->Print(strDebug, 0, 0, 2);
 	DebugText::GetInstance()->DrawAll();
 

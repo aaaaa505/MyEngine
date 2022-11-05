@@ -184,6 +184,8 @@ bool Input::PushKeepButton(unsigned int buttonNumber)
         return true;
     }
 
+    
+
     return false;
 }
 
@@ -246,6 +248,9 @@ bool Input::TiltRightStick(unsigned int stickNumber)
         }
     }
 
+   /* XINPUT_VIBRATION aaa;
+   
+    aaa.wLeftMotorSpeed*/
     return false;
 }
 

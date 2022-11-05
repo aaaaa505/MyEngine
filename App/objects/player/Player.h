@@ -3,6 +3,9 @@
 #include "Input.h"
 #include "Camera.h"
 
+#define RADIUS_X 0.4f
+#define RADIUS_Z 1.8f
+
 class Player
 {
 private:// エイリアス
