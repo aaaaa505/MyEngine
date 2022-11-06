@@ -35,6 +35,7 @@ void PlayScene::Updata()
 			{
 				// シーン切り替え
 				SceneManager::GetInstance()->ChangeScene("END");
+				break;
 			}
 		}
 		else
@@ -43,6 +44,7 @@ void PlayScene::Updata()
 			{
 				// シーン切り替え
 				SceneManager::GetInstance()->ChangeScene("END");
+				break;
 			}
 		}
 	}

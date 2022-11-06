@@ -33,8 +33,6 @@ void Player::Initialize()
 	obj_Bike = Object3d::Create(pos, model_Bike);
 	// 初期回転
 	rot = { 0.0f, 0.0f, 0.0f };
-	// スケール
-	obj_Bike->SetScale({ 0.5f, 0.5f, 0.5f });
 	// 初速度
 	speed = { 0.1f, 0.0f, 0.1f };
 	// モデル読み込み

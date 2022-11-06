@@ -3,17 +3,45 @@
 
 // モデルの最大数
 #define MAX_MODEL 2
+#define MAX_TIMER 4
+#define MAX_SPEED 3
 // TRACKモデルのサイズ
 #define TRACK_RADIUS_X 1.3f
-#define TRACK_RADIUS_Z 4.5f
+#define TRACK_RADIUS_Z 6.1f
 // CARモデルのサイズ
 #define CAR_RADIUS_X 1.3f
 #define CAR_RADIUS_Z 3.0f
-
-enum EnemyData
+// RandTimerの最大数
+#define RANDTIMER_MAX 200
+// RandTimerの最小数
+#define RANDTIMER_MINI 50
+// ラインの中心座標
+#define CENTERLINER 1.8f
+#define SIDELINE 5.3f
+// スピード
+#define TopSpeed 0.7f
+#define MiddleSpeed 0.6f
+#define BottonSpeed 0.5f
+// 配置座標
+#define BASEPOS 310.0f
+enum ModelNumber
 {
 	car,
 	track,
+};
+
+enum LineNumber
+{
+	left_Second,
+	left_First, 
+	right_First,
+	rightSecond,
+};
+
+enum SpeedNumber
+{
+	First,
+	Second,
 };
 
 class Enemy
@@ -46,7 +74,7 @@ public: // メンバ関数
 
 #pragma region getter
 	// 生成タイマー取得
-	int GetCreateTimer() { return createTimer; }
+	int GetCreateTimer() { return createTimer[0]; }
 	// データ数を取得
 	int GetDataSize() { return objects.size(); }
 	// 座標取得
@@ -66,21 +94,13 @@ private:
 	/// 自動移動
 	/// </summary>
 	/// <param name="i">配列のカウント</param>
-	void AutoSprint(int i);
-
-	/// <summary>
-	/// 引数に与えた数値の範囲でランダムに値を決定する
-	/// </summary>
-	/// <param name="maxValue">最大値</param>
-	/// <param name="miniValue">最小値</param>
-	/// <returns></returns>
-	int RandValue(const int maxValue, const int miniValue);
+	void AutoSprint(int number);
 
 	/// <summary>
 	/// ランダムに座標を決定する
 	/// </summary>
 	/// <returns></returns>
-	XMFLOAT3 RandPos();
+	XMFLOAT3 RandPos(int number);
 
 	/// <summary>
 	/// ランダムにモデルを決定する
@@ -92,7 +112,7 @@ private:
 	/// ランダムにスピードを決定する
 	/// </summary>
 	/// <returns></returns>
-	int RandTimer();
+	float RandSpeed();
 
 
 private:
@@ -104,9 +124,9 @@ private:
 	// 速度
 	std::vector<float>speeds;
 	// モデルフラッグ
-	std::vector<bool>modelFlag;
+	std::vector<bool>modelFlags;
 	// 生成時間
-	int createTimer = 0;
+	int createTimer[MAX_TIMER] = {};
 	// 存在フラッグ
 	bool existenceFlag = false;
 

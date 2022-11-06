@@ -22,84 +22,81 @@ Enemy::~Enemy()
 	{
 		delete model[i];
 	}
-	//　オブジェクト解放
-	for (int i = 0; i < objects.size(); i++)
+	// オブジェクト解放
+	for (auto& object : objects)
 	{
-		delete objects[i];
+		delete object;
 	}
+	// スピード情報解放
+	speeds.clear();
+	// モデルフラッグ解放
+	modelFlags.clear();
 }
 
 void Enemy::Initialize()
 {
+	srand(time(NULL));
 	// モデル読み込み
 	model[car] = Model::LoadFromOBJ("car");
 	model[track] = Model::LoadFromOBJ("track");
 	// 生成時間
-	createTimer = 90;
+	for (int i = 0; i < MAX_TIMER; i++)
+	{
+		createTimer[i] = (rand() % RANDTIMER_MAX) + RANDTIMER_MINI;
+	}
 	// 存在フラッグ
 	existenceFlag = false;
 }
 
-void Enemy::AutoSprint(int i)
+void Enemy::AutoSprint(int number)
 {
-	XMFLOAT3 pos = objects[i]->GetPosition();
-	pos.z += speeds[i];
-	objects[i]->SetPosition(pos);
+	XMFLOAT3 pos = objects[number]->GetPosition();
+	pos.z += speeds[number];
+	objects[number]->SetPosition(pos);
 }
 
-int Enemy::RandValue(const int maxValue, const int miniValue)
+DirectX::XMFLOAT3 Enemy::RandPos(int number)
 {
-	if (miniValue == 0)
+	if (number == left_Second)
 	{
-		return rand() % maxValue;
+		return { -SIDELINE, 0.0f, player_Pos.z + BASEPOS };
+	}
+	else if (number == left_First)
+	{
+		return { -CENTERLINER, 0.0f, player_Pos.z + BASEPOS };
+	}
+	else if (number == right_First)
+	{
+		return { CENTERLINER, 0.0f, player_Pos.z + BASEPOS };
 	}
 	else
 	{
-		return (rand() % maxValue) + miniValue;
-	}
-}
-
-DirectX::XMFLOAT3 Enemy::RandPos()
-{
-	int randFlag = rand() % 4;
-	if (randFlag == 0)
-	{
-		return { -5.3f, 0.0f, player_Pos.z + 310.0f };
-	}
-	else if (randFlag == 1)
-	{
-		return { -1.8f, 0.0f, player_Pos.z + 310.0f };
-	}
-	else if (randFlag == 2)
-	{
-		return { 1.8f, 0.0f, player_Pos.z + 310.0f };
-	}
-	else
-	{
-		return { 5.3f, 0.0f, player_Pos.z + 310.0f };
+		return { SIDELINE, 0.0f, player_Pos.z + BASEPOS };
 	}
 }
 
 short Enemy::RandModel()
 {
-	modelFlag.push_back(rand() % MAX_MODEL);
-	return modelFlag[objects.size()];
+	modelFlags.push_back(rand() % MAX_MODEL);
+	return modelFlags[objects.size()];
 }
 
-int Enemy::RandTimer()
+float Enemy::RandSpeed()
 {
-	if (player_Speed > 0.0f && player_Speed <= 0.5f)
+	int randFlag = rand() % MAX_SPEED;
+	if (randFlag == First)
 	{
-		return (rand() % 10) + 80;
+		return BottonSpeed;
 	}
-	else if (player_Speed > 0.5f && player_Speed <= 1.0f)
+	else if (randFlag == Second)
 	{
-		return (rand() % 10) + 40;
+		return MiddleSpeed;
 	}
 	else
 	{
-		return (rand() % 10) + 20;
+		return TopSpeed;
 	}
+	
 }
 
 void Enemy::Update(const XMFLOAT3& playerPos, const float& playerSpeed)
@@ -109,16 +106,16 @@ void Enemy::Update(const XMFLOAT3& playerPos, const float& playerSpeed)
 	player_Speed = playerSpeed;
 
 	// タイマー
-	createTimer--;
-	if (createTimer <= 0)
+	for (int i = 0; i < MAX_TIMER; i++)
 	{
-		// 0.1 90  1.5 20
-		// ※
-		createTimer = RandTimer();
-		// ※
-		speeds.push_back(0.5f);
-		objects.push_back(Object3d::Create(RandPos(), model[RandModel()]));
+		createTimer[i]--;
+		if (createTimer[i] <= 0)
+		{
+			createTimer[i] = (rand() % RANDTIMER_MAX) + RANDTIMER_MINI;
+			speeds.push_back(RandSpeed());
+			objects.push_back(Object3d::Create(RandPos(i), model[RandModel()]));
 
+		}
 	}
 
 
@@ -134,7 +131,7 @@ void Enemy::Update(const XMFLOAT3& playerPos, const float& playerSpeed)
 				//　データ外列の
 				objects.erase(objects.begin() + i);
 				speeds.erase(speeds.begin() + i);
-				modelFlag.erase(modelFlag.begin() + i);
+				modelFlags.erase(modelFlags.begin() + i);
 			}
 			// オブジェクトデータ更新
 			objects[i]->Update();
@@ -170,9 +167,9 @@ const DirectX::XMFLOAT3& Enemy::GetPos(const int& number)
 const bool& Enemy::GetModelFlag(const int& number)
 {
 	// データがあれば
-	if (!modelFlag.empty())
+	if (!modelFlags.empty())
 	{
-		return modelFlag[number];
+		return modelFlags[number];
 	}
 	else
 	{
