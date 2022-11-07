@@ -31,8 +31,6 @@ void Player::Initialize()
 	model_Bike = Model::LoadFromOBJ("bike", true);
 	// オブジェクト生成
 	obj_Bike = Object3d::Create(pos, model_Bike);
-	// 初期回転
-	rot = { 0.0f, 0.0f, 0.0f };
 	// 初速度
 	speed = { 0.1f, 0.0f, 0.1f };
 	// モデル読み込み
@@ -43,79 +41,58 @@ void Player::Initialize()
 
 void Player::BesideMove()
 {
-	// パッド操作
-	if (Input::GetInstacne()->CheckPad())
+	// 左移動
+	if (Input::GetInstacne()->PushKey(DIK_LEFT) && rot.z <= MAX_ROT)
 	{
-		// 左移動
-		if (Input::GetInstacne()->TiltLeftStick(StickLeft))
-		{
-			rot.z += 0.1f;
-			pos.x -= rot.z / 15.0f;
-		}
-		// 右移動
-		else if (Input::GetInstacne()->TiltLeftStick(StickRight))
-		{
-			rot.z -= 0.1f;
-			pos.x -= rot.z / 15.0f;
-		}
-		// キーを離した時
-		else
-		{
-			rot.z = 0.0f;
-		}
-	}
-	// キーボード操作
-	else
-	{
-		// 左移動
-		if (Input::GetInstacne()->PushKey(DIK_A))
-		{
-			rot.z += 0.1f;
-			pos.x -= rot.z / 15.0f;
-		}
-
-		// 右移動
-		if (Input::GetInstacne()->PushKey(DIK_D))
-		{
-			rot.z -= 0.1f;
-			pos.x -= rot.z / 15.0f;
-		}
-
-		// キーを離した時
-		if (Input::GetInstacne()->AwayKey(DIK_A) || Input::GetInstacne()->AwayKey(DIK_D))
-		{
-			rot.z = 0.0f;
-		}
+		rot.z += MAX_ROTSPEED;
 	}
 
+	// 右移動
+	if (Input::GetInstacne()->PushKey(DIK_RIGHT) && rot.z >= -MAX_ROT)
+	{
+		rot.z -= MAX_ROTSPEED;
+	}
+
+	// 回転角によるX軸のスピード変動
+	if (rot.z <= PARTITION_ROT && rot.z >= -PARTITION_ROT)
+	{
+		speed.x = 0.0f;
+	}
+	if (rot.z > PARTITION_ROT)
+	{
+		speed.x -= ACC_POWER;
+	}
+	if (rot.z < -PARTITION_ROT)
+	{
+		speed.x += ACC_POWER;
+	}
+
+	pos.x += speed.x;
 }
 
 float Player::Fluctuation()
 {
 	// 加速
-	if (speed.z < 1.5f)
+	if (speed.z < MAX_SPEED)
 	{
-		if (Input::GetInstacne()->TiltRightStick(StickUp) ||
-			Input::GetInstacne()->PushKey(DIK_W))
+		if (Input::GetInstacne()->PushKey(DIK_W))
 		{
-			speed.z += 0.01f;
+			speed.z += ACC_POWER;
 		}
 	}
 
-	// 規定値より上なら
-	if (speed.z >= 0.12f)
+	// 減速
+	if (speed.z >= MINI_SPEED)
 	{
 		// 惰性走行
-		//if (Input::GetInstacne()->TiltLeftStick(StickUp) == false ||
-		//	Input::GetInstacne()->PushKey(DIK_W) == false)
-		//{
-		//	speed.z -= 0.005f;
-		//}
-		// ブレーキ
-		if (Input::GetInstacne()->TiltRightStick(StickDown) ||
-			Input::GetInstacne()->PushKey(DIK_S))
+		if (Input::GetInstacne()->PushKey(DIK_W) == false && Input::GetInstacne()->PushKey(DIK_S) == false)
 		{
-			speed.z -= 0.01f;
+			speed.z -= INE_POWER;
+		}
+		// ブレーキ
+		else if (Input::GetInstacne()->PushKey(DIK_S))
+		{
+			speed.z -= BRA_POWER;
 		}
 	}
 

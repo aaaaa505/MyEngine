@@ -35,7 +35,7 @@ enum LineNumber
 	left_Second,
 	left_First, 
 	right_First,
-	rightSecond,
+	right_Second,
 };
 
 enum SpeedNumber
