@@ -8,20 +8,21 @@
 #define RADIUS_Z 1.8f
 
 // 速度(Z)
-#define MAX_SPEED 1.5f
+#define MAX_SPEED 1.8f
 #define MINI_SPEED 0.15f
 
 // 回転角
 #define MAX_ROT 19.0f
 #define MAX_ROTSPEED 1.7f
 #define PARTITION_ROT 7.0f
+#define MITIGATIONVALUE 130.0f
 
 // 加速力
 #define ACC_POWER 0.01f
 // 減速力
-#define BRA_POWER 0.025
+#define BRA_POWER 0.04f
 // 惰性力
-#define INE_POWER 0.005f
+#define INE_POWER 0.01f
 
 class Player
 {
@@ -103,6 +104,7 @@ private:
 	XMFLOAT3 rot{};
 	// スピード
 	XMFLOAT3 speed{};
-
+	// 加速度
+	XMFLOAT3 acc{};
 };
 

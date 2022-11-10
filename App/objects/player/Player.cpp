@@ -32,7 +32,7 @@ void Player::Initialize()
 	// オブジェクト生成
 	obj_Bike = Object3d::Create(pos, model_Bike);
 	// 初速度
-	speed = { 0.1f, 0.0f, 0.1f };
+	speed = { 0.0f, 0.0f, 0.1f };
 	// モデル読み込み
 	model_Dome = Model::LoadFromOBJ("skydome");
 	// オブジェクト生成
@@ -42,13 +42,13 @@ void Player::Initialize()
 void Player::BesideMove()
 {
 	// 左移動
-	if (Input::GetInstacne()->PushKey(DIK_LEFT) && rot.z <= MAX_ROT)
+	if (Input::GetInstacne()->PushKey(DIK_A) && rot.z <= MAX_ROT)
 	{
 		rot.z += MAX_ROTSPEED;
 	}
 
 	// 右移動
-	if (Input::GetInstacne()->PushKey(DIK_RIGHT) && rot.z >= -MAX_ROT)
+	if (Input::GetInstacne()->PushKey(DIK_D) && rot.z >= -MAX_ROT)
 	{
 		rot.z -= MAX_ROTSPEED;
 	}
@@ -60,11 +60,11 @@ void Player::BesideMove()
 	}
 	if (rot.z > PARTITION_ROT)
 	{
-		speed.x -= ACC_POWER;
+		speed.x -= speed.z / MITIGATIONVALUE;
 	}
 	if (rot.z < -PARTITION_ROT)
 	{
-		speed.x += ACC_POWER;
+		speed.x += speed.z / MITIGATIONVALUE;
 	}
 
 	pos.x += speed.x;

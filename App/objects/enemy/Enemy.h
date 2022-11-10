@@ -103,17 +103,16 @@ private:
 	XMFLOAT3 RandPos(int number);
 
 	/// <summary>
-	/// ランダムにモデルを決定する
+	/// ランダムにモデルを設定する
 	/// </summary>
 	/// <returns></returns>
 	short RandModel();
 
 	/// <summary>
-	/// ランダムにスピードを決定する
+	/// ランダムにスピードを設定する
 	/// </summary>
 	/// <returns></returns>
 	float RandSpeed();
-
 
 private:
 
@@ -134,4 +133,6 @@ private:
 	XMFLOAT3 player_Pos{};
 	// プレイヤースピード
 	float player_Speed = 0.0f;
+	
+
 };

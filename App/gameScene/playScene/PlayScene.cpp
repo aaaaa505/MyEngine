@@ -72,7 +72,7 @@ void PlayScene::Draw()
 	SpriteCommon::GetInstance()->PreDraw();
 	//デバッグテキスト描画
 	
-	sprintf_s(strDebug, "CreateTimer = %f", player->GetSpeed().z);
+	sprintf_s(strDebug, "Speed = 0.5f");
 	DebugText::GetInstance()->Print(strDebug, 0, 0, 2);
 	DebugText::GetInstance()->DrawAll();
 
