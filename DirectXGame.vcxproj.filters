@@ -121,6 +121,15 @@
     <Filter Include="App\Staging\Scroll">
       <UniqueIdentifier>{acb33086-1370-40ff-b5e7-53d8fc2e3387}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App\GameScene\ManualScene">
+      <UniqueIdentifier>{54e1a09f-95eb-46c7-a027-38623e6ed0a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Audio">
+      <UniqueIdentifier>{1fcdfed5-5716-47dd-989b-c19fab38c5b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Staging\CountDown">
+      <UniqueIdentifier>{357ce541-899d-42e8-ade5-6012c2aabc95}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\2d\DebugText\DebugText.cpp">
@@ -200,6 +209,15 @@
     </ClCompile>
     <ClCompile Include="App\staging\scroll\Scroll.cpp">
       <Filter>App\Staging\Scroll</Filter>
+    </ClCompile>
+    <ClCompile Include="App\gameScene\ManualScene\ManualScene.cpp">
+      <Filter>App\GameScene\ManualScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Audio\Audio.cpp">
+      <Filter>Engine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="App\staging\CountDown\CountDown.cpp">
+      <Filter>App\Staging\CountDown</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -283,6 +301,15 @@
     </ClInclude>
     <ClInclude Include="App\staging\scroll\Scroll.h">
       <Filter>App\Staging\Scroll</Filter>
+    </ClInclude>
+    <ClInclude Include="App\gameScene\ManualScene\ManualScene.h">
+      <Filter>App\GameScene\ManualScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Audio\Audio.h">
+      <Filter>Engine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="App\staging\CountDown\CountDown.h">
+      <Filter>App\Staging\CountDown</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

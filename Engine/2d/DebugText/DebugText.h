@@ -7,9 +7,9 @@ class DebugText
 {
 public: //定数の宣言    
 	static const int maxCharCount = 256;//最大文字数
-	static const int fontWidth = 9;//フォント画像内1文字分の横幅
-	static const int fontHeight = 18;//フォント画像内1文字分の縦幅
-	static const int fontLineCount = 14;//フォント画像内1行分の文字数
+	static const int fontWidth = 32;//フォント画像内1文字分の横幅 9
+	static const int fontHeight = 64;//フォント画像内1文字分の縦幅 18
+	static const int fontLineCount = 10;//フォント画像内1行分の文字数 14
 
 public: //メンバ関数
 

@@ -1,10 +1,6 @@
 #pragma once
 #include "Object3d.h"
 
-// モデルの最大数
-#define MAX_MODEL 2
-#define MAX_TIMER 4
-#define MAX_SPEED 3
 // TRACKモデルのサイズ
 #define TRACK_RADIUS_X 1.3f
 #define TRACK_RADIUS_Z 6.1f
@@ -50,6 +46,12 @@ private: // エイリアス
 	using XMFLOAT3 = DirectX::XMFLOAT3;
 	using XMFLOAT4 = DirectX::XMFLOAT4;
 
+public:// 定数
+	static const int maxModel = 2;// モデルの最大数
+	static const int maxTimer = 4;// タイマーの最大数
+	static const int maxSpeedPattern = 3;// スピードパターンの最大数
+
+
 public: // 静的メンバ関数
 
 	/// <summary>
@@ -74,13 +76,13 @@ public: // メンバ関数
 
 #pragma region getter
 	// 生成タイマー取得
-	int GetCreateTimer() { return createTimer[0]; }
+	const int& GetCreateTimer() { return createTimer[0]; }
 	// データ数を取得
-	int GetDataSize() { return objects.size(); }
+	size_t GetDataSize() { return objects.size(); }
 	// 座標取得
-	const XMFLOAT3& GetPos(const int& number);
+	XMFLOAT3 GetPos(const int& number);
 	// モデルフラッグ取得
-	const bool& GetModelFlag(const int& number);
+	bool GetModelFlag(const int& number);
 #pragma endregion
 
 
@@ -117,7 +119,7 @@ private:
 private:
 
 	// 車モデル
-	Model* model[MAX_MODEL] = { nullptr };
+	Model* model[maxModel] = { nullptr };
 	// オブジェクト
 	std::vector<Object3d*>objects;
 	// 速度
@@ -125,7 +127,7 @@ private:
 	// モデルフラッグ
 	std::vector<bool>modelFlags;
 	// 生成時間
-	int createTimer[MAX_TIMER] = {};
+	int createTimer[maxTimer] = {};
 	// 存在フラッグ
 	bool existenceFlag = false;
 

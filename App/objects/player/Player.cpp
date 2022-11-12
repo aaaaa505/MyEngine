@@ -72,31 +72,38 @@ void Player::BesideMove()
 
 float Player::Fluctuation()
 {
-	// 加速
-	if (speed.z < MAX_SPEED)
+	if (!startFlag)
 	{
-		if (Input::GetInstacne()->PushKey(DIK_W))
-		{
-			speed.z += ACC_POWER;
-		}
+		return 0.1f;
 	}
-
-	// 減速
-	if (speed.z >= MINI_SPEED)
+	else
 	{
-		// 惰性走行
-		if (Input::GetInstacne()->PushKey(DIK_W) == false && Input::GetInstacne()->PushKey(DIK_S) == false)
+		// 加速
+		if (speed.z < MAX_SPEED)
 		{
-			speed.z -= INE_POWER;
+			if (Input::GetInstacne()->PushKey(DIK_W))
+			{
+				speed.z += ACC_POWER;
+			}
 		}
-		// ブレーキ
-		else if (Input::GetInstacne()->PushKey(DIK_S))
-		{
-			speed.z -= BRA_POWER;
-		}
-	}
 
-	return speed.z;
+		// 減速
+		if (speed.z >= MINI_SPEED)
+		{
+			// 惰性走行
+			if (Input::GetInstacne()->PushKey(DIK_W) == false && Input::GetInstacne()->PushKey(DIK_S) == false)
+			{
+				speed.z -= INE_POWER;
+			}
+			// ブレーキ
+			else if (Input::GetInstacne()->PushKey(DIK_S))
+			{
+				speed.z -= BRA_POWER;
+			}
+		}
+
+		return speed.z;
+	}
 }
 
 void Player::AutoSprint()
@@ -107,53 +114,28 @@ void Player::AutoSprint()
 	obj_Bike->SetPosition(pos);
 }
 
-void Player::DebugMove()
+void Player::Update(bool startFlag)
 {
-	if (Input::GetInstacne()->PushMoveKey())
-	{
-		if (Input::GetInstacne()->PushKey(DIK_W))
-		{
-			pos.z += 0.1f;
-		}
-
-		if (Input::GetInstacne()->PushKey(DIK_A))
-		{
-			pos.x -= 0.1f;
-		}
-
-		if (Input::GetInstacne()->PushKey(DIK_S))
-		{
-			pos.z -= 0.1f;
-		}
-
-		if (Input::GetInstacne()->PushKey(DIK_D))
-		{
-			pos.x += 0.1f;
-		}
-	}
-}
-
-void Player::Update()
-{
+	this->startFlag = startFlag;
 	// 横移動
 	BesideMove();
+
 	// 自動移動
 	AutoSprint();
-	//DebugMove();
+
 	// カメラ追従
-	camera->SetEye({pos.x, pos.y + 1.7f, pos.z - 0.3f});
-	camera->SetTarget({pos.x, pos.y + 1.7f, pos.z + 1.0f});
+	camera->SetEye({ pos.x, pos.y + 1.7f, pos.z - 0.3f });
+	camera->SetTarget({ pos.x, pos.y + 1.7f, pos.z + 1.0f });
+
 
 	// カメラ更新
 	camera->Update();
-
 	// 回転を反映
 	obj_Bike->SetRotation(rot);
 	// 座標を反映
 	obj_Bike->SetPosition(pos);
 	// バイク更新
 	obj_Bike->Update();
-
 	// 座標反映
 	obj_Dome->SetPosition({ pos.x, pos.y, pos.z + 150.0f });
 	// スカイドーム更新

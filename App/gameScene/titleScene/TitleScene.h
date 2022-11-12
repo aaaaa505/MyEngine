@@ -6,8 +6,17 @@
 
 class TitleScene : public BaseScene
 {
+public:// 定数
+	static const int maxTex = 3;// タイトル画像の最大数
+
 public:
-	
+	enum Select
+	{
+		start = 1,
+		manual,
+	};
+
+public:
 	/// <summary>
 	/// 初期化
 	/// </summary>
@@ -29,6 +38,7 @@ public:
 	void Draw() override;
 
 private:// メンバ変数
-	Sprite* sprite = nullptr;
+	Sprite* sprites[maxTex];
+	USHORT texFlag = 0;
 };
 

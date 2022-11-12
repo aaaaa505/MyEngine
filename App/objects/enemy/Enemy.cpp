@@ -18,7 +18,7 @@ Enemy* Enemy::Create()
 Enemy::~Enemy()
 {
 	// モデル解放
-	for (int i = 0; i < MAX_MODEL; i++)
+	for (int i = 0; i < maxModel; i++)
 	{
 		delete model[i];
 	}
@@ -40,7 +40,7 @@ void Enemy::Initialize()
 	model[car] = Model::LoadFromOBJ("car");
 	model[track] = Model::LoadFromOBJ("track");
 	// 生成時間
-	for (int i = 0; i < MAX_TIMER; i++)
+	for (int i = 0; i < maxTimer; i++)
 	{
 		createTimer[i] = (rand() % RANDTIMER_MAX) + RANDTIMER_MINI;
 	}
@@ -77,13 +77,13 @@ DirectX::XMFLOAT3 Enemy::RandPos(int number)
 
 short Enemy::RandModel()
 {
-	modelFlags.push_back(rand() % MAX_MODEL);
+	modelFlags.push_back(rand() % maxModel);
 	return modelFlags[objects.size()];
 }
 
 float Enemy::RandSpeed()
 {
-	int randFlag = rand() % MAX_SPEED;
+	int randFlag = rand() % maxSpeedPattern;
 	if (randFlag == First)
 	{
 		return BottonSpeed;
@@ -106,14 +106,17 @@ void Enemy::Update(const XMFLOAT3& playerPos, const float& playerSpeed)
 	player_Speed = playerSpeed;
 
 	// タイマー
-	for (int i = 0; i < MAX_TIMER; i++)
+	if (player_Speed > 1.0f)
 	{
-		createTimer[i]--;
-		if (createTimer[i] <= 0)
+		for (int i = 0; i < maxTimer; i++)
 		{
-			createTimer[i] = (rand() % RANDTIMER_MAX) + RANDTIMER_MINI;
-			speeds.push_back(RandSpeed());
-			objects.push_back(Object3d::Create(RandPos(i), model[RandModel()]));
+			createTimer[i]--;
+			if (createTimer[i] <= 0)
+			{
+				createTimer[i] = (rand() % RANDTIMER_MAX) + RANDTIMER_MINI;
+				speeds.push_back(RandSpeed());
+				objects.push_back(Object3d::Create(RandPos(i), model[RandModel()]));
+			}
 		}
 	}
 
@@ -147,7 +150,7 @@ void Enemy::Draw()
 	}
 }
 
-const DirectX::XMFLOAT3& Enemy::GetPos(const int& number)
+DirectX::XMFLOAT3 Enemy::GetPos(const int& number)
 {
 	// データがあれば
 	if (!objects.empty())
@@ -160,7 +163,7 @@ const DirectX::XMFLOAT3& Enemy::GetPos(const int& number)
 	}
 }
 
-const bool& Enemy::GetModelFlag(const int& number)
+bool Enemy::GetModelFlag(const int& number)
 {
 	// データがあれば
 	if (!modelFlags.empty())

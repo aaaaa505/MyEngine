@@ -2,6 +2,7 @@
 #include "WinApp.h"
 #include "DirectXCommon.h"
 #include "Input.h"
+#include "Audio.h"
 #include "DebugText.h"
 #include "LoadSprite.h"
 #include "Object3d.h"
@@ -47,6 +48,7 @@ protected:
 	DirectXCommon* dxCommon = nullptr;
 	SpriteCommon* spriteCommon = nullptr;
 	Input* input = nullptr;
+	Audio* audio = nullptr;
 	DebugText* debugText = nullptr;
 	AbstractSceneFactory* sceneFactory = nullptr;
 

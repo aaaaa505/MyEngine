@@ -124,6 +124,9 @@ public://ƒƒ“ƒoŠÖ”
 
 	void SetColor(XMFLOAT4 color) { this->color = color; }
 
+
+	const XMFLOAT2& GetSize() {return size;}
+	const float& GetAlpha() { return color.w; }
 #pragma endregion
 
 private:// ƒƒ“ƒoŠÖ”

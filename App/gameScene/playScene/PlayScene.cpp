@@ -13,13 +13,15 @@ void PlayScene::Initialize()
 	enemy = Enemy::Create();
 	// フィールド生成
 	scroll = Scroll::Create();
+	// カウントダウン生成
+	countDown = CountDown::Create();
 }
 
 void PlayScene::Finalize()
 {
 	// プレイヤー解放
 	delete player;
-	// エネミー解放
+	// エネミー解放wwwwwww
 	delete enemy;
 	// フィールド解放
 	delete scroll;
@@ -49,12 +51,16 @@ void PlayScene::Updata()
 		}
 	}
 
+	
+
 	// プレイヤー更新
-	player->Update();
+	player->Update(countDown->GetStartFlag());
 	// エネミー更新
 	enemy->Update(player->GetPos(), player->GetSpeed().z);
 	// フィールド更新
 	scroll->Update(player->GetPos());
+
+	if (!countDown->GetStartFlag()){ countDown->Update(); }
 }
 
 void PlayScene::Draw()
@@ -68,12 +74,11 @@ void PlayScene::Draw()
 	enemy->Draw();
 	// フィールド描画
 	scroll->Draw();
+	
 	// スプライト前処理
 	SpriteCommon::GetInstance()->PreDraw();
-	//デバッグテキスト描画
-	
-	sprintf_s(strDebug, "Speed = 0.5f");
-	DebugText::GetInstance()->Print(strDebug, 0, 0, 2);
+	if (!countDown->GetStartFlag()) { countDown->Draw(); }
+	sprintf_s(strDebug, "11111");
+	DebugText::GetInstance()->Print(strDebug, 0.0f, 0.0f, 2);
 	DebugText::GetInstance()->DrawAll();
-
 }

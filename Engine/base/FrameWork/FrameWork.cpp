@@ -14,6 +14,13 @@ void FrameWork::Initialize()
 	input = Input::GetInstacne();
 	input->Initialize(winApp);
 
+	// オーディオの初期化
+	audio = Audio::GetInstance();
+	if (!audio->Initialize())
+	{
+		assert(0);
+	}
+
 	// 確保したスプライト共通部分インスタンスを初期化
 	spriteCommon = SpriteCommon::GetInstance();
 	spriteCommon->Initialize(dxCommon->Getdev(), dxCommon->GetCmdList(), WinApp::window_width, WinApp::window_height);
@@ -23,7 +30,7 @@ void FrameWork::Initialize()
 
 	// デバッグテキスト生成
 	debugText = DebugText::GetInstance();
-	debugText->Initialize(debugTextTexNumber);
+	debugText->Initialize(NumberNumber);
 
 	// オブジェクト3Dの静的初期化
 	Object3d::StaticInitialize(dxCommon->Getdev(), dxCommon->GetCmdList());

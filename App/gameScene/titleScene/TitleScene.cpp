@@ -2,31 +2,70 @@
 #include "Input.h"
 #include "DebugText.h"
 #include "SceneManager.h"
+#include "Audio.h"
 
 void TitleScene::Initialize()
 {
-#pragma region スプライト
-	// スプライト生成
-	sprite = Sprite::Create(title_Number, { 0.0f, 0.0f });
-#pragma endregion
+	for (int i = 0; i < maxTex; i++)
+	{
+		// スプライト生成
+		sprites[i] = Sprite::Create(title_None_Number + i, {0.0f, 0.0f});
+	}
+
+	Audio::GetInstance()->LoadWave("title.wav");
+	Audio::GetInstance()->LoadWave("select.wav");
 }
 
 void TitleScene::Finalize()
 {
 	// スプライト解放
-	delete sprite;
+	for (int i = 0; i < maxTex; i++)
+	{
+		delete sprites[i];
+	}
 }
 
 void TitleScene::Updata()
 {
 	Input* input = Input::GetInstacne();
-	if (input->PushButton(Button_A))
+	Audio* audio = Audio::GetInstance();
+
+	audio->PlayWave("title.wav", true);
+
+	if (input->TriggerKey(DIK_S))
 	{
-		// シーン切り替え
-		SceneManager::GetInstance()->ChangeScene("PLAY");
+		audio->StopWave("select.wav");
+		audio->PlayWave("select.wav", false);
+		texFlag = manual;
 	}
 
-	sprite->Updata();
+	if (input->TriggerKey(DIK_W))
+	{
+		audio->StopWave("select.wav");
+		audio->PlayWave("select.wav", false);
+		texFlag = start;
+	}
+
+	if (texFlag == start)
+	{
+		if (input->TriggerKey(DIK_SPACE))
+		{
+			// シーン切り替え
+			SceneManager::GetInstance()->ChangeScene("PLAY");
+			audio->StopWave("title.wav");
+		}
+	}
+	
+	else if (texFlag == manual)
+	{
+		if (input->TriggerKey(DIK_SPACE))
+		{
+			// シーン切り替え
+			SceneManager::GetInstance()->ChangeScene("MANUAL");
+		}
+	}
+
+	sprites[texFlag]->Updata();
 }
 
 void TitleScene::Draw()
@@ -34,6 +73,5 @@ void TitleScene::Draw()
 	// スプライト前処理
 	SpriteCommon::GetInstance()->PreDraw();
 	// スプライト描画
-	sprite->Draw();
-
+	sprites[texFlag]->Draw();
 }

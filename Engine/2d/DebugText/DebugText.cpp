@@ -39,7 +39,7 @@ void DebugText::Print(const std::string& text, float x, float y, float size)
 		const unsigned char& character = text[i];
 
 		//ASCIIコードの2段分飛ばした番号を計算
-		int fontIndex = character - 32;
+		int fontIndex = character - 48;//32
 		if (character >= 0x7f) {
 			fontIndex = 0;
 		}

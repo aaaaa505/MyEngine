@@ -45,7 +45,7 @@ public:
 	/// <summary>
 	/// 更新
 	/// </summary>
-	void Update();
+	void Update(bool startFlag);
 
 	/// <summary>
 	/// 描画処理
@@ -63,7 +63,7 @@ public:
 private:
 	/// <summary>
 	/// 生成処理
-	/// </summary>
+	/// </summary>B
 	void Initialize();
 
 	/// <summary>
@@ -80,11 +80,6 @@ private:
 	/// 加速
 	/// </summary>
 	float Fluctuation();
-
-	/// <summary>
-	/// デバッグ用
-	/// </summary>
-	void DebugMove();
 
 private:
 	// カメラ
@@ -106,5 +101,8 @@ private:
 	XMFLOAT3 speed{};
 	// 加速度
 	XMFLOAT3 acc{};
+
+	// レース開始フラッグ
+	bool startFlag = false;
 };
 
