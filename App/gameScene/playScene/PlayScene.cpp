@@ -1,7 +1,7 @@
 #include "PlayScene.h"
 #include "TitleScene.h"
 #include "Input.h"
-#include "DebugText.h"
+#include "DrawNumber.h"
 #include "SceneManager.h"
 #include "Collision.h"
 
@@ -61,6 +61,9 @@ void PlayScene::Updata()
 	scroll->Update(player->GetPos());
 
 	if (!countDown->GetStartFlag()){ countDown->Update(); }
+
+	sprintf_s(str, "%d", 60);
+	DrawNumber::GetInstance()->Updata(str, 60, {0.0f, 0.0f}, 2);
 }
 
 void PlayScene::Draw()
@@ -78,7 +81,6 @@ void PlayScene::Draw()
 	// スプライト前処理
 	SpriteCommon::GetInstance()->PreDraw();
 	if (!countDown->GetStartFlag()) { countDown->Draw(); }
-	sprintf_s(strDebug, "11111");
-	DebugText::GetInstance()->Print(strDebug, 0.0f, 0.0f, 2);
-	DebugText::GetInstance()->DrawAll();
+	
+	DrawNumber::GetInstance()->DrawAll();
 }

@@ -48,7 +48,6 @@ private:
 	// カウントダウン
 	CountDown* countDown = nullptr;
 
-	// デバッグテキスト用
-	char strDebug[100];
+	char str[100];
 };
 

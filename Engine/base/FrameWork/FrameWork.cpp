@@ -30,7 +30,11 @@ void FrameWork::Initialize()
 
 	// デバッグテキスト生成
 	debugText = DebugText::GetInstance();
-	debugText->Initialize(NumberNumber);
+	debugText->Initialize(debugTextTexNumber);
+
+	// Drawナンバー生成
+	drawNumber = DrawNumber::GetInstance();
+	drawNumber->Initialize(NumberNumber);
 
 	// オブジェクト3Dの静的初期化
 	Object3d::StaticInitialize(dxCommon->Getdev(), dxCommon->GetCmdList());

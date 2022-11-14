@@ -16,9 +16,6 @@
     <Filter Include="Engine\2D">
       <UniqueIdentifier>{dbb99018-01cd-456d-ab25-0ebbbc72ccee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\2D\DebugText">
-      <UniqueIdentifier>{c8690236-0dde-4b5d-a66f-5c0987aada4a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\2D\LoadSprite">
       <UniqueIdentifier>{4900f846-aa53-4042-bdce-6e7c3e0a3893}</UniqueIdentifier>
     </Filter>
@@ -66,9 +63,6 @@
     </Filter>
     <Filter Include="Engine\Base\Main">
       <UniqueIdentifier>{ee54b079-1710-4500-9a95-3a7776e4afff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Base\FrameWork">
-      <UniqueIdentifier>{225e559d-4f85-4ce0-aaa3-eed1425fa6af}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\Base\MyGame">
       <UniqueIdentifier>{5d724db5-af71-4bdc-8757-37f1b7420c30}</UniqueIdentifier>
@@ -130,11 +124,14 @@
     <Filter Include="App\Staging\CountDown">
       <UniqueIdentifier>{357ce541-899d-42e8-ade5-6012c2aabc95}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\2D\Text">
+      <UniqueIdentifier>{62b12941-38b0-4386-b141-2c3945ee0a72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Base\FrameWork">
+      <UniqueIdentifier>{225e559d-4f85-4ce0-aaa3-eed1425fa6af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Engine\2d\DebugText\DebugText.cpp">
-      <Filter>Engine\2D\DebugText</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\2d\LoadSprite\LoadSprite.cpp">
       <Filter>Engine\2D\LoadSprite</Filter>
     </ClCompile>
@@ -161,9 +158,6 @@
     </ClCompile>
     <ClCompile Include="Engine\3d\obj\Object3d\Object3d.cpp">
       <Filter>Engine\3D\OBJ\Object3d</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\base\DirectXCommon\DirectXCommon.cpp">
-      <Filter>Engine\Base\DirectXCommon</Filter>
     </ClCompile>
     <ClCompile Include="Engine\base\FrameWork\FrameWork.cpp">
       <Filter>Engine\Base\FrameWork</Filter>
@@ -219,11 +213,17 @@
     <ClCompile Include="App\staging\CountDown\CountDown.cpp">
       <Filter>App\Staging\CountDown</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\2d\Text\DebugText.cpp">
+      <Filter>Engine\2D\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\2d\Text\DrawNumber.cpp">
+      <Filter>Engine\2D\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\base\DirectXCommon\DirectXCommon.cpp">
+      <Filter>Engine\Base\DirectXCommon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Engine\2d\DebugText\DebugText.h">
-      <Filter>Engine\2D\DebugText</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\2d\LoadSprite\LoadSprite.h">
       <Filter>Engine\2D\LoadSprite</Filter>
     </ClInclude>
@@ -250,9 +250,6 @@
     </ClInclude>
     <ClInclude Include="Engine\3d\obj\Object3d\Object3d.h">
       <Filter>Engine\3D\OBJ\Object3d</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\base\DirectXCommon\DirectXCommon.h">
-      <Filter>Engine\Base\DirectXCommon</Filter>
     </ClInclude>
     <ClInclude Include="Engine\base\FrameWork\FrameWork.h">
       <Filter>Engine\Base\FrameWork</Filter>
@@ -310,6 +307,15 @@
     </ClInclude>
     <ClInclude Include="App\staging\CountDown\CountDown.h">
       <Filter>App\Staging\CountDown</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\2d\Text\DebugText.h">
+      <Filter>Engine\2D\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\2d\Text\DrawNumber.h">
+      <Filter>Engine\2D\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\base\DirectXCommon\DirectXCommon.h">
+      <Filter>Engine\Base\DirectXCommon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

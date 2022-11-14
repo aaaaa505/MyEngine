@@ -25,7 +25,7 @@ void DebugText::Finalize()
 }
 
 //デバッグ文字列の描画
-void DebugText::Print(const std::string& text, float x, float y, float size)
+void DebugText::Print(const std::string& text, const XMFLOAT2& pos, const float& size)
 {
 	//全ての文字について
 	for (int i = 0; i < text.size(); i++)
@@ -48,7 +48,7 @@ void DebugText::Print(const std::string& text, float x, float y, float size)
 		int fontIndexX = fontIndex % fontLineCount;
 
 		//座標計算
-		spriteDatas[spriteIndex]->SetPosition({ x + fontWidth * size * i, y});
+		spriteDatas[spriteIndex]->SetPosition({ pos.x + fontWidth * size * i, pos.y});
 		spriteDatas[spriteIndex]->SetTextureRect({ (float)fontIndexX * fontWidth, (float)fontIndexY * fontHeight }, { (float)fontWidth, (float)fontHeight });
 		spriteDatas[spriteIndex]->SetSize({ fontWidth * size, fontHeight * size });
 		spriteDatas[spriteIndex]->SetAlpha(100.0f);

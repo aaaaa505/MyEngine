@@ -74,7 +74,7 @@ void CountDown::Update()
 		alpha -= decayPower;
 		sprite->SetAlpha(alpha);
 		sprite->SetSize(size);
-		if (alpha < -3.0f)
+		if (alpha < -2.5f)
 		{
 			startFlag = true;
 			audio->StopWave("countDown.wav");

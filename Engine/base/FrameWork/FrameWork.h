@@ -4,6 +4,7 @@
 #include "Input.h"
 #include "Audio.h"
 #include "DebugText.h"
+#include "DrawNumber.h"
 #include "LoadSprite.h"
 #include "Object3d.h"
 #include "Sprite.h"
@@ -50,6 +51,7 @@ protected:
 	Input* input = nullptr;
 	Audio* audio = nullptr;
 	DebugText* debugText = nullptr;
+	DrawNumber* drawNumber = nullptr;
 	AbstractSceneFactory* sceneFactory = nullptr;
 
 };
