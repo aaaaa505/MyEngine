@@ -19,6 +19,11 @@ Player::~Player()
 	delete model_Bike;
 	// オブジェクト解放
 	delete obj_Bike;
+
+	// ドームモデル
+	delete model_Dome;
+	// ドームオブジェクト
+	delete obj_Dome;
 }
 
 void Player::Initialize()
@@ -37,6 +42,10 @@ void Player::Initialize()
 	model_Dome = Model::LoadFromOBJ("skydome");
 	// オブジェクト生成
 	obj_Dome = Object3d::Create({0.0f, 0.0f, 0.0f}, model_Dome);
+
+	//audio = Audio::GetInstance();
+	//audio->LoadWave("bike.wav");
+	//audio->SetVolume("bike.wav", volume);
 }
 
 void Player::BesideMove()
@@ -67,7 +76,9 @@ void Player::BesideMove()
 		speed.x += speed.z / MITIGATIONVALUE;
 	}
 
+
 	pos.x += speed.x;
+
 }
 
 float Player::Fluctuation()
@@ -84,6 +95,7 @@ float Player::Fluctuation()
 			if (Input::GetInstacne()->PushKey(DIK_W))
 			{
 				speed.z += ACC_POWER;
+				volume += 0.001f;
 			}
 		}
 
@@ -94,11 +106,13 @@ float Player::Fluctuation()
 			if (Input::GetInstacne()->PushKey(DIK_W) == false && Input::GetInstacne()->PushKey(DIK_S) == false)
 			{
 				speed.z -= INE_POWER;
+				volume -= INE_POWER;
 			}
 			// ブレーキ
 			else if (Input::GetInstacne()->PushKey(DIK_S))
 			{
 				speed.z -= BRA_POWER;
+				volume -= BRA_POWER;
 			}
 		}
 
@@ -116,30 +130,41 @@ void Player::AutoSprint()
 
 void Player::Update(bool startFlag)
 {
-	this->startFlag = startFlag;
-	// 横移動
-	BesideMove();
+	if (!hitFlag)
+	{
+		this->startFlag = startFlag;
+		// 横移動
+		BesideMove();
 
-	// 自動移動
-	AutoSprint();
+		// 自動移動
+		AutoSprint();
 
-	// カメラ追従
-	camera->SetEye({ pos.x, pos.y + 1.7f, pos.z - 0.3f });
-	camera->SetTarget({ pos.x, pos.y + 1.7f, pos.z + 1.0f });
+		// カメラ追従
+		camera->SetEye({ pos.x, pos.y + 1.7f, pos.z - 0.3f });
+		camera->SetTarget({ pos.x, pos.y + 1.7f, pos.z + 1.0f });
 
+		//audio->SetVolume("bike.wav",volume);
+		//audio->PlayWave("bike.wav", true);
 
-	// カメラ更新
-	camera->Update();
-	// 回転を反映
-	obj_Bike->SetRotation(rot);
-	// 座標を反映
-	obj_Bike->SetPosition(pos);
-	// バイク更新
-	obj_Bike->Update();
-	// 座標反映
-	obj_Dome->SetPosition({ pos.x, pos.y, pos.z + 150.0f });
-	// スカイドーム更新
-	obj_Dome->Update();
+		// カメラ更新
+		camera->Update();
+		// 回転を反映
+		obj_Bike->SetRotation(rot);
+		// 座標を反映
+		obj_Bike->SetPosition(pos);
+		// バイク更新
+		obj_Bike->Update();
+		// 座標反映
+		obj_Dome->SetPosition({ pos.x, pos.y, pos.z + 150.0f });
+		// スカイドーム更新
+		obj_Dome->Update();
+	}
+	else
+	{
+		//audio->StopWave("bike.wav");
+	}
+
+	
 }
 
 void Player::Draw()

@@ -14,6 +14,7 @@ Scroll* Scroll::Create()
 
 Scroll::~Scroll()
 {
+
 	for (int i = 0; i < MAX_PLATE; i++)
 	{
 		delete(plate[i]);

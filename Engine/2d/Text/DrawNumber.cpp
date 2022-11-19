@@ -23,7 +23,7 @@ void DrawNumber::Finalize()
 	}
 }
 
-void DrawNumber::Updata(const std::string& text, const int& value, const XMFLOAT2& pos, const float& size)
+void DrawNumber::Updata(const std::string& text, const XMFLOAT2& pos, const float& size)
 {
 
 	//‘S‚Ä‚Ì•¶Žš‚É‚Â‚¢‚Ä

@@ -49,6 +49,8 @@ void FrameWork::Finalize()
 	delete dxCommon;
 	// デバッグテキストの終了処理
 	debugText->Finalize();
+	// DrawNumberの終了処理
+	drawNumber->Finalize();
 	// WindowsAPIの終了処理
 	winApp->Finalize();
 	// WindowsAPIクラス解放

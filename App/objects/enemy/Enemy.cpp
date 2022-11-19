@@ -99,45 +99,49 @@ float Enemy::RandSpeed()
 	
 }
 
-void Enemy::Update(const XMFLOAT3& playerPos, const float& playerSpeed)
+void Enemy::Update(const XMFLOAT3& playerPos, const float& playerSpeed, bool hitFlag)
 {	
-	// プレイヤーの座標を格納
-	player_Pos = playerPos;
-	player_Speed = playerSpeed;
-
-	// タイマー
-	if (player_Speed > 1.0f)
+	if (!hitFlag)
 	{
-		for (int i = 0; i < maxTimer; i++)
+		// プレイヤーの座標を格納
+		player_Pos = playerPos;
+		player_Speed = playerSpeed;
+
+		// タイマー
+		if (player_Speed > 1.0f)
 		{
-			createTimer[i]--;
-			if (createTimer[i] <= 0)
+			for (int i = 0; i < maxTimer; i++)
 			{
-				createTimer[i] = (rand() % RANDTIMER_MAX) + RANDTIMER_MINI;
-				speeds.push_back(RandSpeed());
-				objects.push_back(Object3d::Create(RandPos(i), model[RandModel()]));
+				createTimer[i]--;
+				if (createTimer[i] <= 0)
+				{
+					createTimer[i] = (rand() % RANDTIMER_MAX) + RANDTIMER_MINI;
+					speeds.push_back(RandSpeed());
+					objects.push_back(Object3d::Create(RandPos(i), model[RandModel()]));
+				}
 			}
 		}
-	}
 
 
-	
-	for (int i = 0; i < objects.size(); i++)
-	{
-		// 自動走行
-		AutoSprint(i);
-		//　プレイヤーがエネミーを追い越したら
-		if (objects[i]->GetPosition().z < playerPos.z - 20.0f)
+
+		for (int i = 0; i < objects.size(); i++)
 		{
-			// データを解放
-			objects.erase(objects.begin() + i);
-			speeds.erase(speeds.begin() + i);
-			modelFlags.erase(modelFlags.begin() + i);
-			break;
+			// 自動走行
+			AutoSprint(i);
+			//　プレイヤーがエネミーを追い越したら
+			if (objects[i]->GetPosition().z < playerPos.z - 20.0f)
+			{
+				// データを解放
+				objects.erase(objects.begin() + i);
+				speeds.erase(speeds.begin() + i);
+				modelFlags.erase(modelFlags.begin() + i);
+				break;
+			}
+			// オブジェクトデータ更新
+			objects[i]->Update();
 		}
-		// オブジェクトデータ更新
-		objects[i]->Update();
 	}
+	
 }
 
 void Enemy::Draw()

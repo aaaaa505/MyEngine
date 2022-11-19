@@ -48,6 +48,20 @@ private:
 	// カウントダウン
 	CountDown* countDown = nullptr;
 
+	bool hitFlag = false;
+
+	// スコア
+	Sprite* sprite = nullptr;
+	int32_t score = 0;
+	int32_t scoreTimer = 30;
 	char str[100];
+
+	// クラッシュ
+	Sprite* crash = nullptr;
+	int32_t sceneChangeTimer = 80;
+
+	// result
+	Sprite* result = nullptr;
+	bool resultFlag = false;
 };
 

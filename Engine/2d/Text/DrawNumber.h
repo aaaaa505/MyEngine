@@ -13,7 +13,7 @@ private:// エイリアス
 public: //定数の宣言
 	static const int maxCharCount = 256;	//最大文字数
 	static const int fontWidth = 34;		//フォント画像内1文字分の横幅
-	static const int fontHeight = 64;		//フォント画像内1文字分の縦幅
+	static const int fontHeight = 66;		//フォント画像内1文字分の縦幅
 	static const int fontLineCount = 10;	//フォント画像内1行分の文字数
 
 public: //メンバ関数
@@ -39,10 +39,9 @@ public: //メンバ関数
 	/// 文字列更新
 	/// </summary>
 	/// <param name="text">文字格納用</param>
-	/// <param name="value">数値</param>
 	/// <param name="pos">座標</param>
 	/// <param name="size">大きさ</param>
-	void Updata(const std::string& text, const int& value, const XMFLOAT2& pos, const float& size);
+	void Updata(const std::string& text, const XMFLOAT2& pos, const float& size);
 	
 	/// <summary>
 	/// 全描画

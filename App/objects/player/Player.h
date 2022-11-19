@@ -2,6 +2,7 @@
 #include "Object3d.h"
 #include "Input.h"
 #include "Camera.h"
+#include "Audio.h"
 
 // サイズ
 #define RADIUS_X 0.4f
@@ -18,7 +19,7 @@
 #define MITIGATIONVALUE 130.0f
 
 // 加速力
-#define ACC_POWER 0.01f
+#define ACC_POWER 0.005f
 // 減速力
 #define BRA_POWER 0.04f
 // 惰性力
@@ -60,6 +61,8 @@ public:
 	// プレイヤーの速度を取得
 	const XMFLOAT3& GetSpeed() { return speed; }
 
+	void SetHitFlag(bool hitFlag) { this->hitFlag = hitFlag; }
+
 private:
 	/// <summary>
 	/// 生成処理
@@ -84,6 +87,8 @@ private:
 private:
 	// カメラ
 	Camera* camera = nullptr;
+	// オーディオ
+	//Audio* audio = nullptr;
 	// バイクモデル
 	Model* model_Bike = nullptr;
 	// バイクオブジェクト
@@ -101,8 +106,12 @@ private:
 	XMFLOAT3 speed{};
 	// 加速度
 	XMFLOAT3 acc{};
+	// 音量
+	float volume = 0.0f;
 
 	// レース開始フラッグ
 	bool startFlag = false;
+
+	bool hitFlag = false;
 };
 

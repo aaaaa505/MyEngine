@@ -18,9 +18,9 @@ public:// ’è”
 	static const int maxTimer = 50;
 
 private:// ’è”
-	const float centerPos = 0.5f;
-	const float movePower = 100.0f;
-	const float decayPower = 0.05f;
+	static const float centerPos;
+	static const float movePower;
+	static const float decayPower;
 
 public:// Ã“Iƒƒ“ƒoŠÖ”
 

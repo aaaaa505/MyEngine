@@ -22,7 +22,12 @@ enum  SpriteNumber
 	second_Number,
 	first_Number,
 	zero_Number,
-
+	// スコアバー
+	scoreBar_Number,
+	// クラッシュ
+	crash_Number,
+	// result
+	result_Number,
 
 };
 

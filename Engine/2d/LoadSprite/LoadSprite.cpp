@@ -57,4 +57,20 @@ void LoadSprite::StaticInitialize(SpriteCommon* spriteCommon)
 		return;
 	}
 #pragma endregion
+
+	// エンド画像
+	if (!spriteCommon->LoadTexture(scoreBar_Number, L"Resources/scoreBar.png")) {
+		assert(0);
+		return;
+	}
+	// エンド画像
+	if (!spriteCommon->LoadTexture(crash_Number, L"Resources/crash.png")) {
+		assert(0);
+		return;
+	}
+	// エンド画像
+	if (!spriteCommon->LoadTexture(result_Number, L"Resources/result.png")) {
+		assert(0);
+		return;
+	}
 }

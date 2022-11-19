@@ -67,7 +67,7 @@ public: // ƒƒ“ƒoŠÖ”
 	/// <summary>
 	/// XV
 	/// </summary>
-	void Update(const XMFLOAT3& playerPos, const float& playerSpeed);
+	void Update(const XMFLOAT3& playerPos, const float& playerSpeed, bool hitFlag);
 
 	/// <summary>
 	/// •`‰æˆ—

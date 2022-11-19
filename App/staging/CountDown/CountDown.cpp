@@ -3,6 +3,11 @@
 #include "LoadSprite.h"
 #include "Audio.h"
 
+// 静的メンバ変数の実体
+const float CountDown::centerPos = 0.5f;
+const float CountDown::movePower = 100.0f;
+const float CountDown::decayPower = 0.05f;
+
 CountDown* CountDown::Create()
 {
     // インスタンス生成
@@ -27,7 +32,7 @@ void CountDown::Initialize()
     // 初期タイマーセット
     countTimer = maxTimer;
 	// 音源読み込み
-	Audio::GetInstance()->LoadWave("countDown.wav");
+	//Audio::GetInstance()->LoadWave("countDown.wav");
 }
 
 
@@ -62,7 +67,7 @@ void CountDown::Update()
 			sprite->SetTexture(zero_Number);
 		}
 
-		audio->PlayWave("countDown.wav", false);
+		//audio->PlayWave("countDown.wav", false);
 	}
 
 	if (countFlag == zero)
@@ -77,7 +82,7 @@ void CountDown::Update()
 		if (alpha < -2.5f)
 		{
 			startFlag = true;
-			audio->StopWave("countDown.wav");
+			//audio->StopWave("countDown.wav");
 		}
 	}
 
