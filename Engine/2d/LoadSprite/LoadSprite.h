@@ -15,8 +15,6 @@ enum  SpriteNumber
 	title_Manual_Number,
 	// マニュアルナンバー
 	manual_Number,
-	// エンドナンバー
-	end_Number,
 	// カウントダウン
 	third_Number,
 	second_Number,

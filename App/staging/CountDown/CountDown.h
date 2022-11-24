@@ -6,22 +6,6 @@ class CountDown
 private: // エイリアス
 	using XMFLOAT2 = DirectX::XMFLOAT2;
 
-public:// 定数
-	enum CountNumber
-	{
-		third,
-		second,
-		first,
-		zero,
-	};
-
-	static const int maxTimer = 50;
-
-private:// 定数
-	static const float centerPos;
-	static const float movePower;
-	static const float decayPower;
-
 public:// 静的メンバ関数
 
 	/// <summary>
@@ -53,6 +37,22 @@ private:// メンバ関数
 	/// 生成処理
 	/// </summary>
 	void Initialize();
+
+private://列挙定数
+	enum CountNumber
+	{
+		third,
+		second,
+		first,
+		zero,
+	};
+
+private:// 定数
+	static const float centerPos;
+	static const float movePower;
+	static const float decayPower;
+
+	static const int maxTimer = 50;
 
 private:// メンバ変数
 	Sprite* sprite = nullptr;

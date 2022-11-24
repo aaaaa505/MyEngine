@@ -3,7 +3,6 @@
 #include "TitleScene.h"
 #include "ManualScene.h"
 #include "PlayScene.h"
-#include "EndScene.h"
 
 BaseScene* SceneFactory::CreateScene(const std::string& sceneName)
 {
@@ -22,10 +21,6 @@ BaseScene* SceneFactory::CreateScene(const std::string& sceneName)
 	else if (sceneName == "MANUAL")
 	{
 		newScene = new ManualScene();
-	}
-	else if (sceneName == "END")
-	{
-		newScene = new EndScene();
 	}
 
 	// 作成したシーンをリターン

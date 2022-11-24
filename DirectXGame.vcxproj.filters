@@ -22,9 +22,6 @@
     <Filter Include="Engine\2D\Sprite">
       <UniqueIdentifier>{44f57d94-e49c-469d-bb86-5200c07a61b3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\2D\SpriteCommon">
-      <UniqueIdentifier>{0d469624-e784-436e-bcbb-ce5dcacf0cb2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\3D">
       <UniqueIdentifier>{c63cc561-2bd6-4acb-a423-b4d75f3d14c2}</UniqueIdentifier>
     </Filter>
@@ -76,24 +73,6 @@
     <Filter Include="App\GameScene\TitleScene">
       <UniqueIdentifier>{0723d6e7-3b33-4adc-9784-6b520c19a530}</UniqueIdentifier>
     </Filter>
-    <Filter Include="App\Objects">
-      <UniqueIdentifier>{ed429022-d93e-48a2-a9ce-2437001ff5b9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\Objects\Player">
-      <UniqueIdentifier>{101e9d70-34a5-4789-9de6-2dd2dfb14d7f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\Objects\Field">
-      <UniqueIdentifier>{d7e93119-86d9-4eb0-8e09-e1f008008ceb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\Objects\Collision">
-      <UniqueIdentifier>{01a8bf13-a78b-4ded-9235-e1f0f032ff92}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\Objects\Enemy">
-      <UniqueIdentifier>{afeba06b-3935-41ef-89b6-bb0ffcbb670d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\GameScene\EndScene">
-      <UniqueIdentifier>{563d60b6-0985-46b5-a243-2dd202d82a7a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\MakeScene">
       <UniqueIdentifier>{3bd9e02f-13c4-458c-bcfe-2ae7dd7cb6d3}</UniqueIdentifier>
     </Filter>
@@ -130,6 +109,21 @@
     <Filter Include="Engine\Base\FrameWork">
       <UniqueIdentifier>{225e559d-4f85-4ce0-aaa3-eed1425fa6af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App\Objects">
+      <UniqueIdentifier>{ed429022-d93e-48a2-a9ce-2437001ff5b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Objects\Player">
+      <UniqueIdentifier>{101e9d70-34a5-4789-9de6-2dd2dfb14d7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Objects\Field">
+      <UniqueIdentifier>{d7e93119-86d9-4eb0-8e09-e1f008008ceb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Objects\Enemy">
+      <UniqueIdentifier>{afeba06b-3935-41ef-89b6-bb0ffcbb670d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Collision">
+      <UniqueIdentifier>{01a8bf13-a78b-4ded-9235-e1f0f032ff92}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\2d\LoadSprite\LoadSprite.cpp">
@@ -137,9 +131,6 @@
     </ClCompile>
     <ClCompile Include="Engine\2d\Sprite\Sprite.cpp">
       <Filter>Engine\2D\Sprite</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\2d\SpriteCommon\SpriteCommon.cpp">
-      <Filter>Engine\2D\SpriteCommon</Filter>
     </ClCompile>
     <ClCompile Include="Engine\input\Input.cpp">
       <Filter>Engine\Input</Filter>
@@ -171,17 +162,11 @@
     <ClCompile Include="Engine\base\Main\main.cpp">
       <Filter>Engine\Base\Main</Filter>
     </ClCompile>
-    <ClCompile Include="App\gameScene\EndScene\EndScene.cpp">
-      <Filter>App\GameScene\EndScene</Filter>
-    </ClCompile>
     <ClCompile Include="App\gameScene\playScene\PlayScene.cpp">
       <Filter>App\GameScene\PlayScene</Filter>
     </ClCompile>
     <ClCompile Include="App\gameScene\titleScene\TitleScene.cpp">
       <Filter>App\GameScene\TitleScene</Filter>
-    </ClCompile>
-    <ClCompile Include="App\objects\collision\Collision.cpp">
-      <Filter>App\Objects\Collision</Filter>
     </ClCompile>
     <ClCompile Include="App\objects\enemy\Enemy.cpp">
       <Filter>App\Objects\Enemy</Filter>
@@ -222,6 +207,12 @@
     <ClCompile Include="Engine\base\DirectXCommon\DirectXCommon.cpp">
       <Filter>Engine\Base\DirectXCommon</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\2D\Sprite\SpriteCommon.cpp">
+      <Filter>Engine\2D\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Collision\Collision.cpp">
+      <Filter>Engine\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\2d\LoadSprite\LoadSprite.h">
@@ -229,9 +220,6 @@
     </ClInclude>
     <ClInclude Include="Engine\2d\Sprite\Sprite.h">
       <Filter>Engine\2D\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\2d\SpriteCommon\SpriteCommon.h">
-      <Filter>Engine\2D\SpriteCommon</Filter>
     </ClInclude>
     <ClInclude Include="Engine\input\Input.h">
       <Filter>Engine\Input</Filter>
@@ -260,17 +248,11 @@
     <ClInclude Include="Engine\base\WinApp\WinApp.h">
       <Filter>Engine\Base\WinApp</Filter>
     </ClInclude>
-    <ClInclude Include="App\gameScene\EndScene\EndScene.h">
-      <Filter>App\GameScene\EndScene</Filter>
-    </ClInclude>
     <ClInclude Include="App\gameScene\playScene\PlayScene.h">
       <Filter>App\GameScene\PlayScene</Filter>
     </ClInclude>
     <ClInclude Include="App\gameScene\titleScene\TitleScene.h">
       <Filter>App\GameScene\TitleScene</Filter>
-    </ClInclude>
-    <ClInclude Include="App\objects\collision\Collision.h">
-      <Filter>App\Objects\Collision</Filter>
     </ClInclude>
     <ClInclude Include="App\objects\enemy\Enemy.h">
       <Filter>App\Objects\Enemy</Filter>
@@ -316,6 +298,12 @@
     </ClInclude>
     <ClInclude Include="Engine\base\DirectXCommon\DirectXCommon.h">
       <Filter>Engine\Base\DirectXCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\2D\Sprite\SpriteCommon.h">
+      <Filter>Engine\2D\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Collision\Collision.h">
+      <Filter>Engine\Collision</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
