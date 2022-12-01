@@ -12,8 +12,8 @@ void TitleScene::Initialize()
 		sprites[i] = Sprite::Create(title_None_Number + i, {0.0f, 0.0f});
 	}
 
-	//Audio::GetInstance()->LoadWave("title.wav");
-	//Audio::GetInstance()->LoadWave("select.wav");
+	Audio::GetInstance()->LoadWave("title.wav");
+	Audio::GetInstance()->LoadWave("select.wav");
 }
 
 void TitleScene::Finalize()
@@ -28,21 +28,21 @@ void TitleScene::Finalize()
 void TitleScene::Updata()
 {
 	Input* input = Input::GetInstacne();
-	//Audio* audio = Audio::GetInstance();
+	Audio* audio = Audio::GetInstance();
 
-	//audio->PlayWave("title.wav", true);
+	audio->PlayWave("title.wav", true);
 
 	if (input->TriggerKey(DIK_S))
 	{
-		//audio->StopWave("select.wav");
-		//audio->PlayWave("select.wav", false);
+		audio->StopWave("select.wav");
+		audio->PlayWave("select.wav", false);
 		texFlag = manual;
 	}
 
 	if (input->TriggerKey(DIK_W))
 	{
-		//audio->StopWave("select.wav");
-		//audio->PlayWave("select.wav", false);
+		audio->StopWave("select.wav");
+		audio->PlayWave("select.wav", false);
 		texFlag = start;
 	}
 
@@ -52,7 +52,7 @@ void TitleScene::Updata()
 		{
 			// ƒV[ƒ“Ø‚è‘Ö‚¦
 			SceneManager::GetInstance()->ChangeScene("PLAY");
-			//audio->StopWave("title.wav");
+			audio->StopWave("title.wav");
 		}
 	}
 	

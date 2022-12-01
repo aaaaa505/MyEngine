@@ -21,9 +21,9 @@ Player::~Player()
 	delete obj_Bike;
 
 	// ドームモデル
-	delete model_Dome;
+	delete model_BackGround;
 	// ドームオブジェクト
-	delete obj_Dome;
+	delete obj_BackGround;
 }
 
 void Player::Initialize()
@@ -39,13 +39,13 @@ void Player::Initialize()
 	// 初速度
 	speed = { 0.0f, 0.0f, 0.1f };
 	// モデル読み込み
-	model_Dome = Model::LoadFromOBJ("skydome");
+	model_BackGround = Model::LoadFromOBJ("backGround");
 	// オブジェクト生成
-	obj_Dome = Object3d::Create({0.0f, 0.0f, 0.0f}, model_Dome);
+	obj_BackGround = Object3d::Create({0.0f, 0.0f, 0.0f}, model_BackGround);
 
-	//audio = Audio::GetInstance();
-	//audio->LoadWave("bike.wav");
-	//audio->SetVolume("bike.wav", volume);
+	audio = Audio::GetInstance();
+	audio->LoadWave("bike.wav");
+	audio->SetVolume("bike.wav", volume);
 }
 
 void Player::BesideMove()
@@ -95,7 +95,7 @@ float Player::Fluctuation()
 			if (Input::GetInstacne()->PushKey(DIK_W))
 			{
 				speed.z += ACC_POWER;
-				volume += 0.001f;
+				volume -= 0.001f;
 			}
 		}
 
@@ -106,13 +106,13 @@ float Player::Fluctuation()
 			if (Input::GetInstacne()->PushKey(DIK_W) == false && Input::GetInstacne()->PushKey(DIK_S) == false)
 			{
 				speed.z -= INE_POWER;
-				volume -= INE_POWER;
+				//volume = 0.0f;
 			}
 			// ブレーキ
 			else if (Input::GetInstacne()->PushKey(DIK_S))
 			{
 				speed.z -= BRA_POWER;
-				volume -= BRA_POWER;
+				//volume -= BRA_POWER;
 			}
 		}
 
@@ -143,8 +143,8 @@ void Player::Update(bool startFlag)
 		camera->SetEye({ pos.x, pos.y + 1.7f, pos.z - 0.3f });
 		camera->SetTarget({ pos.x, pos.y + 1.7f, pos.z + 1.0f });
 
-		//audio->SetVolume("bike.wav",volume);
-		//audio->PlayWave("bike.wav", true);
+		audio->SetVolume("bike.wav",volume);
+		audio->PlayWave("bike.wav", true);
 
 		// カメラ更新
 		camera->Update();
@@ -155,13 +155,13 @@ void Player::Update(bool startFlag)
 		// バイク更新
 		obj_Bike->Update();
 		// 座標反映
-		obj_Dome->SetPosition({ pos.x, pos.y, pos.z + 150.0f });
+		obj_BackGround->SetPosition({ pos.x, pos.y, pos.z + 300.0f });
 		// スカイドーム更新
-		obj_Dome->Update();
+		obj_BackGround->Update();
 	}
 	else
 	{
-		//audio->StopWave("bike.wav");
+		audio->StopWave("bike.wav");
 	}
 
 	
@@ -172,5 +172,5 @@ void Player::Draw()
 	// バイク更新
 	obj_Bike->Draw();
 	// スカイドーム更新
-	obj_Dome->Draw();
+	obj_BackGround->Draw();
 }

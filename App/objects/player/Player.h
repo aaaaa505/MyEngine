@@ -88,15 +88,15 @@ private:
 	// カメラ
 	Camera* camera = nullptr;
 	// オーディオ
-	//Audio* audio = nullptr;
+	Audio* audio = nullptr;
 	// バイクモデル
 	Model* model_Bike = nullptr;
 	// バイクオブジェクト
 	Object3d* obj_Bike = nullptr;
 	// ドームモデル
-	Model* model_Dome = nullptr;
+	Model* model_BackGround = nullptr;
 	// ドームオブジェクト
-	Object3d* obj_Dome = nullptr;
+	Object3d* obj_BackGround = nullptr;
 
 	// 座標
 	XMFLOAT3 pos{};

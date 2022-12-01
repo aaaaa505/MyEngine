@@ -24,12 +24,12 @@ Scroll::~Scroll()
 void Scroll::Initialize()
 {
 	// ネクスト
-	plate[first] = Field::Create("plateSetthing");
+	plate[first] = Field::Create("fieldSetthing");
 	basePos[first] = { 0.0f, 0.0f, radius };
 	plate[first]->SetPosition(basePos[first]);
 
 	// トップ
-	plate[second] = Field::Create("plateSetthing");
+	plate[second] = Field::Create("fieldSetthing");
 	basePos[second] = { 0.0f, 0.0f, radius + diameter};
 	plate[second]->SetPosition(basePos[second]);
 

@@ -14,10 +14,6 @@ struct LevelData {
 		std::string fileName;
 		// 平行移動
 		DirectX::XMVECTOR translation;
-		// 回転角
-		DirectX::XMVECTOR rotation;
-		// スケーリング
-		DirectX::XMVECTOR scaling;
 		// model
 		Model* model = nullptr;
 	};

@@ -3,15 +3,15 @@
     "objects": [
         {
             "type": "MESH",
-            "name": "Cube",
+            "name": "平面",
             "transform": {
                 "translation": [
                     0.0,
-                    -5.0,
-                    1.0
+                    0.0,
+                    0.0
                 ],
                 "rotation": [
-                    0.0,
+                    90.00000762939453,
                     -0.0,
                     0.0
                 ],
@@ -21,62 +21,19 @@
                     1.0
                 ]
             },
-            "file_name": "cube",
-            "center_point": ""
-        },
-        {
-            "type": "LIGHT",
-            "name": "Light",
-            "transform": {
-                "translation": [
-                    4.076245307922363,
-                    1.0054539442062378,
-                    5.903861999511719
-                ],
-                "rotation": [
-                    37.261043548583984,
-                    3.1637072563171387,
-                    106.93630981445312
-                ],
-                "scaling": [
-                    1.0,
-                    0.9999999403953552,
-                    1.0
-                ]
-            }
-        },
-        {
-            "type": "CAMERA",
-            "name": "Camera",
-            "transform": {
-                "translation": [
-                    7.358891487121582,
-                    -6.925790786743164,
-                    4.958309173583984
-                ],
-                "rotation": [
-                    63.559303283691406,
-                    -2.664711473698844e-06,
-                    46.69194793701172
-                ],
-                "scaling": [
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            }
+            "file_name": "road"
         },
         {
             "type": "MESH",
-            "name": "Cube.001",
+            "name": "Plane001.001",
             "transform": {
                 "translation": [
                     0.0,
-                    5.0,
-                    1.0
+                    0.0,
+                    -0.10000000149011612
                 ],
                 "rotation": [
-                    0.0,
+                    90.00000762939453,
                     -0.0,
                     0.0
                 ],
@@ -86,20 +43,41 @@
                     1.0
                 ]
             },
-            "file_name": "cube",
-            "center_point": "this"
+            "file_name": "ground"
         },
         {
             "type": "MESH",
-            "name": "Cube.002",
+            "name": "立方体",
             "transform": {
                 "translation": [
                     0.0,
                     0.0,
-                    1.0
+                    0.0
                 ],
                 "rotation": [
                     0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scaling": [
+                    1.0,
+                    300.0,
+                    1.0
+                ]
+            },
+            "file_name": "guardRail"
+        },
+        {
+            "type": "MESH",
+            "name": "Plane001.002",
+            "transform": {
+                "translation": [
+                    0.0,
+                    0.0,
+                    -0.20000000298023224
+                ],
+                "rotation": [
+                    90.00000762939453,
                     -0.0,
                     0.0
                 ],
@@ -109,8 +87,7 @@
                     1.0
                 ]
             },
-            "file_name": "cube",
-            "center_point": ""
+            "file_name": "terrain"
         }
     ]
 }
