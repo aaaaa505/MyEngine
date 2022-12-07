@@ -143,8 +143,8 @@ void Player::Update(bool startFlag)
 		camera->SetEye({ pos.x, pos.y + 1.7f, pos.z - 0.3f });
 		camera->SetTarget({ pos.x, pos.y + 1.7f, pos.z + 1.0f });
 
-		audio->SetVolume("bike.wav",volume);
-		audio->PlayWave("bike.wav", true);
+		//audio->SetVolume("bike.wav",volume);
+		//audio->PlayWave("bike.wav", true);
 
 		// ƒJƒƒ‰XV
 		camera->Update();

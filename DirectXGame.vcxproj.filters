@@ -16,9 +16,6 @@
     <Filter Include="Engine\2D">
       <UniqueIdentifier>{dbb99018-01cd-456d-ab25-0ebbbc72ccee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\2D\LoadSprite">
-      <UniqueIdentifier>{4900f846-aa53-4042-bdce-6e7c3e0a3893}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\2D\Sprite">
       <UniqueIdentifier>{44f57d94-e49c-469d-bb86-5200c07a61b3}</UniqueIdentifier>
     </Filter>
@@ -28,175 +25,37 @@
     <Filter Include="Engine\3D\OBJ">
       <UniqueIdentifier>{7e8081d0-cb98-49cd-8911-10b403cf2c72}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\3D\OBJ\Object3d">
-      <UniqueIdentifier>{c2fa1ddb-f0b0-4d51-be16-2f91e7f83139}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\3D\OBJ\Mesh">
-      <UniqueIdentifier>{ee91e7de-f590-4869-aced-9a3bb1f03203}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\3D\OBJ\Model">
-      <UniqueIdentifier>{1af386ec-662a-4c9a-9281-e87807071314}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\3D\OBJ\Material">
-      <UniqueIdentifier>{2425e6dc-68f2-47b4-8ab8-59a3243fecd6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\3D\Camera">
-      <UniqueIdentifier>{f9e260d0-a3cf-41d7-bc60-3224a10727b2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="App">
       <UniqueIdentifier>{f12462c4-7248-4910-b4a5-4926ca95f089}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Input">
-      <UniqueIdentifier>{33467f57-db8b-4fdf-a8e7-8b6ec05b1a4c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\Base">
       <UniqueIdentifier>{174a6840-0eec-4543-94a2-8d5539fe0f5c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\Base\DirectXCommon">
-      <UniqueIdentifier>{e07193ed-72a7-44e9-be86-6d7652f56f68}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Base\WinApp">
-      <UniqueIdentifier>{6b57e627-9872-4197-814c-47e3955fc0e3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Base\Main">
-      <UniqueIdentifier>{ee54b079-1710-4500-9a95-3a7776e4afff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Base\MyGame">
-      <UniqueIdentifier>{5d724db5-af71-4bdc-8757-37f1b7420c30}</UniqueIdentifier>
-    </Filter>
     <Filter Include="App\GameScene">
       <UniqueIdentifier>{56f6cc47-08c1-4da3-9be4-d43f74cc1461}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\GameScene\PlayScene">
-      <UniqueIdentifier>{1edc7448-ce8a-463f-8602-ac907adfc54d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\GameScene\TitleScene">
-      <UniqueIdentifier>{0723d6e7-3b33-4adc-9784-6b520c19a530}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\MakeScene">
       <UniqueIdentifier>{3bd9e02f-13c4-458c-bcfe-2ae7dd7cb6d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\MakeScene\SceneFactory">
-      <UniqueIdentifier>{9c83c25c-3c73-4fab-b42d-3931271a26d3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\MakeScene\SceneManager">
-      <UniqueIdentifier>{bb5cf123-c9ec-4805-a5de-d47431ba2aa0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\MakeScene\BaseScene">
-      <UniqueIdentifier>{90d50ca2-f528-4afb-98b1-07ae8d9bb75c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="App\Staging">
       <UniqueIdentifier>{355bbfc0-c73c-46f1-80c2-104d5709fdc8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\LevelLoader">
-      <UniqueIdentifier>{41e5a09c-d683-4ab2-9dd4-d91fa5e61d74}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\Staging\Scroll">
-      <UniqueIdentifier>{acb33086-1370-40ff-b5e7-53d8fc2e3387}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\GameScene\ManualScene">
-      <UniqueIdentifier>{54e1a09f-95eb-46c7-a027-38623e6ed0a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Audio">
-      <UniqueIdentifier>{1fcdfed5-5716-47dd-989b-c19fab38c5b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\Staging\CountDown">
-      <UniqueIdentifier>{357ce541-899d-42e8-ade5-6012c2aabc95}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\2D\Text">
       <UniqueIdentifier>{62b12941-38b0-4386-b141-2c3945ee0a72}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\Base\FrameWork">
-      <UniqueIdentifier>{225e559d-4f85-4ce0-aaa3-eed1425fa6af}</UniqueIdentifier>
-    </Filter>
     <Filter Include="App\Objects">
       <UniqueIdentifier>{ed429022-d93e-48a2-a9ce-2437001ff5b9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="App\Objects\Player">
-      <UniqueIdentifier>{101e9d70-34a5-4789-9de6-2dd2dfb14d7f}</UniqueIdentifier>
+    <Filter Include="Engine\Allpurpose">
+      <UniqueIdentifier>{fb820e95-7f77-43a7-b8af-6a6a5fa0aaa4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="App\Objects\Field">
-      <UniqueIdentifier>{d7e93119-86d9-4eb0-8e09-e1f008008ceb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App\Objects\Enemy">
-      <UniqueIdentifier>{afeba06b-3935-41ef-89b6-bb0ffcbb670d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Collision">
-      <UniqueIdentifier>{01a8bf13-a78b-4ded-9235-e1f0f032ff92}</UniqueIdentifier>
+    <Filter Include="Engine\FrameWork">
+      <UniqueIdentifier>{70e8e959-4404-42ea-b696-50a64bc1c28f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Engine\2d\LoadSprite\LoadSprite.cpp">
-      <Filter>Engine\2D\LoadSprite</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\2d\Sprite\Sprite.cpp">
       <Filter>Engine\2D\Sprite</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\input\Input.cpp">
-      <Filter>Engine\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\3d\camera\Camera.cpp">
-      <Filter>Engine\3D\Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\3d\obj\Material\Material.cpp">
-      <Filter>Engine\3D\OBJ\Material</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\3d\obj\Mesh\Mesh.cpp">
-      <Filter>Engine\3D\OBJ\Mesh</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\3d\obj\Model\Model.cpp">
-      <Filter>Engine\3D\OBJ\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\3d\obj\Object3d\Object3d.cpp">
-      <Filter>Engine\3D\OBJ\Object3d</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\base\FrameWork\FrameWork.cpp">
-      <Filter>Engine\Base\FrameWork</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\base\MyGame\MyGame.cpp">
-      <Filter>Engine\Base\MyGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\base\WinApp\WinApp.cpp">
-      <Filter>Engine\Base\WinApp</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\base\Main\main.cpp">
-      <Filter>Engine\Base\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="App\gameScene\playScene\PlayScene.cpp">
-      <Filter>App\GameScene\PlayScene</Filter>
-    </ClCompile>
-    <ClCompile Include="App\gameScene\titleScene\TitleScene.cpp">
-      <Filter>App\GameScene\TitleScene</Filter>
-    </ClCompile>
-    <ClCompile Include="App\objects\enemy\Enemy.cpp">
-      <Filter>App\Objects\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="App\objects\player\Player.cpp">
-      <Filter>App\Objects\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\makeScene\sceneManager\SceneManager.cpp">
-      <Filter>Engine\MakeScene\SceneManager</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\makeScene\sceneFactory\SceneFactory.cpp">
-      <Filter>Engine\MakeScene\SceneFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="App\objects\field\Field.cpp">
-      <Filter>App\Objects\Field</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\levelLoader\LevelLoader.cpp">
-      <Filter>Engine\LevelLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="App\staging\scroll\Scroll.cpp">
-      <Filter>App\Staging\Scroll</Filter>
-    </ClCompile>
-    <ClCompile Include="App\gameScene\ManualScene\ManualScene.cpp">
-      <Filter>App\GameScene\ManualScene</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\Audio\Audio.cpp">
-      <Filter>Engine\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="App\staging\CountDown\CountDown.cpp">
-      <Filter>App\Staging\CountDown</Filter>
     </ClCompile>
     <ClCompile Include="Engine\2d\Text\DebugText.cpp">
       <Filter>Engine\2D\Text</Filter>
@@ -204,91 +63,88 @@
     <ClCompile Include="Engine\2d\Text\DrawNumber.cpp">
       <Filter>Engine\2D\Text</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\base\DirectXCommon\DirectXCommon.cpp">
-      <Filter>Engine\Base\DirectXCommon</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\2D\Sprite\SpriteCommon.cpp">
       <Filter>Engine\2D\Sprite</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Collision\Collision.cpp">
-      <Filter>Engine\Collision</Filter>
+    <ClCompile Include="App\GameScene\ManualScene.cpp">
+      <Filter>App\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="App\GameScene\PlayScene.cpp">
+      <Filter>App\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="App\GameScene\TitleScene.cpp">
+      <Filter>App\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Objects\Enemy.cpp">
+      <Filter>App\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Objects\Field.cpp">
+      <Filter>App\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Objects\Player.cpp">
+      <Filter>App\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Staging\CountDown.cpp">
+      <Filter>App\Staging</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Staging\Scroll.cpp">
+      <Filter>App\Staging</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\2D\Sprite\LoadSprite.cpp">
+      <Filter>Engine\2D\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3D\Obj\Material.cpp">
+      <Filter>Engine\3D\OBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3D\Obj\Mesh.cpp">
+      <Filter>Engine\3D\OBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3D\Obj\Model.cpp">
+      <Filter>Engine\3D\OBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3D\Obj\Object3d.cpp">
+      <Filter>Engine\3D\OBJ</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\3D\Camera.cpp">
+      <Filter>Engine\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Allpurpose\Audio.cpp">
+      <Filter>Engine\Allpurpose</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Allpurpose\Collision.cpp">
+      <Filter>Engine\Allpurpose</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Allpurpose\Input.cpp">
+      <Filter>Engine\Allpurpose</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Allpurpose\LevelLoader.cpp">
+      <Filter>Engine\Allpurpose</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\MakeScene\SceneFactory.cpp">
+      <Filter>Engine\MakeScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\MakeScene\SceneManager.cpp">
+      <Filter>Engine\MakeScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Base\DirectXCommon.cpp">
+      <Filter>Engine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Base\main.cpp">
+      <Filter>Engine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Base\WinApp.cpp">
+      <Filter>Engine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\FrameWork\FrameWork.cpp">
+      <Filter>Engine\FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\FrameWork\MyGame.cpp">
+      <Filter>Engine\FrameWork</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Engine\2d\LoadSprite\LoadSprite.h">
-      <Filter>Engine\2D\LoadSprite</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\2d\Sprite\Sprite.h">
       <Filter>Engine\2D\Sprite</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\input\Input.h">
-      <Filter>Engine\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\3d\camera\Camera.h">
-      <Filter>Engine\3D\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\3d\obj\Material\Material.h">
-      <Filter>Engine\3D\OBJ\Material</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\3d\obj\Mesh\Mesh.h">
-      <Filter>Engine\3D\OBJ\Mesh</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\3d\obj\Model\Model.h">
-      <Filter>Engine\3D\OBJ\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\3d\obj\Object3d\Object3d.h">
-      <Filter>Engine\3D\OBJ\Object3d</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\base\FrameWork\FrameWork.h">
-      <Filter>Engine\Base\FrameWork</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\base\MyGame\MyGame.h">
-      <Filter>Engine\Base\MyGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\base\WinApp\WinApp.h">
-      <Filter>Engine\Base\WinApp</Filter>
-    </ClInclude>
-    <ClInclude Include="App\gameScene\playScene\PlayScene.h">
-      <Filter>App\GameScene\PlayScene</Filter>
-    </ClInclude>
-    <ClInclude Include="App\gameScene\titleScene\TitleScene.h">
-      <Filter>App\GameScene\TitleScene</Filter>
-    </ClInclude>
-    <ClInclude Include="App\objects\enemy\Enemy.h">
-      <Filter>App\Objects\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="App\objects\player\Player.h">
-      <Filter>App\Objects\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\makeScene\baseScene\AbstractSceneFactory.h">
-      <Filter>Engine\MakeScene\BaseScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\makeScene\baseScene\BaseScene.h">
-      <Filter>Engine\MakeScene\BaseScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\makeScene\sceneManager\SceneManager.h">
-      <Filter>Engine\MakeScene\SceneManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\makeScene\sceneFactory\SceneFactory.h">
-      <Filter>Engine\MakeScene\SceneFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="App\objects\field\Field.h">
-      <Filter>App\Objects\Field</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\levelLoader\LevelLoader.h">
-      <Filter>Engine\LevelLoader</Filter>
-    </ClInclude>
-    <ClInclude Include="App\staging\scroll\Scroll.h">
-      <Filter>App\Staging\Scroll</Filter>
-    </ClInclude>
-    <ClInclude Include="App\gameScene\ManualScene\ManualScene.h">
-      <Filter>App\GameScene\ManualScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Audio\Audio.h">
-      <Filter>Engine\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="App\staging\CountDown\CountDown.h">
-      <Filter>App\Staging\CountDown</Filter>
     </ClInclude>
     <ClInclude Include="Engine\2d\Text\DebugText.h">
       <Filter>Engine\2D\Text</Filter>
@@ -296,14 +152,86 @@
     <ClInclude Include="Engine\2d\Text\DrawNumber.h">
       <Filter>Engine\2D\Text</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\base\DirectXCommon\DirectXCommon.h">
-      <Filter>Engine\Base\DirectXCommon</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\2D\Sprite\SpriteCommon.h">
       <Filter>Engine\2D\Sprite</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Collision\Collision.h">
-      <Filter>Engine\Collision</Filter>
+    <ClInclude Include="App\GameScene\ManualScene.h">
+      <Filter>App\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="App\GameScene\PlayScene.h">
+      <Filter>App\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="App\GameScene\TitleScene.h">
+      <Filter>App\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Objects\Enemy.h">
+      <Filter>App\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Objects\Field.h">
+      <Filter>App\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Objects\Player.h">
+      <Filter>App\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Staging\CountDown.h">
+      <Filter>App\Staging</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Staging\Scroll.h">
+      <Filter>App\Staging</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\2D\Sprite\LoadSprite.h">
+      <Filter>Engine\2D\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3D\Obj\Material.h">
+      <Filter>Engine\3D\OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3D\Obj\Mesh.h">
+      <Filter>Engine\3D\OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3D\Obj\Model.h">
+      <Filter>Engine\3D\OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3D\Obj\Object3d.h">
+      <Filter>Engine\3D\OBJ</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3D\Camera.h">
+      <Filter>Engine\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Allpurpose\Audio.h">
+      <Filter>Engine\Allpurpose</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Allpurpose\Collision.h">
+      <Filter>Engine\Allpurpose</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Allpurpose\Input.h">
+      <Filter>Engine\Allpurpose</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Allpurpose\LevelLoader.h">
+      <Filter>Engine\Allpurpose</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\MakeScene\AbstractSceneFactory.h">
+      <Filter>Engine\MakeScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\MakeScene\BaseScene.h">
+      <Filter>Engine\MakeScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\MakeScene\SceneFactory.h">
+      <Filter>Engine\MakeScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\MakeScene\SceneManager.h">
+      <Filter>Engine\MakeScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Base\DirectXCommon.h">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Base\WinApp.h">
+      <Filter>Engine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\FrameWork\FrameWork.h">
+      <Filter>Engine\FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\FrameWork\MyGame.h">
+      <Filter>Engine\FrameWork</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

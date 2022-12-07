@@ -78,13 +78,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir);$(ProjectDir)Engine\3D\camera;$(ProjectDir)Engine\Base\DirectXCommon;$(ProjectDir)Engine\Base\FrameWork;$(ProjectDir)Engine\Base\MyGame;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)Engine\2D\Sprite;$(ProjectDir)Engine\2D\LoadSprite;$(ProjectDir)Engine\3D\obj\Material;$(ProjectDir)Engine\3D\obj\Mesh;$(ProjectDir)Engine\3D\obj\Model;$(ProjectDir)Engine\2D\Text;$(ProjectDir)Engine\3D\obj\Object3d;$(ProjectDir)Engine\Input;$(ProjectDir)Engine\Base\WinApp;$(ProjectDir)Engine\Base\Main;$(ProjectDir)App\Objects\player;$(ProjectDir)App\Objects\enemy;$(ProjectDir)App\Objects\field;$(ProjectDir)Engine\collision;$(ProjectDir)App\GameScene\PlayScene;$(ProjectDir)App\GameScene\TitleScene;$(ProjectDir)App\GameScene\EndScene;$(ProjectDir)Engine\MakeScene\baseScene;$(ProjectDir)Engine\MakeScene\SceneFactory;$(ProjectDir)Engine\MakeScene\SceneManager;$(ProjectDir)Engine\LevelLoader;$(ProjectDir)App\Staging\scroll;$(ProjectDir)App\GameScene\ManualScene;$(ProjectDir)Engine\Audio;$(ProjectDir)App\Staging\CountDown;$(ProjectDir)lib\Json;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(ProjectDir)Engine\3D;$(ProjectDir)Engine\Base;$(ProjectDir)Engine\FrameWork;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)Engine\2D\Sprite;$(ProjectDir)Engine\3D\obj;$(ProjectDir)Engine\2D\Text;$(ProjectDir)App\Objects;$(ProjectDir)App\GameScene;$(ProjectDir)Engine\MakeScene;$(ProjectDir)App\Staging;$(ProjectDir)Engine\Allpurpose;$(ProjectDir)lib\Json;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)lib\DirectXTex\lib\Debug;$(ProjectDir)lib\imgui\lib\Debug;$(LibraryPath);$(ProjectDir)lib\fbx_sdk\lib;$(ProjectDir)lib\fbx_sdk\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir);$(ProjectDir)Engine\3D\camera;$(ProjectDir)Engine\Base\DirectXCommon;$(ProjectDir)Engine\Base\FrameWork;$(ProjectDir)Engine\Base\MyGame;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)Engine\2D\Sprite;$(ProjectDir)Engine\2D\LoadSprite;$(ProjectDir)Engine\3D\obj\Material;$(ProjectDir)Engine\3D\obj\Mesh;$(ProjectDir)Engine\3D\obj\Model;$(ProjectDir)Engine\2D\Text;$(ProjectDir)Engine\3D\obj\Object3d;$(ProjectDir)Engine\Input;$(ProjectDir)Engine\Base\WinApp;$(ProjectDir)Engine\Base\Main;$(ProjectDir)App\Objects\player;$(ProjectDir)App\Objects\enemy;$(ProjectDir)App\Objects\field;$(ProjectDir)Engine\collision;$(ProjectDir)App\GameScene\PlayScene;$(ProjectDir)App\GameScene\TitleScene;$(ProjectDir)App\GameScene\EndScene;$(ProjectDir)Engine\MakeScene\baseScene;$(ProjectDir)Engine\MakeScene\SceneFactory;$(ProjectDir)Engine\MakeScene\SceneManager;$(ProjectDir)Engine\LevelLoader;$(ProjectDir)App\Staging\scroll;$(ProjectDir)App\GameScene\ManualScene;$(ProjectDir)Engine\Audio;$(ProjectDir)App\Staging\CountDown;$(ProjectDir)lib\Json;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)lib\DirectXTex\lib\Release;$(ProjectDir)lib\imgui\lib\Release;$(LibraryPath);$(ProjectDir)lib\fbx_sdk\lib;$(ProjectDir)lib\fbx_sdk\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir);$(ProjectDir)Engine\3D;$(ProjectDir)Engine\Base;$(ProjectDir)Engine\FrameWork;$(ProjectDir)lib\DirectXTex\include;$(ProjectDir)Engine\2D\Sprite;$(ProjectDir)Engine\3D\obj;$(ProjectDir)Engine\2D\Text;$(ProjectDir)App\Objects;$(ProjectDir)App\GameScene;$(ProjectDir)Engine\MakeScene;$(ProjectDir)App\Staging;$(ProjectDir)Engine\Allpurpose;$(ProjectDir)lib\Json;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)lib\DirectXTex\lib\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -142,71 +142,71 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>DirectXTex.lib;libfbxsdk-mt.lib;libxml2-mt.lib;zlib-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>DirectXTex.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="App\gameScene\ManualScene\ManualScene.cpp" />
-    <ClCompile Include="App\gameScene\playScene\PlayScene.cpp" />
-    <ClCompile Include="App\gameScene\titleScene\TitleScene.cpp" />
-    <ClCompile Include="App\objects\enemy\Enemy.cpp" />
-    <ClCompile Include="App\objects\field\Field.cpp" />
-    <ClCompile Include="App\objects\player\Player.cpp" />
-    <ClCompile Include="App\staging\CountDown\CountDown.cpp" />
-    <ClCompile Include="App\staging\scroll\Scroll.cpp" />
-    <ClCompile Include="Engine\2d\LoadSprite\LoadSprite.cpp" />
+    <ClCompile Include="App\GameScene\ManualScene.cpp" />
+    <ClCompile Include="App\GameScene\PlayScene.cpp" />
+    <ClCompile Include="App\GameScene\TitleScene.cpp" />
+    <ClCompile Include="App\Objects\Enemy.cpp" />
+    <ClCompile Include="App\Objects\Field.cpp" />
+    <ClCompile Include="App\Objects\Player.cpp" />
+    <ClCompile Include="App\Staging\CountDown.cpp" />
+    <ClCompile Include="App\Staging\Scroll.cpp" />
+    <ClCompile Include="Engine\2D\Sprite\LoadSprite.cpp" />
     <ClCompile Include="Engine\2d\Sprite\Sprite.cpp" />
     <ClCompile Include="Engine\2D\Sprite\SpriteCommon.cpp" />
     <ClCompile Include="Engine\2d\Text\DebugText.cpp" />
     <ClCompile Include="Engine\2d\Text\DrawNumber.cpp" />
-    <ClCompile Include="Engine\3d\camera\Camera.cpp" />
-    <ClCompile Include="Engine\3d\obj\Material\Material.cpp" />
-    <ClCompile Include="Engine\3d\obj\Mesh\Mesh.cpp" />
-    <ClCompile Include="Engine\3d\obj\Model\Model.cpp" />
-    <ClCompile Include="Engine\3d\obj\Object3d\Object3d.cpp" />
-    <ClCompile Include="Engine\Audio\Audio.cpp" />
-    <ClCompile Include="Engine\base\DirectXCommon\DirectXCommon.cpp" />
-    <ClCompile Include="Engine\base\FrameWork\FrameWork.cpp" />
-    <ClCompile Include="Engine\base\Main\main.cpp" />
-    <ClCompile Include="Engine\base\MyGame\MyGame.cpp" />
-    <ClCompile Include="Engine\base\WinApp\WinApp.cpp" />
-    <ClCompile Include="Engine\Collision\Collision.cpp" />
-    <ClCompile Include="Engine\input\Input.cpp" />
-    <ClCompile Include="Engine\levelLoader\LevelLoader.cpp" />
-    <ClCompile Include="Engine\makeScene\sceneFactory\SceneFactory.cpp" />
-    <ClCompile Include="Engine\makeScene\sceneManager\SceneManager.cpp" />
+    <ClCompile Include="Engine\3D\Camera.cpp" />
+    <ClCompile Include="Engine\3D\Obj\Material.cpp" />
+    <ClCompile Include="Engine\3D\Obj\Mesh.cpp" />
+    <ClCompile Include="Engine\3D\Obj\Model.cpp" />
+    <ClCompile Include="Engine\3D\Obj\Object3d.cpp" />
+    <ClCompile Include="Engine\Allpurpose\Audio.cpp" />
+    <ClCompile Include="Engine\Allpurpose\Collision.cpp" />
+    <ClCompile Include="Engine\Allpurpose\Input.cpp" />
+    <ClCompile Include="Engine\Allpurpose\LevelLoader.cpp" />
+    <ClCompile Include="Engine\Base\DirectXCommon.cpp" />
+    <ClCompile Include="Engine\Base\main.cpp" />
+    <ClCompile Include="Engine\Base\WinApp.cpp" />
+    <ClCompile Include="Engine\FrameWork\FrameWork.cpp" />
+    <ClCompile Include="Engine\FrameWork\MyGame.cpp" />
+    <ClCompile Include="Engine\MakeScene\SceneFactory.cpp" />
+    <ClCompile Include="Engine\MakeScene\SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="App\gameScene\ManualScene\ManualScene.h" />
-    <ClInclude Include="App\gameScene\playScene\PlayScene.h" />
-    <ClInclude Include="App\gameScene\titleScene\TitleScene.h" />
-    <ClInclude Include="App\objects\enemy\Enemy.h" />
-    <ClInclude Include="App\objects\field\Field.h" />
-    <ClInclude Include="App\objects\player\Player.h" />
-    <ClInclude Include="App\staging\CountDown\CountDown.h" />
-    <ClInclude Include="App\staging\scroll\Scroll.h" />
-    <ClInclude Include="Engine\2d\LoadSprite\LoadSprite.h" />
+    <ClInclude Include="App\GameScene\ManualScene.h" />
+    <ClInclude Include="App\GameScene\PlayScene.h" />
+    <ClInclude Include="App\GameScene\TitleScene.h" />
+    <ClInclude Include="App\Objects\Enemy.h" />
+    <ClInclude Include="App\Objects\Field.h" />
+    <ClInclude Include="App\Objects\Player.h" />
+    <ClInclude Include="App\Staging\CountDown.h" />
+    <ClInclude Include="App\Staging\Scroll.h" />
+    <ClInclude Include="Engine\2D\Sprite\LoadSprite.h" />
     <ClInclude Include="Engine\2d\Sprite\Sprite.h" />
     <ClInclude Include="Engine\2D\Sprite\SpriteCommon.h" />
     <ClInclude Include="Engine\2d\Text\DebugText.h" />
     <ClInclude Include="Engine\2d\Text\DrawNumber.h" />
-    <ClInclude Include="Engine\3d\camera\Camera.h" />
-    <ClInclude Include="Engine\3d\obj\Material\Material.h" />
-    <ClInclude Include="Engine\3d\obj\Mesh\Mesh.h" />
-    <ClInclude Include="Engine\3d\obj\Model\Model.h" />
-    <ClInclude Include="Engine\3d\obj\Object3d\Object3d.h" />
-    <ClInclude Include="Engine\Audio\Audio.h" />
-    <ClInclude Include="Engine\base\DirectXCommon\DirectXCommon.h" />
-    <ClInclude Include="Engine\base\FrameWork\FrameWork.h" />
-    <ClInclude Include="Engine\base\MyGame\MyGame.h" />
-    <ClInclude Include="Engine\base\WinApp\WinApp.h" />
-    <ClInclude Include="Engine\Collision\Collision.h" />
-    <ClInclude Include="Engine\input\Input.h" />
-    <ClInclude Include="Engine\levelLoader\LevelLoader.h" />
-    <ClInclude Include="Engine\makeScene\baseScene\AbstractSceneFactory.h" />
-    <ClInclude Include="Engine\makeScene\baseScene\BaseScene.h" />
-    <ClInclude Include="Engine\makeScene\sceneFactory\SceneFactory.h" />
-    <ClInclude Include="Engine\makeScene\sceneManager\SceneManager.h" />
+    <ClInclude Include="Engine\3D\Camera.h" />
+    <ClInclude Include="Engine\3D\Obj\Material.h" />
+    <ClInclude Include="Engine\3D\Obj\Mesh.h" />
+    <ClInclude Include="Engine\3D\Obj\Model.h" />
+    <ClInclude Include="Engine\3D\Obj\Object3d.h" />
+    <ClInclude Include="Engine\Allpurpose\Audio.h" />
+    <ClInclude Include="Engine\Allpurpose\Collision.h" />
+    <ClInclude Include="Engine\Allpurpose\Input.h" />
+    <ClInclude Include="Engine\Allpurpose\LevelLoader.h" />
+    <ClInclude Include="Engine\Base\DirectXCommon.h" />
+    <ClInclude Include="Engine\Base\WinApp.h" />
+    <ClInclude Include="Engine\FrameWork\FrameWork.h" />
+    <ClInclude Include="Engine\FrameWork\MyGame.h" />
+    <ClInclude Include="Engine\MakeScene\AbstractSceneFactory.h" />
+    <ClInclude Include="Engine\MakeScene\BaseScene.h" />
+    <ClInclude Include="Engine\MakeScene\SceneFactory.h" />
+    <ClInclude Include="Engine\MakeScene\SceneManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shaders\OBJShaderHeader.hlsli" />
